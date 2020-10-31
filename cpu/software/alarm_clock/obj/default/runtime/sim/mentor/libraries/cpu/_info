@@ -1,0 +1,582 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+vsystem_CPU
+!s110 1604120146
+!i10b 1
+!s100 T4HZz6XSLZkX9ACkzO_W]2
+Ij6G9bi:zUm7;Ql=<5U[CP2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1604116277
+8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU.v
+FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU.v
+L0 9
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1604120146.000000
+!s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU.v|
+!s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU.v|-work|CPU|
+!i113 1
+o-work CPU
+Z3 tCvgOpt 0
+nsystem_@c@p@u
+vsystem_CPU_cpu
+Z4 !s110 1604120143
+!i10b 1
+!s100 HDWY<H>0=kjnzEEjI]a1_1
+Ih4a_>i65CS1>9PC4MFTbN3
+R1
+R0
+Z5 w1604116314
+Z6 8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu.v
+Z7 FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu.v
+L0 2834
+R2
+r1
+!s85 0
+31
+Z8 !s108 1604120142.000000
+Z9 !s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu.v|
+Z10 !s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu.v|-work|cpu|
+!i113 1
+Z11 o-work cpu
+R3
+nsystem_@c@p@u_cpu
+vsystem_CPU_cpu_debug_slave_sysclk
+R4
+!i10b 1
+!s100 EdG<;UN=`@6QB9T<5>1K21
+I2>@golE1RTdnO`Y:2T<nG2
+R1
+R0
+R5
+8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_sysclk.v
+FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_sysclk.v
+Z12 L0 21
+R2
+r1
+!s85 0
+31
+Z13 !s108 1604120143.000000
+!s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_sysclk.v|
+!s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_sysclk.v|-work|cpu|
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_debug_slave_sysclk
+vsystem_CPU_cpu_debug_slave_tck
+R4
+!i10b 1
+!s100 d@a8akIES@2RhfHQ06gQ@0
+IeQ=N_NY0KnCI0ncn`haLZ3
+R1
+R0
+R5
+8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_tck.v
+FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_tck.v
+R12
+R2
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_tck.v|
+!s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_tck.v|-work|cpu|
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_debug_slave_tck
+vsystem_CPU_cpu_debug_slave_wrapper
+R4
+!i10b 1
+!s100 _ge7;VKXz?B^P35jG:e9k3
+IYDjE6fClel>gNj3cI<n`12
+R1
+R0
+R5
+8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_wrapper.v
+FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_wrapper.v
+R12
+R2
+r1
+!s85 0
+31
+R13
+!s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_wrapper.v|
+!s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_wrapper.v|-work|cpu|
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_debug_slave_wrapper
+vsystem_CPU_cpu_nios2_avalon_reg
+R4
+!i10b 1
+!s100 UbIO[EXEGIToPYEC?_i453
+IDH?e?2zPEe;QeATemiKV60
+R1
+R0
+R5
+R6
+R7
+L0 2023
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_avalon_reg
+vsystem_CPU_cpu_nios2_oci
+R4
+!i10b 1
+!s100 8YdZi4E]kcCRJgEhO0`De3
+IYBf=;USbAez[z74PTW>5H0
+R1
+R0
+R5
+R6
+R7
+L0 2362
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci
+vsystem_CPU_cpu_nios2_oci_break
+Z14 !s110 1604120142
+!i10b 1
+!s100 nCeJT1_f^k7?YQ`U:4c5O0
+IS3f;b[GU5L8MCIU80FWnT2
+R1
+R0
+R5
+R6
+R7
+L0 295
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_break
+vsystem_CPU_cpu_nios2_oci_compute_input_tm_cnt
+R4
+!i10b 1
+!s100 Eo`37OzzTldCh;U]=7P`52
+Id8?[M;IbdWS3;0FeN1_QY1
+R1
+R0
+R5
+R6
+R7
+L0 1265
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_compute_input_tm_cnt
+vsystem_CPU_cpu_nios2_oci_dbrk
+R4
+!i10b 1
+!s100 H25gUXL3[M7iko2H[:OX72
+IhJMoJE7flX4g;zIRd10ER2
+R1
+R0
+R5
+R6
+R7
+L0 795
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_dbrk
+vsystem_CPU_cpu_nios2_oci_debug
+R14
+!i10b 1
+!s100 decdV4al:WHcIDS6>VMIh3
+IF:9kDn]S6foJZ<f2SWbLD3
+R1
+R0
+R5
+R6
+R7
+L0 153
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_debug
+vsystem_CPU_cpu_nios2_oci_dtrace
+R4
+!i10b 1
+!s100 W<[IaMK2`9`LhC<@X9RCk3
+I1kj0CPM42U]735JfFTJWA0
+R1
+R0
+R5
+R6
+R7
+L0 1183
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_dtrace
+vsystem_CPU_cpu_nios2_oci_fifo
+R4
+!i10b 1
+!s100 cfLlhXPcU:cQQc7T]ZLh80
+IVbXEMFYS]PmSSNfk705Lg1
+R1
+R0
+R5
+R6
+R7
+L0 1427
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_fifo
+vsystem_CPU_cpu_nios2_oci_fifo_cnt_inc
+R4
+!i10b 1
+!s100 zLmK6W6c>cbozDSH4`Sfl3
+IhaP;nS4Zjd6mABJ41ah`N2
+R1
+R0
+R5
+R6
+R7
+L0 1380
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_fifo_cnt_inc
+vsystem_CPU_cpu_nios2_oci_fifo_wrptr_inc
+R4
+!i10b 1
+!s100 9^@SEkFY6mZem]]3=ibOU0
+IzM8T:TT3bgG`iF@;EZSA90
+R1
+R0
+R5
+R6
+R7
+L0 1337
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_fifo_wrptr_inc
+vsystem_CPU_cpu_nios2_oci_im
+R4
+!i10b 1
+!s100 MJG_n]OhPKW:4J2H9[T?C1
+I9aVg=ZOezo>X84IC62KGa0
+R1
+R0
+R5
+R6
+R7
+L0 1936
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_im
+vsystem_CPU_cpu_nios2_oci_itrace
+R4
+!i10b 1
+!s100 ^g_fJ]>zoXKeFoh@<E]0>3
+I<8]0EO:o`bJgJnn<VlEoU1
+R1
+R0
+R5
+R6
+R7
+L0 982
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_itrace
+vsystem_CPU_cpu_nios2_oci_pib
+R4
+!i10b 1
+!s100 iXJEJ2I6oKd9P74bXRIj51
+IbH^EQdb=nEJ7_jza3GIS]3
+R1
+R0
+R5
+R6
+R7
+L0 1913
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_pib
+vsystem_CPU_cpu_nios2_oci_td_mode
+R4
+!i10b 1
+!s100 5lckE]RD=7]Sh_k<Sz9Ed1
+Ik0@U@N?UQ>i`ZJPNjB5WQ1
+R1
+R0
+R5
+R6
+R7
+L0 1115
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_td_mode
+vsystem_CPU_cpu_nios2_oci_xbrk
+R14
+!i10b 1
+!s100 77E0AB]_od`3cGXlWdfJ`0
+IC0G9NK>ickN`SRDc?7`R33
+R1
+R0
+R5
+R6
+R7
+L0 588
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_oci_xbrk
+vsystem_CPU_cpu_nios2_ocimem
+R4
+!i10b 1
+!s100 cT<M>@:ZMa6?zU>@no[bN0
+IcFoJVKzZ6;aGO=Gdl4@z^3
+R1
+R0
+R5
+R6
+R7
+L0 2181
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_ocimem
+vsystem_CPU_cpu_nios2_performance_monitors
+R4
+!i10b 1
+!s100 j=;JX3B8lC_QmOPKT56QQ3
+I:55bJI@Ok3d?GMRM>Y7>g2
+R1
+R0
+R5
+R6
+R7
+L0 2006
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_nios2_performance_monitors
+vsystem_CPU_cpu_ociram_sp_ram_module
+R4
+!i10b 1
+!s100 ee4_9>SMOI`afjA2boP6<1
+Ih=WP:g^R4?TO9J=@CHbmE3
+R1
+R0
+R5
+R6
+R7
+L0 2116
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_ociram_sp_ram_module
+vsystem_CPU_cpu_register_bank_a_module
+R14
+!i10b 1
+!s100 K0RGVmCDl1J8mKJ`0U?QP1
+IFIFkWYUn];L9X70e42boR3
+R1
+R0
+R5
+R6
+R7
+R12
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_register_bank_a_module
+vsystem_CPU_cpu_register_bank_b_module
+R14
+!i10b 1
+!s100 jBdHTbA3IfHF6PVh6i;?D2
+IY[Zl?QT7bRhcZI:M^GRV[3
+R1
+R0
+R5
+R6
+R7
+L0 87
+R2
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_register_bank_b_module
+vsystem_CPU_cpu_test_bench
+!s110 1604120144
+!i10b 1
+!s100 PlNCLdjgh8HRJDV_BicFO3
+Iglm?;MKUVEUQ4e]1m2VK02
+R1
+R0
+R5
+8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_test_bench.v
+FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_test_bench.v
+R12
+R2
+r1
+!s85 0
+31
+!s108 1604120144.000000
+!s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_test_bench.v|
+!s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_test_bench.v|-work|cpu|
+!i113 1
+R11
+R3
+nsystem_@c@p@u_cpu_test_bench
