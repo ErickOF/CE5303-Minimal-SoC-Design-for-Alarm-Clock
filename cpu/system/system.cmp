@@ -1,0 +1,13 @@
+	component system is
+		port (
+			clk_clk           : in  std_logic                    := 'X'; -- clk
+			reset_reset_n     : in  std_logic                    := 'X'; -- reset_n
+			display_h1_export : out std_logic_vector(3 downto 0);        -- export
+			display_h0_export : out std_logic_vector(3 downto 0);        -- export
+			display_m1_export : out std_logic_vector(3 downto 0);        -- export
+			display_m0_export : out std_logic_vector(3 downto 0);        -- export
+			display_s1_export : out std_logic_vector(3 downto 0);        -- export
+			display_s0_export : out std_logic_vector(3 downto 0)         -- export
+		);
+	end component system;
+
