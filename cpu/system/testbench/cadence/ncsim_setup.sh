@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2020.10.30.21:51:59
+# ACDS 18.1 625 win32 2020.10.31.23:42:28
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -106,7 +106,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2020.10.30.21:51:59
+# ACDS 18.1 625 win32 2020.10.31.23:42:28
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="system_tb"
@@ -168,9 +168,13 @@ mkdir -p ./libraries/UART/
 mkdir -p ./libraries/RAM/
 mkdir -p ./libraries/H0/
 mkdir -p ./libraries/CPU/
+mkdir -p ./libraries/BTN_DOWN/
+mkdir -p ./libraries/ALARM/
 mkdir -p ./libraries/system_inst_reset_bfm/
 mkdir -p ./libraries/system_inst_display_h0_bfm/
 mkdir -p ./libraries/system_inst_clk_bfm/
+mkdir -p ./libraries/system_inst_btn_down_bfm/
+mkdir -p ./libraries/system_inst_alarm_bfm/
 mkdir -p ./libraries/system_inst/
 mkdir -p ./libraries/altera_ver/
 mkdir -p ./libraries/lpm_ver/
@@ -246,9 +250,13 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_RAM.v"                                                  -work RAM                                   -cdslib ./cds_libs/RAM.cds.lib                                  
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_H0.v"                                                   -work H0                                    -cdslib ./cds_libs/H0.cds.lib                                   
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_CPU.v"                                                  -work CPU                                   -cdslib ./cds_libs/CPU.cds.lib                                  
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_BTN_DOWN.v"                                             -work BTN_DOWN                              -cdslib ./cds_libs/BTN_DOWN.cds.lib                             
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_ALARM.v"                                                -work ALARM                                 -cdslib ./cds_libs/ALARM.cds.lib                                
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_reset_source.sv"                                 -work system_inst_reset_bfm                 -cdslib ./cds_libs/system_inst_reset_bfm.cds.lib                
-  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_conduit_bfm.sv"                                         -work system_inst_display_h0_bfm            -cdslib ./cds_libs/system_inst_display_h0_bfm.cds.lib           
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv"                                    -work system_inst_display_h0_bfm            -cdslib ./cds_libs/system_inst_display_h0_bfm.cds.lib           
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_clock_source.sv"                                 -work system_inst_clk_bfm                   -cdslib ./cds_libs/system_inst_clk_bfm.cds.lib                  
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_conduit_bfm_0002.sv"                                    -work system_inst_btn_down_bfm              -cdslib ./cds_libs/system_inst_btn_down_bfm.cds.lib             
+  ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_conduit_bfm.sv"                                         -work system_inst_alarm_bfm                 -cdslib ./cds_libs/system_inst_alarm_bfm.cds.lib                
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system.v"                                                      -work system_inst                           -cdslib ./cds_libs/system_inst.cds.lib                          
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/system_tb.v"                                                                                                                                                                          
 fi

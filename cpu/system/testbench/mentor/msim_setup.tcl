@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2020.10.30.21:51:59
+# ACDS 18.1 625 win32 2020.10.31.23:42:28
 
 # ----------------------------------------
 # Initialize variables
@@ -222,12 +222,20 @@ ensure_lib                                       ./libraries/H0/
 vmap       H0                                    ./libraries/H0/                                   
 ensure_lib                                       ./libraries/CPU/                                  
 vmap       CPU                                   ./libraries/CPU/                                  
+ensure_lib                                       ./libraries/BTN_DOWN/                             
+vmap       BTN_DOWN                              ./libraries/BTN_DOWN/                             
+ensure_lib                                       ./libraries/ALARM/                                
+vmap       ALARM                                 ./libraries/ALARM/                                
 ensure_lib                                       ./libraries/system_inst_reset_bfm/                
 vmap       system_inst_reset_bfm                 ./libraries/system_inst_reset_bfm/                
 ensure_lib                                       ./libraries/system_inst_display_h0_bfm/           
 vmap       system_inst_display_h0_bfm            ./libraries/system_inst_display_h0_bfm/           
 ensure_lib                                       ./libraries/system_inst_clk_bfm/                  
 vmap       system_inst_clk_bfm                   ./libraries/system_inst_clk_bfm/                  
+ensure_lib                                       ./libraries/system_inst_btn_down_bfm/             
+vmap       system_inst_btn_down_bfm              ./libraries/system_inst_btn_down_bfm/             
+ensure_lib                                       ./libraries/system_inst_alarm_bfm/                
+vmap       system_inst_alarm_bfm                 ./libraries/system_inst_alarm_bfm/                
 ensure_lib                                       ./libraries/system_inst/                          
 vmap       system_inst                           ./libraries/system_inst/                          
 
@@ -285,9 +293,13 @@ alias com {
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_RAM.v"                                                                               -work RAM                                  
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_H0.v"                                                                                -work H0                                   
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_CPU.v"                                                                               -work CPU                                  
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_BTN_DOWN.v"                                                                          -work BTN_DOWN                             
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system_ALARM.v"                                                                             -work ALARM                                
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_reset_source.sv"                                 -L altera_common_sv_packages -work system_inst_reset_bfm                
-  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_conduit_bfm.sv"                                         -L altera_common_sv_packages -work system_inst_display_h0_bfm           
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv"                                    -L altera_common_sv_packages -work system_inst_display_h0_bfm           
   eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_avalon_clock_source.sv"                                 -L altera_common_sv_packages -work system_inst_clk_bfm                  
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_conduit_bfm_0002.sv"                                    -L altera_common_sv_packages -work system_inst_btn_down_bfm             
+  eval  vlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/system_tb/simulation/submodules/altera_conduit_bfm.sv"                                         -L altera_common_sv_packages -work system_inst_alarm_bfm                
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/submodules/system.v"                                                                                   -work system_inst                          
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/system_tb/simulation/system_tb.v"                                                                                                                                      
 }
@@ -296,14 +308,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L router_002 -L router -L UART_avalon_jtag_slave_agent_rsp_fifo -L UART_avalon_jtag_slave_agent -L CPU_data_master_agent -L UART_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L UART -L RAM -L H0 -L CPU -L system_inst_reset_bfm -L system_inst_display_h0_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L router_002 -L router -L UART_avalon_jtag_slave_agent_rsp_fifo -L UART_avalon_jtag_slave_agent -L CPU_data_master_agent -L UART_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L UART -L RAM -L H0 -L CPU -L BTN_DOWN -L ALARM -L system_inst_reset_bfm -L system_inst_display_h0_bfm -L system_inst_clk_bfm -L system_inst_btn_down_bfm -L system_inst_alarm_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L router_002 -L router -L UART_avalon_jtag_slave_agent_rsp_fifo -L UART_avalon_jtag_slave_agent -L CPU_data_master_agent -L UART_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L UART -L RAM -L H0 -L CPU -L system_inst_reset_bfm -L system_inst_display_h0_bfm -L system_inst_clk_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L altera_common_sv_packages -L error_adapter_0 -L avalon_st_adapter -L rsp_mux -L rsp_demux -L cmd_mux -L cmd_demux -L router_002 -L router -L UART_avalon_jtag_slave_agent_rsp_fifo -L UART_avalon_jtag_slave_agent -L CPU_data_master_agent -L UART_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L UART -L RAM -L H0 -L CPU -L BTN_DOWN -L ALARM -L system_inst_reset_bfm -L system_inst_display_h0_bfm -L system_inst_clk_bfm -L system_inst_btn_down_bfm -L system_inst_alarm_bfm -L system_inst -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

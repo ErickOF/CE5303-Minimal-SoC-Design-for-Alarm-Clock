@@ -3,6 +3,14 @@ Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu
 Info: qsys-generate C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\system.qsys --testbench=STANDARD --output-directory=C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu --family="Cyclone V" --part=5CEBA2F17A7
 Progress: Loading cpu/system.qsys
 Progress: Reading input file
+Progress: Adding ALARM [altera_avalon_pio 18.1]
+Progress: Parameterizing module ALARM
+Progress: Adding BTN_DOWN [altera_avalon_pio 18.1]
+Progress: Parameterizing module BTN_DOWN
+Progress: Adding BTN_SET_ALARM [altera_avalon_pio 18.1]
+Progress: Parameterizing module BTN_SET_ALARM
+Progress: Adding BTN_UP [altera_avalon_pio 18.1]
+Progress: Parameterizing module BTN_UP
 Progress: Adding CLK [clock_source 18.1]
 Progress: Parameterizing module CLK
 Progress: Adding CPU [altera_nios2_gen2 18.1]
@@ -37,34 +45,35 @@ Progress: (2) searching C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_com
 Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx
 Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx: Loading now from components.ipx
 Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx
-Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0.01 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.01 seconds
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\ip_component_categories.ipx described 0 plugins, 0 paths, in 0.00 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0.00 seconds
 Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\system\testbench\system.ipx
 Progress: Loading cpu/system.qsys
-Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/* matched 4 files in 0.00 seconds
+Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/* matched 7 files in 0.00 seconds
 Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/ip/**/* matched 0 files in 0.00 seconds
-Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/*/* matched 10 files in 0.00 seconds
-Info: C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\system\testbench\system.ipx described 0 plugins, 3 paths, in 0.01 seconds
-Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/* matched 4 files in 0.02 seconds
-Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/*/* matched 0 files in 0.00 seconds
+Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/*/* matched 12 files in 0.00 seconds
+Info: C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\system\testbench\system.ipx described 0 plugins, 3 paths, in 0.00 seconds
+Progress: Loading testbench/system_tb.qsys
+Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/* matched 12 files in 0.01 seconds
+Info: C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/*/* matched 9 files in 0.00 seconds
 Info: C:/Users/erick/.altera.quartus/ip/18.1/**/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_PROJECTDIR/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_USERDIR/* matched 0 files in 0.00 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$$QUARTUS_IP_GLOBALDIR/* matched 0 files in 0.00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx
-Info: C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0.19 seconds
-Info: C:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0.20 seconds
+Info: C:\intelfpga_lite\18.1\ip\altera\altera_components.ipx described 2035 plugins, 0 paths, in 0.10 seconds
+Info: C:/intelfpga_lite/18.1/ip/**/* matched 139 files in 0.11 seconds
 Info: C:/intelfpga_lite/ip/**/* matched 0 files in 0.00 seconds
 Info: Reading index C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx
-Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0.03 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/**/* matched 8 files in 0.03 seconds
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\builtin.ipx described 83 plugins, 0 paths, in 0.01 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/**/* matched 8 files in 0.01 seconds
 Info: Reading index C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx
 Info: C:\intelfpga_lite\18.1\quartus\common\librarian\factories\index.ipx described 151 plugins, 0 paths, in 0.01 seconds
 Info: C:/intelfpga_lite/18.1/quartus/common/librarian/factories/**/* matched 4 files in 0.01 seconds
 Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0.00 seconds
-Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0.26 seconds
-Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.27 seconds
+Info: C:\intelfpga_lite\18.1\quartus\sopc_builder\bin\root_components.ipx described 0 plugins, 13 paths, in 0.13 seconds
+Info: C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0.13 seconds
 Progress: 
 Progress: 
 Progress: 
@@ -76,6 +85,18 @@ Info: send_message Info TB_Gen: System design is: system
 Info: TB_Gen: System design is: system
 Info: get_interfaces 
 Info: get_connections 
+Info: get_interface_property alarm EXPORT_OF
+Info: get_instance_property ALARM CLASS_NAME
+Info: get_instance_assignment ALARM testbench.partner.map.external_connection
+Info: get_interface_property btn_down EXPORT_OF
+Info: get_instance_property BTN_DOWN CLASS_NAME
+Info: get_instance_assignment BTN_DOWN testbench.partner.map.external_connection
+Info: get_interface_property btn_set_alarm EXPORT_OF
+Info: get_instance_property BTN_SET_ALARM CLASS_NAME
+Info: get_instance_assignment BTN_SET_ALARM testbench.partner.map.external_connection
+Info: get_interface_property btn_up EXPORT_OF
+Info: get_instance_property BTN_UP CLASS_NAME
+Info: get_instance_assignment BTN_UP testbench.partner.map.external_connection
 Info: get_interface_property clk EXPORT_OF
 Info: get_instance_property CLK CLASS_NAME
 Info: get_instance_assignment CLK testbench.partner.map.clk_in
@@ -106,6 +127,10 @@ Info: create_system system_tb
 Info: add_instance system_inst system 
 Info: set_use_testbench_naming_pattern true system
 Info: get_instance_interfaces system_inst
+Info: get_instance_interface_property system_inst alarm CLASS_NAME
+Info: get_instance_interface_property system_inst btn_down CLASS_NAME
+Info: get_instance_interface_property system_inst btn_set_alarm CLASS_NAME
+Info: get_instance_interface_property system_inst btn_up CLASS_NAME
 Info: get_instance_interface_property system_inst clk CLASS_NAME
 Info: get_instance_interface_property system_inst display_h0 CLASS_NAME
 Info: get_instance_interface_property system_inst display_h1 CLASS_NAME
@@ -155,6 +180,94 @@ Info: get_instance_interfaces system_inst_reset_bfm
 Info: get_instance_interface_property system_inst_reset_bfm clk CLASS_NAME
 Info: get_instance_interface_property system_inst_reset_bfm reset CLASS_NAME
 Info: add_connection system_inst_reset_bfm.reset system_inst.reset
+Info: get_instance_interface_property system_inst alarm CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: alarm
+Info: TB_Gen: conduit_end found: alarm
+Info: get_instance_interface_property system_inst alarm CLASS_NAME
+Info: add_instance system_inst_alarm_bfm altera_conduit_bfm 
+Info: get_instance_property system_inst_alarm_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value system_inst alarm associatedClock
+Info: get_instance_interface_parameter_value system_inst alarm associatedReset
+Info: get_instance_interface_ports system_inst alarm
+Info: get_instance_interface_port_property system_inst alarm alarm_export ROLE
+Info: get_instance_interface_port_property system_inst alarm alarm_export WIDTH
+Info: get_instance_interface_port_property system_inst alarm alarm_export DIRECTION
+Info: set_instance_parameter_value system_inst_alarm_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value system_inst_alarm_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value system_inst_alarm_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value system_inst_alarm_bfm SIGNAL_WIDTHS 1
+Info: set_instance_parameter_value system_inst_alarm_bfm SIGNAL_DIRECTIONS input
+Info: get_instance_property system_inst_alarm_bfm CLASS_NAME
+Info: get_instance_interface_property system_inst alarm CLASS_NAME
+Info: get_instance_interfaces system_inst_alarm_bfm
+Info: get_instance_interface_property system_inst_alarm_bfm conduit CLASS_NAME
+Info: add_connection system_inst_alarm_bfm.conduit system_inst.alarm
+Info: get_instance_interface_property system_inst btn_down CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: btn_down
+Info: TB_Gen: conduit_end found: btn_down
+Info: get_instance_interface_property system_inst btn_down CLASS_NAME
+Info: add_instance system_inst_btn_down_bfm altera_conduit_bfm 
+Info: get_instance_property system_inst_btn_down_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value system_inst btn_down associatedClock
+Info: get_instance_interface_parameter_value system_inst btn_down associatedReset
+Info: get_instance_interface_ports system_inst btn_down
+Info: get_instance_interface_port_property system_inst btn_down btn_down_export ROLE
+Info: get_instance_interface_port_property system_inst btn_down btn_down_export WIDTH
+Info: get_instance_interface_port_property system_inst btn_down btn_down_export DIRECTION
+Info: set_instance_parameter_value system_inst_btn_down_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value system_inst_btn_down_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value system_inst_btn_down_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value system_inst_btn_down_bfm SIGNAL_WIDTHS 1
+Info: set_instance_parameter_value system_inst_btn_down_bfm SIGNAL_DIRECTIONS output
+Info: get_instance_property system_inst_btn_down_bfm CLASS_NAME
+Info: get_instance_interface_property system_inst btn_down CLASS_NAME
+Info: get_instance_interfaces system_inst_btn_down_bfm
+Info: get_instance_interface_property system_inst_btn_down_bfm conduit CLASS_NAME
+Info: add_connection system_inst_btn_down_bfm.conduit system_inst.btn_down
+Info: get_instance_interface_property system_inst btn_set_alarm CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: btn_set_alarm
+Info: TB_Gen: conduit_end found: btn_set_alarm
+Info: get_instance_interface_property system_inst btn_set_alarm CLASS_NAME
+Info: add_instance system_inst_btn_set_alarm_bfm altera_conduit_bfm 
+Info: get_instance_property system_inst_btn_set_alarm_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value system_inst btn_set_alarm associatedClock
+Info: get_instance_interface_parameter_value system_inst btn_set_alarm associatedReset
+Info: get_instance_interface_ports system_inst btn_set_alarm
+Info: get_instance_interface_port_property system_inst btn_set_alarm btn_set_alarm_export ROLE
+Info: get_instance_interface_port_property system_inst btn_set_alarm btn_set_alarm_export WIDTH
+Info: get_instance_interface_port_property system_inst btn_set_alarm btn_set_alarm_export DIRECTION
+Info: set_instance_parameter_value system_inst_btn_set_alarm_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value system_inst_btn_set_alarm_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value system_inst_btn_set_alarm_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value system_inst_btn_set_alarm_bfm SIGNAL_WIDTHS 1
+Info: set_instance_parameter_value system_inst_btn_set_alarm_bfm SIGNAL_DIRECTIONS output
+Info: get_instance_property system_inst_btn_set_alarm_bfm CLASS_NAME
+Info: get_instance_interface_property system_inst btn_set_alarm CLASS_NAME
+Info: get_instance_interfaces system_inst_btn_set_alarm_bfm
+Info: get_instance_interface_property system_inst_btn_set_alarm_bfm conduit CLASS_NAME
+Info: add_connection system_inst_btn_set_alarm_bfm.conduit system_inst.btn_set_alarm
+Info: get_instance_interface_property system_inst btn_up CLASS_NAME
+Info: send_message Info TB_Gen: conduit_end found: btn_up
+Info: TB_Gen: conduit_end found: btn_up
+Info: get_instance_interface_property system_inst btn_up CLASS_NAME
+Info: add_instance system_inst_btn_up_bfm altera_conduit_bfm 
+Info: get_instance_property system_inst_btn_up_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value system_inst btn_up associatedClock
+Info: get_instance_interface_parameter_value system_inst btn_up associatedReset
+Info: get_instance_interface_ports system_inst btn_up
+Info: get_instance_interface_port_property system_inst btn_up btn_up_export ROLE
+Info: get_instance_interface_port_property system_inst btn_up btn_up_export WIDTH
+Info: get_instance_interface_port_property system_inst btn_up btn_up_export DIRECTION
+Info: set_instance_parameter_value system_inst_btn_up_bfm CLOCKED_SIGNAL 0
+Info: set_instance_parameter_value system_inst_btn_up_bfm ENABLE_RESET 0
+Info: set_instance_parameter_value system_inst_btn_up_bfm SIGNAL_ROLES export
+Info: set_instance_parameter_value system_inst_btn_up_bfm SIGNAL_WIDTHS 1
+Info: set_instance_parameter_value system_inst_btn_up_bfm SIGNAL_DIRECTIONS output
+Info: get_instance_property system_inst_btn_up_bfm CLASS_NAME
+Info: get_instance_interface_property system_inst btn_up CLASS_NAME
+Info: get_instance_interfaces system_inst_btn_up_bfm
+Info: get_instance_interface_property system_inst_btn_up_bfm conduit CLASS_NAME
+Info: add_connection system_inst_btn_up_bfm.conduit system_inst.btn_up
 Info: get_instance_interface_property system_inst display_h0 CLASS_NAME
 Info: send_message Info TB_Gen: conduit_end found: display_h0
 Info: TB_Gen: conduit_end found: display_h0
@@ -299,6 +412,14 @@ Progress: Loading testbench/system_tb.qsys
 Progress: Reading input file
 Progress: Adding system_inst [system 1.0]
 Progress: Parameterizing module system_inst
+Progress: Adding system_inst_alarm_bfm [altera_conduit_bfm 18.1]
+Progress: Parameterizing module system_inst_alarm_bfm
+Progress: Adding system_inst_btn_down_bfm [altera_conduit_bfm 18.1]
+Progress: Parameterizing module system_inst_btn_down_bfm
+Progress: Adding system_inst_btn_set_alarm_bfm [altera_conduit_bfm 18.1]
+Progress: Parameterizing module system_inst_btn_set_alarm_bfm
+Progress: Adding system_inst_btn_up_bfm [altera_conduit_bfm 18.1]
+Progress: Parameterizing module system_inst_btn_up_bfm
 Progress: Adding system_inst_clk_bfm [altera_avalon_clock_source 18.1]
 Progress: Parameterizing module system_inst_clk_bfm
 Progress: Adding system_inst_display_h0_bfm [altera_conduit_bfm 18.1]
@@ -329,22 +450,34 @@ Info: system_tb.system_inst_reset_bfm:            $Date: 2018/07/18 $
 Info: system_tb.system_inst_reset_bfm: Reset is negatively asserted.
 Info: system_tb: Generating system_tb "system_tb" for SIM_VERILOG
 Info: system_inst: "system_tb" instantiated system "system_inst"
+Info: system_inst_alarm_bfm: "system_tb" instantiated altera_conduit_bfm "system_inst_alarm_bfm"
+Info: system_inst_btn_down_bfm: "system_tb" instantiated altera_conduit_bfm "system_inst_btn_down_bfm"
+Info: Reusing file C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/verbosity_pkg.sv
 Info: system_inst_clk_bfm: "system_tb" instantiated altera_avalon_clock_source "system_inst_clk_bfm"
+Info: Reusing file C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/verbosity_pkg.sv
 Info: system_inst_display_h0_bfm: "system_tb" instantiated altera_conduit_bfm "system_inst_display_h0_bfm"
 Info: Reusing file C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/verbosity_pkg.sv
 Info: system_inst_reset_bfm: "system_tb" instantiated altera_avalon_reset_source "system_inst_reset_bfm"
 Info: Reusing file C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/verbosity_pkg.sv
+Info: ALARM: Starting RTL generation for module 'system_ALARM'
+Info: ALARM:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_ALARM --dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0033_ALARM_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0033_ALARM_gen//system_ALARM_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0033_ALARM_gen/  ]
+Info: ALARM: Done RTL generation for module 'system_ALARM'
+Info: ALARM: "system_inst" instantiated altera_avalon_pio "ALARM"
+Info: BTN_DOWN: Starting RTL generation for module 'system_BTN_DOWN'
+Info: BTN_DOWN:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_BTN_DOWN --dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0034_BTN_DOWN_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0034_BTN_DOWN_gen//system_BTN_DOWN_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0034_BTN_DOWN_gen/  ]
+Info: BTN_DOWN: Done RTL generation for module 'system_BTN_DOWN'
+Info: BTN_DOWN: "system_inst" instantiated altera_avalon_pio "BTN_DOWN"
 Info: CPU: "system_inst" instantiated altera_nios2_gen2 "CPU"
 Info: H0: Starting RTL generation for module 'system_H0'
-Info: H0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_H0 --dir=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0005_H0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0005_H0_gen//system_H0_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0005_H0_gen/  ]
+Info: H0:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=system_H0 --dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0035_H0_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0035_H0_gen//system_H0_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0035_H0_gen/  ]
 Info: H0: Done RTL generation for module 'system_H0'
 Info: H0: "system_inst" instantiated altera_avalon_pio "H0"
 Info: RAM: Starting RTL generation for module 'system_RAM'
-Info: RAM:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_RAM --dir=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0006_RAM_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0006_RAM_gen//system_RAM_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0006_RAM_gen/  ]
+Info: RAM:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=system_RAM --dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0036_RAM_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0036_RAM_gen//system_RAM_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0036_RAM_gen/  ]
 Info: RAM: Done RTL generation for module 'system_RAM'
 Info: RAM: "system_inst" instantiated altera_avalon_onchip_memory2 "RAM"
 Info: UART: Starting RTL generation for module 'system_UART'
-Info: UART:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_UART --dir=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0007_UART_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0007_UART_gen//system_UART_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0007_UART_gen/  ]
+Info: UART:   Generation command is [exec C:/intelfpga_lite/18.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/18.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/18.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=system_UART --dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0037_UART_gen/ --quartus_dir=C:/intelfpga_lite/18.1/quartus --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0037_UART_gen//system_UART_component_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0037_UART_gen/  ]
 Info: UART: Done RTL generation for module 'system_UART'
 Info: UART: "system_inst" instantiated altera_avalon_jtag_uart "UART"
 Info: avalon_st_adapter: Inserting error_adapter: error_adapter_0
@@ -356,24 +489,28 @@ Info: avalon_st_adapter_005: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_006: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_007: Inserting error_adapter: error_adapter_0
 Info: avalon_st_adapter_008: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_009: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_010: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_011: Inserting error_adapter: error_adapter_0
+Info: avalon_st_adapter_012: Inserting error_adapter: error_adapter_0
 Info: mm_interconnect_0: "system_inst" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: irq_mapper: "system_inst" instantiated altera_irq_mapper "irq_mapper"
 Info: rst_controller: "system_inst" instantiated altera_reset_controller "rst_controller"
 Info: cpu: Starting RTL generation for module 'system_CPU_cpu'
-Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=system_CPU_cpu --dir=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0010_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0010_cpu_gen//system_CPU_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0010_cpu_gen/  ]
-Info: cpu: # 2020.10.30 21:51:40 (*) Starting Nios II generation
-Info: cpu: # 2020.10.30 21:51:40 (*)   Checking for plaintext license.
-Info: cpu: # 2020.10.30 21:51:51 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
-Info: cpu: # 2020.10.30 21:51:51 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: cpu: # 2020.10.30 21:51:51 (*)   LM_LICENSE_FILE environment variable is empty
-Info: cpu: # 2020.10.30 21:51:51 (*)   Plaintext license not found.
-Info: cpu: # 2020.10.30 21:51:51 (*)   No license required to generate encrypted Nios II/e.
-Info: cpu: # 2020.10.30 21:51:51 (*)   Elaborating CPU configuration settings
-Info: cpu: # 2020.10.30 21:51:51 (*)   Creating all objects for CPU
-Info: cpu: # 2020.10.30 21:51:53 (*)   Creating 'C:/Users/erick/AppData/Local/Temp/alt8566_206379893446007154.dir/0010_cpu_gen//system_CPU_cpu_nios2_waves.do'
-Info: cpu: # 2020.10.30 21:51:53 (*)   Generating RTL from CPU objects
-Info: cpu: # 2020.10.30 21:51:53 (*)   Creating plain-text RTL
-Info: cpu: # 2020.10.30 21:51:54 (*) Done Nios II generation
+Info: cpu:   Generation command is [exec C:/intelFPGA_lite/18.1/quartus/bin64//eperlcmd.exe -I C:/intelFPGA_lite/18.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/18.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/cpu_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/nios_lib -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -I C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2 -- C:/intelfpga_lite/18.1/quartus/../ip/altera/nios2_ip/altera_nios2_gen2/generate_rtl.epl --name=system_CPU_cpu --dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0040_cpu_gen/ --quartus_bindir=C:/intelFPGA_lite/18.1/quartus/bin64/ --verilog --config=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0040_cpu_gen//system_CPU_cpu_processor_configuration.pl  --do_build_sim=1    --sim_dir=C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0040_cpu_gen/  ]
+Info: cpu: # 2020.10.31 23:42:24 (*) Starting Nios II generation
+Info: cpu: # 2020.10.31 23:42:24 (*)   Checking for plaintext license.
+Info: cpu: # 2020.10.31 23:42:25 (*)   Couldn't query license setup in Quartus directory C:/intelFPGA_lite/18.1/quartus/bin64/
+Info: cpu: # 2020.10.31 23:42:25 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: cpu: # 2020.10.31 23:42:25 (*)   LM_LICENSE_FILE environment variable is empty
+Info: cpu: # 2020.10.31 23:42:25 (*)   Plaintext license not found.
+Info: cpu: # 2020.10.31 23:42:25 (*)   No license required to generate encrypted Nios II/e.
+Info: cpu: # 2020.10.31 23:42:25 (*)   Elaborating CPU configuration settings
+Info: cpu: # 2020.10.31 23:42:25 (*)   Creating all objects for CPU
+Info: cpu: # 2020.10.31 23:42:26 (*)   Creating 'C:/Users/erick/AppData/Local/Temp/alt8567_2884199423133802933.dir/0040_cpu_gen//system_CPU_cpu_nios2_waves.do'
+Info: cpu: # 2020.10.31 23:42:26 (*)   Generating RTL from CPU objects
+Info: cpu: # 2020.10.31 23:42:26 (*)   Creating plain-text RTL
+Info: cpu: # 2020.10.31 23:42:27 (*) Done Nios II generation
 Info: cpu: Done RTL generation for module 'system_CPU_cpu'
 Info: cpu: "CPU" instantiated altera_nios2_gen2_unit "cpu"
 Info: CPU_data_master_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "CPU_data_master_translator"
@@ -390,7 +527,7 @@ Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_m
 Info: Reusing file C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"
-Info: system_tb: Done "system_tb" with 26 modules, 47 files
+Info: system_tb: Done "system_tb" with 30 modules, 51 files
 Info: qsys-generate succeeded.
 Info: sim-script-gen --spd=C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\system_tb.spd --output-directory=C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/ --use-relative-paths=true
 Info: Doing: ip-make-simscript --spd=C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\system_tb.spd --output-directory=C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/ --use-relative-paths=true
@@ -405,7 +542,7 @@ Info: Generating the following file(s) for NCSIM simulator in C:/Users/erick/Doc
 Info: 	cadence/cds.lib
 Info: 	cadence/hdl.var
 Info: 	cadence/ncsim_setup.sh
-Info: 	26 .cds.lib files in cadence/cds_libs/ directory
+Info: 	30 .cds.lib files in cadence/cds_libs/ directory
 Info: Generating the following file(s) for RIVIERA simulator in C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/ directory:
 Info: 	aldec/rivierapro_setup.tcl
 Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/.

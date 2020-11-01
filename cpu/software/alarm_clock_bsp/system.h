@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'system'
  * SOPC Builder design path: ../../system.sopcinfo
  *
- * Generated: Fri Oct 30 22:08:25 CST 2020
+ * Generated: Sun Nov 01 01:53:59 CST 2020
  */
 
 /*
@@ -53,6 +53,114 @@
 
 /* Include definitions from linker script generator */
 #include "linker.h"
+
+
+/*
+ * ALARM configuration
+ *
+ */
+
+#define ALARM_BASE 0x4060
+#define ALARM_BIT_CLEARING_EDGE_REGISTER 0
+#define ALARM_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define ALARM_CAPTURE 0
+#define ALARM_DATA_WIDTH 1
+#define ALARM_DO_TEST_BENCH_WIRING 0
+#define ALARM_DRIVEN_SIM_VALUE 0
+#define ALARM_EDGE_TYPE "NONE"
+#define ALARM_FREQ 50000000
+#define ALARM_HAS_IN 0
+#define ALARM_HAS_OUT 1
+#define ALARM_HAS_TRI 0
+#define ALARM_IRQ -1
+#define ALARM_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define ALARM_IRQ_TYPE "NONE"
+#define ALARM_NAME "/dev/ALARM"
+#define ALARM_RESET_VALUE 0
+#define ALARM_SPAN 16
+#define ALARM_TYPE "altera_avalon_pio"
+#define ALT_MODULE_CLASS_ALARM altera_avalon_pio
+
+
+/*
+ * BTN_DOWN configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_BTN_DOWN altera_avalon_pio
+#define BTN_DOWN_BASE 0x4090
+#define BTN_DOWN_BIT_CLEARING_EDGE_REGISTER 0
+#define BTN_DOWN_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define BTN_DOWN_CAPTURE 0
+#define BTN_DOWN_DATA_WIDTH 1
+#define BTN_DOWN_DO_TEST_BENCH_WIRING 1
+#define BTN_DOWN_DRIVEN_SIM_VALUE 0
+#define BTN_DOWN_EDGE_TYPE "NONE"
+#define BTN_DOWN_FREQ 50000000
+#define BTN_DOWN_HAS_IN 1
+#define BTN_DOWN_HAS_OUT 0
+#define BTN_DOWN_HAS_TRI 0
+#define BTN_DOWN_IRQ 3
+#define BTN_DOWN_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define BTN_DOWN_IRQ_TYPE "LEVEL"
+#define BTN_DOWN_NAME "/dev/BTN_DOWN"
+#define BTN_DOWN_RESET_VALUE 0
+#define BTN_DOWN_SPAN 16
+#define BTN_DOWN_TYPE "altera_avalon_pio"
+
+
+/*
+ * BTN_SET_ALARM configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_BTN_SET_ALARM altera_avalon_pio
+#define BTN_SET_ALARM_BASE 0x4070
+#define BTN_SET_ALARM_BIT_CLEARING_EDGE_REGISTER 0
+#define BTN_SET_ALARM_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define BTN_SET_ALARM_CAPTURE 0
+#define BTN_SET_ALARM_DATA_WIDTH 1
+#define BTN_SET_ALARM_DO_TEST_BENCH_WIRING 1
+#define BTN_SET_ALARM_DRIVEN_SIM_VALUE 0
+#define BTN_SET_ALARM_EDGE_TYPE "NONE"
+#define BTN_SET_ALARM_FREQ 50000000
+#define BTN_SET_ALARM_HAS_IN 1
+#define BTN_SET_ALARM_HAS_OUT 0
+#define BTN_SET_ALARM_HAS_TRI 0
+#define BTN_SET_ALARM_IRQ 1
+#define BTN_SET_ALARM_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define BTN_SET_ALARM_IRQ_TYPE "LEVEL"
+#define BTN_SET_ALARM_NAME "/dev/BTN_SET_ALARM"
+#define BTN_SET_ALARM_RESET_VALUE 0
+#define BTN_SET_ALARM_SPAN 16
+#define BTN_SET_ALARM_TYPE "altera_avalon_pio"
+
+
+/*
+ * BTN_UP configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_BTN_UP altera_avalon_pio
+#define BTN_UP_BASE 0x4080
+#define BTN_UP_BIT_CLEARING_EDGE_REGISTER 0
+#define BTN_UP_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define BTN_UP_CAPTURE 0
+#define BTN_UP_DATA_WIDTH 1
+#define BTN_UP_DO_TEST_BENCH_WIRING 1
+#define BTN_UP_DRIVEN_SIM_VALUE 0
+#define BTN_UP_EDGE_TYPE "NONE"
+#define BTN_UP_FREQ 50000000
+#define BTN_UP_HAS_IN 1
+#define BTN_UP_HAS_OUT 0
+#define BTN_UP_HAS_TRI 0
+#define BTN_UP_IRQ 2
+#define BTN_UP_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define BTN_UP_IRQ_TYPE "LEVEL"
+#define BTN_UP_NAME "/dev/BTN_UP"
+#define BTN_UP_RESET_VALUE 0
+#define BTN_UP_SPAN 16
+#define BTN_UP_TYPE "altera_avalon_pio"
 
 
 /*
@@ -346,19 +454,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/UART"
-#define ALT_STDERR_BASE 0x30c8
+#define ALT_STDERR_BASE 0x3148
 #define ALT_STDERR_DEV UART
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/UART"
-#define ALT_STDIN_BASE 0x30c8
+#define ALT_STDIN_BASE 0x3148
 #define ALT_STDIN_DEV UART
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/UART"
-#define ALT_STDOUT_BASE 0x30c8
+#define ALT_STDOUT_BASE 0x3148
 #define ALT_STDOUT_DEV UART
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -372,7 +480,7 @@
  */
 
 #define ALT_MODULE_CLASS_UART altera_avalon_jtag_uart
-#define UART_BASE 0x30c8
+#define UART_BASE 0x3148
 #define UART_IRQ 0
 #define UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define UART_NAME "/dev/UART"

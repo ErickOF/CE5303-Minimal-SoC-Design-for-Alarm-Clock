@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 vsystem
-!s110 1604120147
+!s110 1604217802
 !i10b 1
-!s100 ^zkeN?NE`K>O0f[4OOzo00
-I9G^U<@bg?0no<JQ]afZ4Z2
+!s100 Tz6zFP2UfWU>HDJc^^:`b3
+IaajGo6PX4V][WK;S]5hb:2
 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1604116276
+w1604209322
 8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system.v
 FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system.v
 L0 6
@@ -23,7 +23,7 @@ OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1604120147.000000
+!s108 1604217801.000000
 !s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system.v|
 !s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system.v|-work|system_inst|
 !i113 1

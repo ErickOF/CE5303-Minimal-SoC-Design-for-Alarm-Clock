@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2020.10.30.22:55:08
+# ACDS 18.1 625 win32 2020.11.01.02:02:39
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2020.10.30.22:55:08
+# ACDS 18.1 625 win32 2020.11.01.02:02:39
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="system_tb"
@@ -169,9 +169,13 @@ mkdir -p ./libraries/UART/
 mkdir -p ./libraries/RAM/
 mkdir -p ./libraries/H0/
 mkdir -p ./libraries/CPU/
+mkdir -p ./libraries/BTN_DOWN/
+mkdir -p ./libraries/ALARM/
 mkdir -p ./libraries/system_inst_reset_bfm/
 mkdir -p ./libraries/system_inst_display_h0_bfm/
 mkdir -p ./libraries/system_inst_clk_bfm/
+mkdir -p ./libraries/system_inst_btn_down_bfm/
+mkdir -p ./libraries/system_inst_alarm_bfm/
 mkdir -p ./libraries/system_inst/
 mkdir -p ./libraries/altera_ver/
 mkdir -p ./libraries/lpm_ver/
@@ -247,9 +251,13 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_RAM.v"                                                  -work RAM                                  
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_H0.v"                                                   -work H0                                   
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU.v"                                                  -work CPU                                  
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_BTN_DOWN.v"                                             -work BTN_DOWN                             
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_ALARM.v"                                                -work ALARM                                
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv"                                 -work system_inst_reset_bfm                
-  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm.sv"                                         -work system_inst_display_h0_bfm           
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv"                                    -work system_inst_display_h0_bfm           
   vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_clock_source.sv"                                 -work system_inst_clk_bfm                  
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0002.sv"                                    -work system_inst_btn_down_bfm             
+  vlogan +v2k -sverilog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm.sv"                                         -work system_inst_alarm_bfm                
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system.v"                                                      -work system_inst                          
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v"                                                                                                         
 fi

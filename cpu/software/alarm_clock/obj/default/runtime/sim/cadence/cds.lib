@@ -31,9 +31,13 @@ DEFINE UART                                  ./libraries/UART/
 DEFINE RAM                                   ./libraries/RAM/                                  
 DEFINE H0                                    ./libraries/H0/                                   
 DEFINE CPU                                   ./libraries/CPU/                                  
+DEFINE BTN_DOWN                              ./libraries/BTN_DOWN/                             
+DEFINE ALARM                                 ./libraries/ALARM/                                
 DEFINE system_inst_reset_bfm                 ./libraries/system_inst_reset_bfm/                
 DEFINE system_inst_display_h0_bfm            ./libraries/system_inst_display_h0_bfm/           
 DEFINE system_inst_clk_bfm                   ./libraries/system_inst_clk_bfm/                  
+DEFINE system_inst_btn_down_bfm              ./libraries/system_inst_btn_down_bfm/             
+DEFINE system_inst_alarm_bfm                 ./libraries/system_inst_alarm_bfm/                
 DEFINE system_inst                           ./libraries/system_inst/                          
 DEFINE altera_ver                            ./libraries/altera_ver/                           
 DEFINE lpm_ver                               ./libraries/lpm_ver/                              

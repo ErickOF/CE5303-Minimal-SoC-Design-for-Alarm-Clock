@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 vsystem_UART
-Z1 !s110 1604120145
+Z1 !s110 1604217799
 !i10b 1
 !s100 AIAJBoEEnS<ETG0<m77ZR1
 Ib1<Q:m=7b<2`:KY=kC4_k1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1604116282
+Z3 w1604209325
 Z4 8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v
 Z5 FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v
 L0 331
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1604120145.000000
+Z7 !s108 1604217799.000000
 Z8 !s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v|
 Z9 !s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v|-work|UART|
 !i113 1

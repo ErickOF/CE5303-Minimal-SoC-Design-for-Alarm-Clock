@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+vsystem_BTN_DOWN
+!s110 1604217800
+!i10b 1
+!s100 a1W>^JkVRGd7fj_Ymad6D2
+ILmVBZSB6U?Gldj3<6VmEi3
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1604209323
+8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_BTN_DOWN.v
+FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_BTN_DOWN.v
+L0 21
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1604217800.000000
+!s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_BTN_DOWN.v|
+!s90 -reportprogress|300|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_BTN_DOWN.v|-work|BTN_DOWN|
+!i113 1
+o-work BTN_DOWN
+tCvgOpt 0
+nsystem_@b@t@n_@d@o@w@n

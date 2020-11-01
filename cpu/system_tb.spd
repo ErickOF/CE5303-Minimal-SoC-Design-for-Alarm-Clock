@@ -174,17 +174,33 @@
    type="VERILOG"
    library="CPU" />
  <file
+   path="system/testbench/system_tb/simulation/submodules/system_BTN_DOWN.v"
+   type="VERILOG"
+   library="BTN_DOWN" />
+ <file
+   path="system/testbench/system_tb/simulation/submodules/system_ALARM.v"
+   type="VERILOG"
+   library="ALARM" />
+ <file
    path="system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv"
    type="SYSTEM_VERILOG"
    library="system_inst_reset_bfm" />
  <file
-   path="system/testbench/system_tb/simulation/submodules/altera_conduit_bfm.sv"
+   path="system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv"
    type="SYSTEM_VERILOG"
    library="system_inst_display_h0_bfm" />
  <file
    path="system/testbench/system_tb/simulation/submodules/altera_avalon_clock_source.sv"
    type="SYSTEM_VERILOG"
    library="system_inst_clk_bfm" />
+ <file
+   path="system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0002.sv"
+   type="SYSTEM_VERILOG"
+   library="system_inst_btn_down_bfm" />
+ <file
+   path="system/testbench/system_tb/simulation/submodules/altera_conduit_bfm.sv"
+   type="SYSTEM_VERILOG"
+   library="system_inst_alarm_bfm" />
  <file
    path="system/testbench/system_tb/simulation/submodules/system.v"
    type="VERILOG"

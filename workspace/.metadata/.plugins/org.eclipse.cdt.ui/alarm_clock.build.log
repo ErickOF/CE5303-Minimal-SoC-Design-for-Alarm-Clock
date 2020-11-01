@@ -1,9 +1,9 @@
-22:54:50 **** Incremental Build of configuration Nios II for project alarm_clock ****
+02:02:24 **** Incremental Build of configuration Nios II for project alarm_clock ****
 make all 
 Info: Building ../alarm_clock_bsp/
 C:/intelFPGA_lite/18.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../alarm_clock_bsp/
 [BSP build complete]
 [alarm_clock build complete]
 
-22:54:51 Build Finished (took 970ms)
+02:02:25 Build Finished (took 908ms)
 

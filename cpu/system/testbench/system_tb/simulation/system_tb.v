@@ -6,24 +6,48 @@
 module system_tb (
 	);
 
-	wire        system_inst_clk_bfm_clk_clk;       // system_inst_clk_bfm:clk -> [system_inst:clk_clk, system_inst_reset_bfm:clk]
-	wire  [3:0] system_inst_display_h0_export;     // system_inst:display_h0_export -> system_inst_display_h0_bfm:sig_export
-	wire  [3:0] system_inst_display_h1_export;     // system_inst:display_h1_export -> system_inst_display_h1_bfm:sig_export
-	wire  [3:0] system_inst_display_m0_export;     // system_inst:display_m0_export -> system_inst_display_m0_bfm:sig_export
-	wire  [3:0] system_inst_display_m1_export;     // system_inst:display_m1_export -> system_inst_display_m1_bfm:sig_export
-	wire  [3:0] system_inst_display_s0_export;     // system_inst:display_s0_export -> system_inst_display_s0_bfm:sig_export
-	wire  [3:0] system_inst_display_s1_export;     // system_inst:display_s1_export -> system_inst_display_s1_bfm:sig_export
-	wire        system_inst_reset_bfm_reset_reset; // system_inst_reset_bfm:reset -> system_inst:reset_reset_n
+	wire        system_inst_clk_bfm_clk_clk;                  // system_inst_clk_bfm:clk -> [system_inst:clk_clk, system_inst_reset_bfm:clk]
+	wire        system_inst_alarm_export;                     // system_inst:alarm_export -> system_inst_alarm_bfm:sig_export
+	wire  [0:0] system_inst_btn_down_bfm_conduit_export;      // system_inst_btn_down_bfm:sig_export -> system_inst:btn_down_export
+	wire  [0:0] system_inst_btn_set_alarm_bfm_conduit_export; // system_inst_btn_set_alarm_bfm:sig_export -> system_inst:btn_set_alarm_export
+	wire  [0:0] system_inst_btn_up_bfm_conduit_export;        // system_inst_btn_up_bfm:sig_export -> system_inst:btn_up_export
+	wire  [3:0] system_inst_display_h0_export;                // system_inst:display_h0_export -> system_inst_display_h0_bfm:sig_export
+	wire  [3:0] system_inst_display_h1_export;                // system_inst:display_h1_export -> system_inst_display_h1_bfm:sig_export
+	wire  [3:0] system_inst_display_m0_export;                // system_inst:display_m0_export -> system_inst_display_m0_bfm:sig_export
+	wire  [3:0] system_inst_display_m1_export;                // system_inst:display_m1_export -> system_inst_display_m1_bfm:sig_export
+	wire  [3:0] system_inst_display_s0_export;                // system_inst:display_s0_export -> system_inst_display_s0_bfm:sig_export
+	wire  [3:0] system_inst_display_s1_export;                // system_inst:display_s1_export -> system_inst_display_s1_bfm:sig_export
+	wire        system_inst_reset_bfm_reset_reset;            // system_inst_reset_bfm:reset -> system_inst:reset_reset_n
 
 	system system_inst (
-		.clk_clk           (system_inst_clk_bfm_clk_clk),       //        clk.clk
-		.display_h0_export (system_inst_display_h0_export),     // display_h0.export
-		.display_h1_export (system_inst_display_h1_export),     // display_h1.export
-		.display_m0_export (system_inst_display_m0_export),     // display_m0.export
-		.display_m1_export (system_inst_display_m1_export),     // display_m1.export
-		.display_s0_export (system_inst_display_s0_export),     // display_s0.export
-		.display_s1_export (system_inst_display_s1_export),     // display_s1.export
-		.reset_reset_n     (system_inst_reset_bfm_reset_reset)  //      reset.reset_n
+		.alarm_export         (system_inst_alarm_export),                     //         alarm.export
+		.btn_down_export      (system_inst_btn_down_bfm_conduit_export),      //      btn_down.export
+		.btn_set_alarm_export (system_inst_btn_set_alarm_bfm_conduit_export), // btn_set_alarm.export
+		.btn_up_export        (system_inst_btn_up_bfm_conduit_export),        //        btn_up.export
+		.clk_clk              (system_inst_clk_bfm_clk_clk),                  //           clk.clk
+		.display_h0_export    (system_inst_display_h0_export),                //    display_h0.export
+		.display_h1_export    (system_inst_display_h1_export),                //    display_h1.export
+		.display_m0_export    (system_inst_display_m0_export),                //    display_m0.export
+		.display_m1_export    (system_inst_display_m1_export),                //    display_m1.export
+		.display_s0_export    (system_inst_display_s0_export),                //    display_s0.export
+		.display_s1_export    (system_inst_display_s1_export),                //    display_s1.export
+		.reset_reset_n        (system_inst_reset_bfm_reset_reset)             //         reset.reset_n
+	);
+
+	altera_conduit_bfm system_inst_alarm_bfm (
+		.sig_export (system_inst_alarm_export)  // conduit.export
+	);
+
+	altera_conduit_bfm_0002 system_inst_btn_down_bfm (
+		.sig_export (system_inst_btn_down_bfm_conduit_export)  // conduit.export
+	);
+
+	altera_conduit_bfm_0002 system_inst_btn_set_alarm_bfm (
+		.sig_export (system_inst_btn_set_alarm_bfm_conduit_export)  // conduit.export
+	);
+
+	altera_conduit_bfm_0002 system_inst_btn_up_bfm (
+		.sig_export (system_inst_btn_up_bfm_conduit_export)  // conduit.export
 	);
 
 	altera_avalon_clock_source #(
@@ -33,27 +57,27 @@ module system_tb (
 		.clk (system_inst_clk_bfm_clk_clk)  // clk.clk
 	);
 
-	altera_conduit_bfm system_inst_display_h0_bfm (
+	altera_conduit_bfm_0003 system_inst_display_h0_bfm (
 		.sig_export (system_inst_display_h0_export)  // conduit.export
 	);
 
-	altera_conduit_bfm system_inst_display_h1_bfm (
+	altera_conduit_bfm_0003 system_inst_display_h1_bfm (
 		.sig_export (system_inst_display_h1_export)  // conduit.export
 	);
 
-	altera_conduit_bfm system_inst_display_m0_bfm (
+	altera_conduit_bfm_0003 system_inst_display_m0_bfm (
 		.sig_export (system_inst_display_m0_export)  // conduit.export
 	);
 
-	altera_conduit_bfm system_inst_display_m1_bfm (
+	altera_conduit_bfm_0003 system_inst_display_m1_bfm (
 		.sig_export (system_inst_display_m1_export)  // conduit.export
 	);
 
-	altera_conduit_bfm system_inst_display_s0_bfm (
+	altera_conduit_bfm_0003 system_inst_display_s0_bfm (
 		.sig_export (system_inst_display_s0_export)  // conduit.export
 	);
 
-	altera_conduit_bfm system_inst_display_s1_bfm (
+	altera_conduit_bfm_0003 system_inst_display_s1_bfm (
 		.sig_export (system_inst_display_s1_export)  // conduit.export
 	);
 

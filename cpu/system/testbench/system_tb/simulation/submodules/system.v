@@ -4,14 +4,18 @@
 
 `timescale 1 ps / 1 ps
 module system (
-		input  wire       clk_clk,           //        clk.clk
-		output wire [3:0] display_h0_export, // display_h0.export
-		output wire [3:0] display_h1_export, // display_h1.export
-		output wire [3:0] display_m0_export, // display_m0.export
-		output wire [3:0] display_m1_export, // display_m1.export
-		output wire [3:0] display_s0_export, // display_s0.export
-		output wire [3:0] display_s1_export, // display_s1.export
-		input  wire       reset_reset_n      //      reset.reset_n
+		output wire       alarm_export,         //         alarm.export
+		input  wire       btn_down_export,      //      btn_down.export
+		input  wire       btn_set_alarm_export, // btn_set_alarm.export
+		input  wire       btn_up_export,        //        btn_up.export
+		input  wire       clk_clk,              //           clk.clk
+		output wire [3:0] display_h0_export,    //    display_h0.export
+		output wire [3:0] display_h1_export,    //    display_h1.export
+		output wire [3:0] display_m0_export,    //    display_m0.export
+		output wire [3:0] display_m1_export,    //    display_m1.export
+		output wire [3:0] display_s0_export,    //    display_s0.export
+		output wire [3:0] display_s1_export,    //    display_s1.export
+		input  wire       reset_reset_n         //         reset.reset_n
 	);
 
 	wire  [31:0] cpu_data_master_readdata;                             // mm_interconnect_0:CPU_data_master_readdata -> CPU:d_readdata
@@ -78,10 +82,80 @@ module system (
 	wire   [1:0] mm_interconnect_0_s0_s1_address;                      // mm_interconnect_0:S0_s1_address -> S0:address
 	wire         mm_interconnect_0_s0_s1_write;                        // mm_interconnect_0:S0_s1_write -> S0:write_n
 	wire  [31:0] mm_interconnect_0_s0_s1_writedata;                    // mm_interconnect_0:S0_s1_writedata -> S0:writedata
+	wire         mm_interconnect_0_alarm_s1_chipselect;                // mm_interconnect_0:ALARM_s1_chipselect -> ALARM:chipselect
+	wire  [31:0] mm_interconnect_0_alarm_s1_readdata;                  // ALARM:readdata -> mm_interconnect_0:ALARM_s1_readdata
+	wire   [1:0] mm_interconnect_0_alarm_s1_address;                   // mm_interconnect_0:ALARM_s1_address -> ALARM:address
+	wire         mm_interconnect_0_alarm_s1_write;                     // mm_interconnect_0:ALARM_s1_write -> ALARM:write_n
+	wire  [31:0] mm_interconnect_0_alarm_s1_writedata;                 // mm_interconnect_0:ALARM_s1_writedata -> ALARM:writedata
+	wire         mm_interconnect_0_btn_set_alarm_s1_chipselect;        // mm_interconnect_0:BTN_SET_ALARM_s1_chipselect -> BTN_SET_ALARM:chipselect
+	wire  [31:0] mm_interconnect_0_btn_set_alarm_s1_readdata;          // BTN_SET_ALARM:readdata -> mm_interconnect_0:BTN_SET_ALARM_s1_readdata
+	wire   [1:0] mm_interconnect_0_btn_set_alarm_s1_address;           // mm_interconnect_0:BTN_SET_ALARM_s1_address -> BTN_SET_ALARM:address
+	wire         mm_interconnect_0_btn_set_alarm_s1_write;             // mm_interconnect_0:BTN_SET_ALARM_s1_write -> BTN_SET_ALARM:write_n
+	wire  [31:0] mm_interconnect_0_btn_set_alarm_s1_writedata;         // mm_interconnect_0:BTN_SET_ALARM_s1_writedata -> BTN_SET_ALARM:writedata
+	wire         mm_interconnect_0_btn_up_s1_chipselect;               // mm_interconnect_0:BTN_UP_s1_chipselect -> BTN_UP:chipselect
+	wire  [31:0] mm_interconnect_0_btn_up_s1_readdata;                 // BTN_UP:readdata -> mm_interconnect_0:BTN_UP_s1_readdata
+	wire   [1:0] mm_interconnect_0_btn_up_s1_address;                  // mm_interconnect_0:BTN_UP_s1_address -> BTN_UP:address
+	wire         mm_interconnect_0_btn_up_s1_write;                    // mm_interconnect_0:BTN_UP_s1_write -> BTN_UP:write_n
+	wire  [31:0] mm_interconnect_0_btn_up_s1_writedata;                // mm_interconnect_0:BTN_UP_s1_writedata -> BTN_UP:writedata
+	wire         mm_interconnect_0_btn_down_s1_chipselect;             // mm_interconnect_0:BTN_DOWN_s1_chipselect -> BTN_DOWN:chipselect
+	wire  [31:0] mm_interconnect_0_btn_down_s1_readdata;               // BTN_DOWN:readdata -> mm_interconnect_0:BTN_DOWN_s1_readdata
+	wire   [1:0] mm_interconnect_0_btn_down_s1_address;                // mm_interconnect_0:BTN_DOWN_s1_address -> BTN_DOWN:address
+	wire         mm_interconnect_0_btn_down_s1_write;                  // mm_interconnect_0:BTN_DOWN_s1_write -> BTN_DOWN:write_n
+	wire  [31:0] mm_interconnect_0_btn_down_s1_writedata;              // mm_interconnect_0:BTN_DOWN_s1_writedata -> BTN_DOWN:writedata
 	wire         irq_mapper_receiver0_irq;                             // UART:av_irq -> irq_mapper:receiver0_irq
+	wire         irq_mapper_receiver1_irq;                             // BTN_SET_ALARM:irq -> irq_mapper:receiver1_irq
+	wire         irq_mapper_receiver2_irq;                             // BTN_UP:irq -> irq_mapper:receiver2_irq
+	wire         irq_mapper_receiver3_irq;                             // BTN_DOWN:irq -> irq_mapper:receiver3_irq
 	wire  [31:0] cpu_irq_irq;                                          // irq_mapper:sender_irq -> CPU:irq
-	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, H0:reset_n, H1:reset_n, M0:reset_n, M1:reset_n, RAM:reset, S0:reset_n, S1:reset_n, UART:rst_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
+	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [ALARM:reset_n, BTN_DOWN:reset_n, BTN_SET_ALARM:reset_n, BTN_UP:reset_n, CPU:reset_n, H0:reset_n, H1:reset_n, M0:reset_n, M1:reset_n, RAM:reset, S0:reset_n, S1:reset_n, UART:rst_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset]
 	wire         rst_controller_reset_out_reset_req;                   // rst_controller:reset_req -> [CPU:reset_req, RAM:reset_req, rst_translator:reset_req_in]
+
+	system_ALARM alarm (
+		.clk        (clk_clk),                               //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),       //               reset.reset_n
+		.address    (mm_interconnect_0_alarm_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_alarm_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_alarm_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_alarm_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_alarm_s1_readdata),   //                    .readdata
+		.out_port   (alarm_export)                           // external_connection.export
+	);
+
+	system_BTN_DOWN btn_down (
+		.clk        (clk_clk),                                  //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),          //               reset.reset_n
+		.address    (mm_interconnect_0_btn_down_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_btn_down_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_btn_down_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_btn_down_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_btn_down_s1_readdata),   //                    .readdata
+		.in_port    (btn_down_export),                          // external_connection.export
+		.irq        (irq_mapper_receiver3_irq)                  //                 irq.irq
+	);
+
+	system_BTN_DOWN btn_set_alarm (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_btn_set_alarm_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_btn_set_alarm_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_btn_set_alarm_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_btn_set_alarm_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_btn_set_alarm_s1_readdata),   //                    .readdata
+		.in_port    (btn_set_alarm_export),                          // external_connection.export
+		.irq        (irq_mapper_receiver1_irq)                       //                 irq.irq
+	);
+
+	system_BTN_DOWN btn_up (
+		.clk        (clk_clk),                                //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),        //               reset.reset_n
+		.address    (mm_interconnect_0_btn_up_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_btn_up_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_btn_up_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_btn_up_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_btn_up_s1_readdata),   //                    .readdata
+		.in_port    (btn_up_export),                          // external_connection.export
+		.irq        (irq_mapper_receiver2_irq)                //                 irq.irq
+	);
 
 	system_CPU cpu (
 		.clk                                 (clk_clk),                                           //                       clk.clk
@@ -220,6 +294,26 @@ module system (
 		.CPU_instruction_master_waitrequest    (cpu_instruction_master_waitrequest),                   //                                .waitrequest
 		.CPU_instruction_master_read           (cpu_instruction_master_read),                          //                                .read
 		.CPU_instruction_master_readdata       (cpu_instruction_master_readdata),                      //                                .readdata
+		.ALARM_s1_address                      (mm_interconnect_0_alarm_s1_address),                   //                        ALARM_s1.address
+		.ALARM_s1_write                        (mm_interconnect_0_alarm_s1_write),                     //                                .write
+		.ALARM_s1_readdata                     (mm_interconnect_0_alarm_s1_readdata),                  //                                .readdata
+		.ALARM_s1_writedata                    (mm_interconnect_0_alarm_s1_writedata),                 //                                .writedata
+		.ALARM_s1_chipselect                   (mm_interconnect_0_alarm_s1_chipselect),                //                                .chipselect
+		.BTN_DOWN_s1_address                   (mm_interconnect_0_btn_down_s1_address),                //                     BTN_DOWN_s1.address
+		.BTN_DOWN_s1_write                     (mm_interconnect_0_btn_down_s1_write),                  //                                .write
+		.BTN_DOWN_s1_readdata                  (mm_interconnect_0_btn_down_s1_readdata),               //                                .readdata
+		.BTN_DOWN_s1_writedata                 (mm_interconnect_0_btn_down_s1_writedata),              //                                .writedata
+		.BTN_DOWN_s1_chipselect                (mm_interconnect_0_btn_down_s1_chipselect),             //                                .chipselect
+		.BTN_SET_ALARM_s1_address              (mm_interconnect_0_btn_set_alarm_s1_address),           //                BTN_SET_ALARM_s1.address
+		.BTN_SET_ALARM_s1_write                (mm_interconnect_0_btn_set_alarm_s1_write),             //                                .write
+		.BTN_SET_ALARM_s1_readdata             (mm_interconnect_0_btn_set_alarm_s1_readdata),          //                                .readdata
+		.BTN_SET_ALARM_s1_writedata            (mm_interconnect_0_btn_set_alarm_s1_writedata),         //                                .writedata
+		.BTN_SET_ALARM_s1_chipselect           (mm_interconnect_0_btn_set_alarm_s1_chipselect),        //                                .chipselect
+		.BTN_UP_s1_address                     (mm_interconnect_0_btn_up_s1_address),                  //                       BTN_UP_s1.address
+		.BTN_UP_s1_write                       (mm_interconnect_0_btn_up_s1_write),                    //                                .write
+		.BTN_UP_s1_readdata                    (mm_interconnect_0_btn_up_s1_readdata),                 //                                .readdata
+		.BTN_UP_s1_writedata                   (mm_interconnect_0_btn_up_s1_writedata),                //                                .writedata
+		.BTN_UP_s1_chipselect                  (mm_interconnect_0_btn_up_s1_chipselect),               //                                .chipselect
 		.CPU_debug_mem_slave_address           (mm_interconnect_0_cpu_debug_mem_slave_address),        //             CPU_debug_mem_slave.address
 		.CPU_debug_mem_slave_write             (mm_interconnect_0_cpu_debug_mem_slave_write),          //                                .write
 		.CPU_debug_mem_slave_read              (mm_interconnect_0_cpu_debug_mem_slave_read),           //                                .read
@@ -278,6 +372,9 @@ module system (
 		.clk           (clk_clk),                        //       clk.clk
 		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
 		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
+		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
+		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
+		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
 		.sender_irq    (cpu_irq_irq)                     //    sender.irq
 	);
 

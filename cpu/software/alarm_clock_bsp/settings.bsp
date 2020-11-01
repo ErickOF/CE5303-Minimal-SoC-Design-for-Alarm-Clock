@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>30/10/2020 10:08:18 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1604117298545</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>01/11/2020 01:53:57 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1604217237720</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>.\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\system.sopcinfo</SopcDesignFile>
@@ -906,7 +906,7 @@
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>UART</slaveDescriptor>
-                <addressRange>0x000030C8 - 0x000030CF</addressRange>
+                <addressRange>0x00003148 - 0x0000314F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
@@ -943,6 +943,30 @@
         <MemoryMap>
                 <slaveDescriptor>S0</slaveDescriptor>
                 <addressRange>0x00004050 - 0x0000405F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>ALARM</slaveDescriptor>
+                <addressRange>0x00004060 - 0x0000406F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>BTN_SET_ALARM</slaveDescriptor>
+                <addressRange>0x00004070 - 0x0000407F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>BTN_UP</slaveDescriptor>
+                <addressRange>0x00004080 - 0x0000408F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>BTN_DOWN</slaveDescriptor>
+                <addressRange>0x00004090 - 0x0000409F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>

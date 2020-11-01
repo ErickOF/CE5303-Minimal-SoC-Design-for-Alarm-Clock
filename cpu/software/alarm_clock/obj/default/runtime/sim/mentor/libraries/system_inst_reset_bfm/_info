@@ -11,7 +11,7 @@ Z0 dC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/s
 valtera_avalon_reset_source
 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 DXx25 altera_common_sv_packages 13 verbosity_pkg 0 22 59gMCkh2WM`ZTjV3NZa980
-!s110 1604120146
+!s110 1604217801
 !i10b 1
 !s100 3a?19XA<0CCRW>1VRc_7<0
 I:zcJHC@Xz5S@9<;Xbf[i[1
@@ -19,7 +19,7 @@ VDg1SIo80bB@j0V0VzS_@n1
 !s105 altera_avalon_reset_source_sv_unit
 S1
 R0
-w1604116276
+w1604209322
 8C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv
 FC:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv
 L0 23
@@ -27,7 +27,7 @@ OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1604120146.000000
+!s108 1604217801.000000
 !s107 C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv|
 !s90 -reportprogress|300|-sv|C:/Users/erick/Documents/Git/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv|-L|altera_common_sv_packages|-work|system_inst_reset_bfm|
 !i113 1

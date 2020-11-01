@@ -24,9 +24,13 @@ UART:                                  ./libraries/UART/
 RAM:                                   ./libraries/RAM/                                  
 H0:                                    ./libraries/H0/                                   
 CPU:                                   ./libraries/CPU/                                  
+BTN_DOWN:                              ./libraries/BTN_DOWN/                             
+ALARM:                                 ./libraries/ALARM/                                
 system_inst_reset_bfm:                 ./libraries/system_inst_reset_bfm/                
 system_inst_display_h0_bfm:            ./libraries/system_inst_display_h0_bfm/           
 system_inst_clk_bfm:                   ./libraries/system_inst_clk_bfm/                  
+system_inst_btn_down_bfm:              ./libraries/system_inst_btn_down_bfm/             
+system_inst_alarm_bfm:                 ./libraries/system_inst_alarm_bfm/                
 system_inst:                           ./libraries/system_inst/                          
 altera_ver:                            ./libraries/altera_ver/                           
 lpm_ver:                               ./libraries/lpm_ver/                              

@@ -81,6 +81,9 @@
 #include "sys/alt_stdio.h"
 #include "system.h"
 
+#define true 1
+#define false 0
+
 
 // Pointers to interact with the displays
 unsigned int *h1_ptr = (unsigned int*) H1_BASE;
@@ -90,7 +93,20 @@ unsigned int *m0_ptr = (unsigned int*) M0_BASE;
 unsigned int *s1_ptr = (unsigned int*) S1_BASE;
 unsigned int *s0_ptr = (unsigned int*) S0_BASE;
 
+// Pointers to interact with the buttons
+unsigned int *set_alarm_ptr = (unsigned int*) BTN_SET_ALARM_BASE;
+unsigned int *up_ptr = (unsigned int*) BTN_UP_BASE;
+unsigned int *down_ptr = (unsigned int*) BTN_DOWN_BASE;
+
+// Pointer to interact with the alarm sound
+unsigned int *alarm_ptr = (unsigned int*) ALARM_BASE;
+
+// Current alarm hour
+unsigned short alarm[3] = {5, 0, 0};
+// Current hour
 unsigned short hour[3] = {0, 0, 0};
+// To activate and deactivate the Alarm
+short is_activated = false;
 
 
 /**
@@ -134,8 +150,14 @@ void init_values()
 	*m0_ptr = 0;
 	*s1_ptr = 0;
 	*s0_ptr = 0;
+
+	// Alarm doesn't sound
+	*alarm_ptr = 0;
 }
 
+/**
+ *
+ */
 void set_value(int value, unsigned int* seg1, unsigned int* seg0)
 {
 	*seg1 = (unsigned int) value / 10;
@@ -148,8 +170,7 @@ int main()
 
   init_values();
 
-  /* Event loop never exits. */
-  while (1)
+  while (true)
   {
 	  add_second();
 
