@@ -95,6 +95,7 @@ unsigned int *s0_ptr = (unsigned int*) S0_BASE;
 
 // Pointers to interact with the buttons
 unsigned int *set_alarm_ptr = (unsigned int*) BTN_SET_ALARM_BASE;
+unsigned int *set_clock_ptr = (unsigned int*) BTN_SET_CLOCK_BASE;
 unsigned int *up_ptr = (unsigned int*) BTN_UP_BASE;
 unsigned int *down_ptr = (unsigned int*) BTN_DOWN_BASE;
 
@@ -172,6 +173,7 @@ int main()
 
   while (true)
   {
+	  // Timer interrupt
 	  add_second();
 
 	  set_value(hour[0], s1_ptr, s0_ptr);

@@ -10,6 +10,7 @@ module system_tb (
 	wire        system_inst_alarm_export;                     // system_inst:alarm_export -> system_inst_alarm_bfm:sig_export
 	wire  [0:0] system_inst_btn_down_bfm_conduit_export;      // system_inst_btn_down_bfm:sig_export -> system_inst:btn_down_export
 	wire  [0:0] system_inst_btn_set_alarm_bfm_conduit_export; // system_inst_btn_set_alarm_bfm:sig_export -> system_inst:btn_set_alarm_export
+	wire  [0:0] system_inst_btn_set_clock_bfm_conduit_export; // system_inst_btn_set_clock_bfm:sig_export -> system_inst:btn_set_clock_export
 	wire  [0:0] system_inst_btn_up_bfm_conduit_export;        // system_inst_btn_up_bfm:sig_export -> system_inst:btn_up_export
 	wire  [3:0] system_inst_display_h0_export;                // system_inst:display_h0_export -> system_inst_display_h0_bfm:sig_export
 	wire  [3:0] system_inst_display_h1_export;                // system_inst:display_h1_export -> system_inst_display_h1_bfm:sig_export
@@ -23,6 +24,7 @@ module system_tb (
 		.alarm_export         (system_inst_alarm_export),                     //         alarm.export
 		.btn_down_export      (system_inst_btn_down_bfm_conduit_export),      //      btn_down.export
 		.btn_set_alarm_export (system_inst_btn_set_alarm_bfm_conduit_export), // btn_set_alarm.export
+		.btn_set_clock_export (system_inst_btn_set_clock_bfm_conduit_export), // btn_set_clock.export
 		.btn_up_export        (system_inst_btn_up_bfm_conduit_export),        //        btn_up.export
 		.clk_clk              (system_inst_clk_bfm_clk_clk),                  //           clk.clk
 		.display_h0_export    (system_inst_display_h0_export),                //    display_h0.export
@@ -44,6 +46,10 @@ module system_tb (
 
 	altera_conduit_bfm_0002 system_inst_btn_set_alarm_bfm (
 		.sig_export (system_inst_btn_set_alarm_bfm_conduit_export)  // conduit.export
+	);
+
+	altera_conduit_bfm_0002 system_inst_btn_set_clock_bfm (
+		.sig_export (system_inst_btn_set_clock_bfm_conduit_export)  // conduit.export
 	);
 
 	altera_conduit_bfm_0002 system_inst_btn_up_bfm (

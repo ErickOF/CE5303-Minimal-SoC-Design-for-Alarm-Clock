@@ -1,30 +1,38 @@
 # # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
 # 
 preplace inst system.CPU.cpu -pg 1
-preplace inst system.CPU -pg 1 -lvl 2 -y 170
+preplace inst system.CPU -pg 1 -lvl 2 -y 100
 preplace inst system.CLK -pg 1 -lvl 1 -y 190
 preplace inst system.RAM -pg 1 -lvl 3 -y 130
+preplace inst system.ALARM -pg 1 -lvl 3 -y 830
 preplace inst system.CPU.reset_bridge -pg 1
+preplace inst system.BTN_UP -pg 1 -lvl 3 -y 1030
 preplace inst system.CPU.clock_bridge -pg 1
+preplace inst system.BTN_DOWN -pg 1 -lvl 3 -y 710
 preplace inst system.S0 -pg 1 -lvl 3 -y 510
 preplace inst system.H0 -pg 1 -lvl 3 -y 30
+preplace inst system.BTN_SET_ALARM -pg 1 -lvl 3 -y 1150
 preplace inst system.S1 -pg 1 -lvl 3 -y 610
 preplace inst system.M0 -pg 1 -lvl 3 -y 310
-preplace inst system.H1 -pg 1 -lvl 3 -y 710
+preplace inst system.H1 -pg 1 -lvl 3 -y 930
 preplace inst system.M1 -pg 1 -lvl 3 -y 410
 preplace inst system.UART -pg 1 -lvl 3 -y 210
 preplace inst system -pg 1 -lvl 1 -y 40 -regy -20
-preplace netloc EXPORT<net_container>system</net_container>(SLAVE)M1.external_connection,(SLAVE)system.display_m1) 1 0 3 NJ 440 NJ 440 NJ
-preplace netloc EXPORT<net_container>system</net_container>(SLAVE)CLK.clk_in_reset,(SLAVE)system.reset) 1 0 1 NJ
-preplace netloc EXPORT<net_container>system</net_container>(SLAVE)CLK.clk_in,(SLAVE)system.clk) 1 0 1 NJ
-preplace netloc INTERCONNECT<net_container>system</net_container>(SLAVE)M1.s1,(SLAVE)S1.s1,(SLAVE)CPU.debug_mem_slave,(MASTER)CPU.data_master,(SLAVE)S0.s1,(MASTER)CPU.instruction_master,(SLAVE)H1.s1,(SLAVE)UART.avalon_jtag_slave,(SLAVE)RAM.s1,(SLAVE)H0.s1,(SLAVE)M0.s1) 1 1 2 330 130 730
-preplace netloc POINT_TO_POINT<net_container>system</net_container>(SLAVE)UART.irq,(MASTER)CPU.irq) 1 2 1 N
-preplace netloc FAN_OUT<net_container>system</net_container>(SLAVE)CPU.clk,(SLAVE)RAM.clk1,(SLAVE)M0.clk,(SLAVE)S0.clk,(SLAVE)H1.clk,(SLAVE)H0.clk,(SLAVE)UART.clk,(SLAVE)M1.clk,(SLAVE)S1.clk,(MASTER)CLK.clk) 1 1 2 290 90 690
-preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.display_s0,(SLAVE)S0.external_connection) 1 0 3 NJ 540 NJ 540 NJ
-preplace netloc EXPORT<net_container>system</net_container>(SLAVE)H1.external_connection,(SLAVE)system.display_h1) 1 0 3 NJ 740 NJ 740 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.reset,(SLAVE)CLK.clk_in_reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>system</net_container>(SLAVE)UART.reset,(SLAVE)BTN_SET_ALARM.reset,(SLAVE)S1.reset,(SLAVE)M1.reset,(SLAVE)BTN_DOWN.reset,(SLAVE)H1.reset,(SLAVE)RAM.reset1,(SLAVE)M0.reset,(MASTER)CLK.clk_reset,(SLAVE)BTN_UP.reset,(SLAVE)CPU.reset,(SLAVE)S0.reset,(SLAVE)H0.reset,(SLAVE)ALARM.reset) 1 1 2 320 260 740
+preplace netloc FAN_OUT<net_container>system</net_container>(SLAVE)BTN_DOWN.irq,(SLAVE)BTN_UP.irq,(SLAVE)UART.irq,(SLAVE)BTN_SET_ALARM.irq,(MASTER)CPU.irq) 1 2 1 700
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.btn_set_alarm,(SLAVE)BTN_SET_ALARM.external_connection) 1 0 3 NJ 1180 NJ 1180 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)BTN_DOWN.external_connection,(SLAVE)system.btn_down) 1 0 3 NJ 740 NJ 740 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)ALARM.external_connection,(SLAVE)system.alarm) 1 0 3 NJ 860 NJ 860 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.btn_up,(SLAVE)BTN_UP.external_connection) 1 0 3 NJ 1060 NJ 1060 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)H1.external_connection,(SLAVE)system.display_h1) 1 0 3 NJ 960 NJ 960 NJ
 preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.display_h0,(SLAVE)H0.external_connection) 1 0 3 NJ 60 NJ 60 NJ
-preplace netloc FAN_OUT<net_container>system</net_container>(SLAVE)UART.reset,(SLAVE)H1.reset,(SLAVE)S0.reset,(MASTER)CLK.clk_reset,(SLAVE)M1.reset,(SLAVE)M0.reset,(SLAVE)CPU.reset,(SLAVE)H0.reset,(SLAVE)RAM.reset1,(SLAVE)S1.reset) 1 1 2 310 110 710
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.clk,(SLAVE)CLK.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.display_m1,(SLAVE)M1.external_connection) 1 0 3 NJ 440 NJ 440 NJ
 preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.display_m0,(SLAVE)M0.external_connection) 1 0 3 NJ 340 NJ 340 NJ
 preplace netloc EXPORT<net_container>system</net_container>(SLAVE)system.display_s1,(SLAVE)S1.external_connection) 1 0 3 NJ 640 NJ 640 NJ
-levelinfo -pg 1 0 80 920
-levelinfo -hier system 90 120 450 760 910
+preplace netloc EXPORT<net_container>system</net_container>(SLAVE)S0.external_connection,(SLAVE)system.display_s0) 1 0 3 NJ 540 NJ 540 NJ
+preplace netloc FAN_OUT<net_container>system</net_container>(SLAVE)UART.clk,(SLAVE)ALARM.clk,(SLAVE)BTN_DOWN.clk,(SLAVE)CPU.clk,(SLAVE)BTN_SET_ALARM.clk,(SLAVE)RAM.clk1,(SLAVE)BTN_UP.clk,(SLAVE)S1.clk,(MASTER)CLK.clk,(SLAVE)H1.clk,(SLAVE)M0.clk,(SLAVE)M1.clk,(SLAVE)H0.clk,(SLAVE)S0.clk) 1 1 2 300 240 760
+preplace netloc INTERCONNECT<net_container>system</net_container>(MASTER)CPU.instruction_master,(MASTER)CPU.data_master,(SLAVE)RAM.s1,(SLAVE)BTN_SET_ALARM.s1,(SLAVE)BTN_DOWN.s1,(SLAVE)S1.s1,(SLAVE)CPU.debug_mem_slave,(SLAVE)H0.s1,(SLAVE)H1.s1,(SLAVE)S0.s1,(SLAVE)M1.s1,(SLAVE)M0.s1,(SLAVE)BTN_UP.s1,(SLAVE)UART.avalon_jtag_slave,(SLAVE)ALARM.s1) 1 1 2 340 280 720
+levelinfo -pg 1 0 90 950
+levelinfo -hier system 100 130 460 790 940

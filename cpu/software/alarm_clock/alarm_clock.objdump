@@ -10,66 +10,66 @@ Program Header:
          filesz 0x00000020 memsz 0x00000020 flags r-x
     LOAD off    0x00001020 vaddr 0x00001020 paddr 0x00001020 align 2**12
          filesz 0x0000079c memsz 0x0000079c flags r-x
-    LOAD off    0x000017bc vaddr 0x000017bc paddr 0x000017f0 align 2**12
-         filesz 0x00000034 memsz 0x00000034 flags rw-
-    LOAD off    0x00001824 vaddr 0x00001824 paddr 0x00001824 align 2**12
+    LOAD off    0x000017bc vaddr 0x000017bc paddr 0x000017f4 align 2**12
+         filesz 0x00000038 memsz 0x00000038 flags rw-
+    LOAD off    0x0000182c vaddr 0x0000182c paddr 0x0000182c align 2**12
          filesz 0x00000000 memsz 0x00000014 flags rw-
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .entry        00000020  00001000  00001000  00001000  2**5
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .exceptions   00000000  00001020  00001020  000017f0  2**0
+  1 .exceptions   00000000  00001020  00001020  000017f4  2**0
                   CONTENTS
   2 .text         00000770  00001020  00001020  00001020  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   3 .rodata       0000002c  00001790  00001790  00001790  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 .rwdata       00000034  000017bc  000017f0  000017bc  2**2
+  4 .rwdata       00000038  000017bc  000017f4  000017bc  2**2
                   CONTENTS, ALLOC, LOAD, DATA, SMALL_DATA
-  5 .bss          00000014  00001824  00001824  00001824  2**2
+  5 .bss          00000014  0000182c  0000182c  0000182c  2**2
                   ALLOC, SMALL_DATA
-  6 .RAM          00000000  00001838  00001838  000017f0  2**0
+  6 .RAM          00000000  00001840  00001840  000017f4  2**0
                   CONTENTS
-  7 .comment      00000023  00000000  00000000  000017f0  2**0
+  7 .comment      00000023  00000000  00000000  000017f4  2**0
                   CONTENTS, READONLY
   8 .debug_aranges 000001d0  00000000  00000000  00001818  2**3
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   000012b5  00000000  00000000  000019e8  2**0
+  9 .debug_info   000012c6  00000000  00000000  000019e8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 000009cd  00000000  00000000  00002c9d  2**0
+ 10 .debug_abbrev 000009cd  00000000  00000000  00002cae  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   00000a38  00000000  00000000  0000366a  2**0
+ 11 .debug_line   00000a38  00000000  00000000  0000367b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  000002cc  00000000  00000000  000040a4  2**2
+ 12 .debug_frame  000002cc  00000000  00000000  000040b4  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    0000088b  00000000  00000000  00004370  2**0
+ 13 .debug_str    00000899  00000000  00000000  00004380  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00000926  00000000  00000000  00004bfb  2**0
+ 14 .debug_loc    00000926  00000000  00000000  00004c19  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000010  00000000  00000000  00005524  2**2
+ 15 .debug_alt_sim_info 00000010  00000000  00000000  00005540  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000170  00000000  00000000  00005538  2**3
+ 16 .debug_ranges 00000170  00000000  00000000  00005550  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  00006661  2**0
+ 17 .thread_model 00000003  00000000  00000000  00006699  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000003  00000000  00000000  00006664  2**0
+ 18 .cpu          00000003  00000000  00000000  0000669c  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  00006667  2**0
+ 19 .qsys         00000001  00000000  00000000  0000669f  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  00006668  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  000066a0  2**0
                   CONTENTS, READONLY
- 21 .stderr_dev   00000004  00000000  00000000  00006669  2**0
+ 21 .stderr_dev   00000004  00000000  00000000  000066a1  2**0
                   CONTENTS, READONLY
- 22 .stdin_dev    00000004  00000000  00000000  0000666d  2**0
+ 22 .stdin_dev    00000004  00000000  00000000  000066a5  2**0
                   CONTENTS, READONLY
- 23 .stdout_dev   00000004  00000000  00000000  00006671  2**0
+ 23 .stdout_dev   00000004  00000000  00000000  000066a9  2**0
                   CONTENTS, READONLY
- 24 .sopc_system_name 00000006  00000000  00000000  00006675  2**0
+ 24 .sopc_system_name 00000006  00000000  00000000  000066ad  2**0
                   CONTENTS, READONLY
- 25 .quartus_project_dir 0000004a  00000000  00000000  0000667b  2**0
+ 25 .quartus_project_dir 0000004a  00000000  00000000  000066b3  2**0
                   CONTENTS, READONLY
- 26 .sopcinfo     0006e651  00000000  00000000  000066c5  2**0
+ 26 .sopcinfo     00075b6a  00000000  00000000  000066fd  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00001000 l    d  .entry	00000000 .entry
@@ -77,8 +77,8 @@ SYMBOL TABLE:
 00001020 l    d  .text	00000000 .text
 00001790 l    d  .rodata	00000000 .rodata
 000017bc l    d  .rwdata	00000000 .rwdata
-00001824 l    d  .bss	00000000 .bss
-00001838 l    d  .RAM	00000000 .RAM
+0000182c l    d  .bss	00000000 .bss
+00001840 l    d  .RAM	00000000 .RAM
 00000000 l    d  .comment	00000000 .comment
 00000000 l    d  .debug_aranges	00000000 .debug_aranges
 00000000 l    d  .debug_info	00000000 .debug_info
@@ -105,60 +105,61 @@ SYMBOL TABLE:
 00000000 l    df *ABS*	00000000 altera_nios2_gen2_irq.c
 00000000 l    df *ABS*	00000000 strlen.c
 000014f0 g     F .text	0000002c alt_main
-000017f0 g       *ABS*	00000000 __flash_rwdata_start
-000017ec g     O .rwdata	00000004 UART
+000017f4 g       *ABS*	00000000 __flash_rwdata_start
+000017f0 g     O .rwdata	00000004 UART
 00001118 g     F .text	0000003c init_values
+000017d0 g     O .rwdata	00000004 set_clock_ptr
 000016d4 g     F .text	00000038 alt_putstr
 0000176c g     F .text	00000008 altera_nios2_gen2_irq_init
 00001000 g     F .entry	0000000c __reset
-000017e4 g     O .rwdata	00000004 h0_ptr
+000017e8 g     O .rwdata	00000004 h0_ptr
 00001020 g       *ABS*	00000000 __flash_exceptions_start
-000017e0 g     O .rwdata	00000004 m1_ptr
-00001830 g     O .bss	00000004 alt_argv
+000017e4 g     O .rwdata	00000004 m1_ptr
+00001838 g     O .bss	00000004 alt_argv
 000097bc g       *ABS*	00000000 _gp
-000017d4 g     O .rwdata	00000004 s0_ptr
+000017d8 g     O .rwdata	00000004 s0_ptr
 000017c8 g     O .rwdata	00000004 down_ptr
 00001354 g     F .text	00000064 .hidden __udivsi3
-000017dc g     O .rwdata	00000004 m0_ptr
-00001838 g       *ABS*	00000000 __bss_end
+000017e0 g     O .rwdata	00000004 m0_ptr
+00001840 g       *ABS*	00000000 __bss_end
 000017bc g     O .rwdata	00000006 alarm
 00001764 g     F .text	00000004 alt_dcache_flush_all
-000017d8 g     O .rwdata	00000004 s1_ptr
-000017f0 g       *ABS*	00000000 __ram_rwdata_end
+000017dc g     O .rwdata	00000004 s1_ptr
+000017f4 g       *ABS*	00000000 __ram_rwdata_end
 000017bc g       *ABS*	00000000 __ram_rodata_end
 000013b8 g     F .text	00000058 .hidden __umodsi3
-00001838 g       *ABS*	00000000 end
+00001840 g       *ABS*	00000000 end
 00002000 g       *ABS*	00000000 __alt_stack_pointer
 00001730 g     F .text	00000034 altera_avalon_jtag_uart_write
 0000151c g     F .text	00000170 alt_printf
 000017cc g     O .rwdata	00000004 up_ptr
 00001020 g     F .text	0000003c _start
 0000172c g     F .text	00000004 alt_sys_init
-000017e8 g     O .rwdata	00000004 h1_ptr
+000017ec g     O .rwdata	00000004 h1_ptr
 000017bc g       *ABS*	00000000 __ram_rwdata_start
 00001790 g       *ABS*	00000000 __ram_rodata_start
-00001826 g     O .bss	00000006 hour
-00001838 g       *ABS*	00000000 __alt_stack_base
+0000182e g     O .bss	00000006 hour
+00001840 g       *ABS*	00000000 __alt_stack_base
 0000105c g     F .text	00000060 add_second
-00001824 g       *ABS*	00000000 __bss_start
+0000182c g       *ABS*	00000000 __bss_start
 000011a8 g     F .text	000000b4 main
 00001000 g       *ABS*	00000000 __alt_mem_RAM
-0000182c g     O .bss	00000004 alt_envp
+00001834 g     O .bss	00000004 alt_envp
 0000125c g     F .text	00000084 .hidden __divsi3
-000017d0 g     O .rwdata	00000004 set_alarm_ptr
+000017d4 g     O .rwdata	00000004 set_alarm_ptr
 00001154 g     F .text	00000054 set_value
 00001790 g       *ABS*	00000000 __flash_rodata_start
 0000170c g     F .text	00000020 alt_irq_init
 000017c4 g     O .rwdata	00000004 alarm_ptr
-00001834 g     O .bss	00000004 alt_argc
+0000183c g     O .bss	00000004 alt_argc
 000010bc g     F .text	0000005c display_hour
 00001020 g       *ABS*	00000000 __ram_exceptions_start
-000017f0 g       *ABS*	00000000 _edata
-00001838 g       *ABS*	00000000 _end
+000017f4 g       *ABS*	00000000 _edata
+00001840 g       *ABS*	00000000 _end
 00001020 g       *ABS*	00000000 __ram_exceptions_end
 000012e0 g     F .text	00000074 .hidden __modsi3
 00002000 g       *ABS*	00000000 __alt_data_end
-00001824 g     O .bss	00000002 is_activated
+0000182c g     O .bss	00000002 is_activated
 0000100c g       .entry	00000000 _exit
 00001774 g     F .text	0000001c strlen
 0000168c g     F .text	00000048 alt_putchar
@@ -209,12 +210,12 @@ Disassembly of section .text:
     movhi r2, %hi(__bss_start)
     1030:	00800034 	movhi	r2,0
     ori r2, r2, %lo(__bss_start)
-    1034:	10860914 	ori	r2,r2,6180
+    1034:	10860b14 	ori	r2,r2,6188
 
     movhi r3, %hi(__bss_end)
     1038:	00c00034 	movhi	r3,0
     ori r3, r3, %lo(__bss_end)
-    103c:	18c60e14 	ori	r3,r3,6200
+    103c:	18c61014 	ori	r3,r3,6208
 
     beq r2, r3, 1f
     1040:	10c00326 	beq	r2,r3,1050 <_start+0x30>
@@ -255,7 +256,7 @@ void add_second()
 {
 	// Add a second
 	hour[0]++;
-    105c:	d0a01a8b 	ldhu	r2,-32662(gp)
+    105c:	d0a01c8b 	ldhu	r2,-32654(gp)
 
 	if (hour[0] == 60)
     1060:	01000f04 	movi	r4,60
@@ -276,21 +277,21 @@ void add_second()
 {
 	// Add a second
 	hour[0]++;
-    1070:	d0a01a8d 	sth	r2,-32662(gp)
+    1070:	d0a01c8d 	sth	r2,-32654(gp)
     1074:	f800283a 	ret
 
 	if (hour[0] == 60)
 	{
 		hour[0] = 0;
 		hour[1]++;
-    1078:	d0a01b0b 	ldhu	r2,-32660(gp)
+    1078:	d0a01d0b 	ldhu	r2,-32652(gp)
 	// Add a second
 	hour[0]++;
 
 	if (hour[0] == 60)
 	{
 		hour[0] = 0;
-    107c:	d0201a8d 	sth	zero,-32662(gp)
+    107c:	d0201c8d 	sth	zero,-32654(gp)
 		hour[1]++;
     1080:	10800044 	addi	r2,r2,1
 
@@ -303,21 +304,21 @@ void add_second()
 	{
 		hour[0] = 0;
 		hour[1]++;
-    108c:	d0a01b0d 	sth	r2,-32660(gp)
+    108c:	d0a01d0d 	sth	r2,-32652(gp)
     1090:	f800283a 	ret
 
 		if (hour[1] == 60)
 		{
 			hour[1] = 0;
 			hour[2]++;
-    1094:	d0a01b8b 	ldhu	r2,-32658(gp)
+    1094:	d0a01d8b 	ldhu	r2,-32650(gp)
 		hour[0] = 0;
 		hour[1]++;
 
 		if (hour[1] == 60)
 		{
 			hour[1] = 0;
-    1098:	d0201b0d 	sth	zero,-32660(gp)
+    1098:	d0201d0d 	sth	zero,-32652(gp)
 			hour[2]++;
 
 			if (hour[2] == 24)
@@ -339,13 +340,13 @@ void add_second()
 		{
 			hour[1] = 0;
 			hour[2]++;
-    10ac:	d0a01b8d 	sth	r2,-32658(gp)
+    10ac:	d0a01d8d 	sth	r2,-32650(gp)
     10b0:	f800283a 	ret
 
 			if (hour[2] == 24)
 			{
 				hour[2] = 0;
-    10b4:	d0201b8d 	sth	zero,-32658(gp)
+    10b4:	d0201d8d 	sth	zero,-32650(gp)
     10b8:	f800283a 	ret
 
 000010bc <display_hour>:
@@ -355,7 +356,7 @@ void add_second()
 void display_hour()
 {
 	alt_printf("%u%u:%u%u:%u%u\n", *h1_ptr, *h0_ptr, *m1_ptr, *m0_ptr,
-    10bc:	d0a00617 	ldw	r2,-32744(gp)
+    10bc:	d0a00717 	ldw	r2,-32740(gp)
 		}
 	}
 }
@@ -376,17 +377,17 @@ void display_hour()
     10d0:	dfc00315 	stw	ra,12(sp)
 	alt_printf("%u%u:%u%u:%u%u\n", *h1_ptr, *h0_ptr, *m1_ptr, *m0_ptr,
     10d4:	d8800215 	stw	r2,8(sp)
-    10d8:	d0a00717 	ldw	r2,-32740(gp)
+    10d8:	d0a00817 	ldw	r2,-32736(gp)
     10dc:	10800017 	ldw	r2,0(r2)
     10e0:	d8800115 	stw	r2,4(sp)
-    10e4:	d0a00817 	ldw	r2,-32736(gp)
+    10e4:	d0a00917 	ldw	r2,-32732(gp)
     10e8:	10800017 	ldw	r2,0(r2)
     10ec:	d8800015 	stw	r2,0(sp)
-    10f0:	d0a00917 	ldw	r2,-32732(gp)
+    10f0:	d0a00a17 	ldw	r2,-32728(gp)
     10f4:	11c00017 	ldw	r7,0(r2)
-    10f8:	d0a00a17 	ldw	r2,-32728(gp)
+    10f8:	d0a00b17 	ldw	r2,-32724(gp)
     10fc:	11800017 	ldw	r6,0(r2)
-    1100:	d0a00b17 	ldw	r2,-32724(gp)
+    1100:	d0a00c17 	ldw	r2,-32720(gp)
     1104:	11400017 	ldw	r5,0(r2)
     1108:	000151c0 	call	151c <alt_printf>
 								   *s1_ptr, *s0_ptr);
@@ -401,22 +402,22 @@ void init_values()
 {
 	// Init all pointer in zero
 	*h1_ptr = 0;
-    1118:	d0a00b17 	ldw	r2,-32724(gp)
+    1118:	d0a00c17 	ldw	r2,-32720(gp)
     111c:	10000015 	stw	zero,0(r2)
 	*h0_ptr = 0;
-    1120:	d0a00a17 	ldw	r2,-32728(gp)
+    1120:	d0a00b17 	ldw	r2,-32724(gp)
     1124:	10000015 	stw	zero,0(r2)
 	*m1_ptr = 0;
-    1128:	d0a00917 	ldw	r2,-32732(gp)
+    1128:	d0a00a17 	ldw	r2,-32728(gp)
     112c:	10000015 	stw	zero,0(r2)
 	*m0_ptr = 0;
-    1130:	d0a00817 	ldw	r2,-32736(gp)
+    1130:	d0a00917 	ldw	r2,-32732(gp)
     1134:	10000015 	stw	zero,0(r2)
 	*s1_ptr = 0;
-    1138:	d0a00717 	ldw	r2,-32740(gp)
+    1138:	d0a00817 	ldw	r2,-32736(gp)
     113c:	10000015 	stw	zero,0(r2)
 	*s0_ptr = 0;
-    1140:	d0a00617 	ldw	r2,-32744(gp)
+    1140:	d0a00717 	ldw	r2,-32740(gp)
     1144:	10000015 	stw	zero,0(r2)
 
 	// Alarm doesn't sound
@@ -497,6 +498,7 @@ int main()
 
   while (true)
   {
+	  // Timer interrupt
 	  add_second();
     11cc:	000105c0 	call	105c <add_second>
 /**
@@ -505,18 +507,18 @@ int main()
 void set_value(int value, unsigned int* seg1, unsigned int* seg0)
 {
 	*seg1 = (unsigned int) value / 10;
-    11d0:	d4201a8b 	ldhu	r16,-32662(gp)
-    11d4:	d4a00717 	ldw	r18,-32740(gp)
+    11d0:	d4201c8b 	ldhu	r16,-32654(gp)
+    11d4:	d4a00817 	ldw	r18,-32736(gp)
     11d8:	01400284 	movi	r5,10
     11dc:	8009883a 	mov	r4,r16
     11e0:	00013540 	call	1354 <__udivsi3>
-
   while (true)
   {
+	  // Timer interrupt
 	  add_second();
 
 	  set_value(hour[0], s1_ptr, s0_ptr);
-    11e4:	d4600617 	ldw	r17,-32744(gp)
+    11e4:	d4600717 	ldw	r17,-32740(gp)
  *
  */
 void set_value(int value, unsigned int* seg1, unsigned int* seg0)
@@ -540,8 +542,8 @@ void set_value(int value, unsigned int* seg1, unsigned int* seg0)
 void set_value(int value, unsigned int* seg1, unsigned int* seg0)
 {
 	*seg1 = (unsigned int) value / 10;
-    11f8:	d4201b0b 	ldhu	r16,-32660(gp)
-    11fc:	d4a00917 	ldw	r18,-32732(gp)
+    11f8:	d4201d0b 	ldhu	r16,-32652(gp)
+    11fc:	d4a00a17 	ldw	r18,-32728(gp)
 	*seg0 = (unsigned int) value % 10;
     1200:	88800015 	stw	r2,0(r17)
 /**
@@ -553,13 +555,13 @@ void set_value(int value, unsigned int* seg1, unsigned int* seg0)
     1204:	8009883a 	mov	r4,r16
     1208:	01400284 	movi	r5,10
     120c:	00013540 	call	1354 <__udivsi3>
-  while (true)
   {
+	  // Timer interrupt
 	  add_second();
 
 	  set_value(hour[0], s1_ptr, s0_ptr);
 	  set_value(hour[1], m1_ptr, m0_ptr);
-    1210:	d4600817 	ldw	r17,-32736(gp)
+    1210:	d4600917 	ldw	r17,-32732(gp)
  *
  */
 void set_value(int value, unsigned int* seg1, unsigned int* seg0)
@@ -583,8 +585,8 @@ void set_value(int value, unsigned int* seg1, unsigned int* seg0)
 void set_value(int value, unsigned int* seg1, unsigned int* seg0)
 {
 	*seg1 = (unsigned int) value / 10;
-    1224:	d4201b8b 	ldhu	r16,-32658(gp)
-    1228:	d4a00b17 	ldw	r18,-32724(gp)
+    1224:	d4201d8b 	ldhu	r16,-32650(gp)
+    1228:	d4a00c17 	ldw	r18,-32720(gp)
 	*seg0 = (unsigned int) value % 10;
     122c:	88800015 	stw	r2,0(r17)
 /**
@@ -596,13 +598,13 @@ void set_value(int value, unsigned int* seg1, unsigned int* seg0)
     1230:	8009883a 	mov	r4,r16
     1234:	01400284 	movi	r5,10
     1238:	00013540 	call	1354 <__udivsi3>
-  {
+	  // Timer interrupt
 	  add_second();
 
 	  set_value(hour[0], s1_ptr, s0_ptr);
 	  set_value(hour[1], m1_ptr, m0_ptr);
 	  set_value(hour[2], h1_ptr, h0_ptr);
-    123c:	d4600a17 	ldw	r17,-32728(gp)
+    123c:	d4600b17 	ldw	r17,-32724(gp)
  *
  */
 void set_value(int value, unsigned int* seg1, unsigned int* seg0)
@@ -759,7 +761,7 @@ void alt_load (void)
     1418:	01400034 	movhi	r5,0
     141c:	dfc00015 	stw	ra,0(sp)
     1420:	2105ef04 	addi	r4,r4,6076
-    1424:	2945fc04 	addi	r5,r5,6128
+    1424:	2945fd04 	addi	r5,r5,6132
 
 static void ALT_INLINE alt_load_section (alt_u32* from, 
                                          alt_u32* to, 
@@ -774,7 +776,7 @@ static void ALT_INLINE alt_load_section (alt_u32* from,
     143c:	2140121e 	bne	r4,r5,1488 <alt_load+0x78>
     1440:	00000b06 	br	1470 <alt_load+0x60>
     1444:	00c00034 	movhi	r3,0
-    1448:	18c5fc04 	addi	r3,r3,6128
+    1448:	18c5fd04 	addi	r3,r3,6132
     144c:	1907c83a 	sub	r3,r3,r4
     1450:	0005883a 	mov	r2,zero
   {
@@ -897,9 +899,9 @@ void alt_main (void)
 
 #ifdef ALT_NO_EXIT
   main (alt_argc, alt_argv, alt_envp);
-    1504:	d1a01c17 	ldw	r6,-32656(gp)
-    1508:	d1601d17 	ldw	r5,-32652(gp)
-    150c:	d1201e17 	ldw	r4,-32648(gp)
+    1504:	d1a01e17 	ldw	r6,-32648(gp)
+    1508:	d1601f17 	ldw	r5,-32644(gp)
+    150c:	d1202017 	ldw	r4,-32640(gp)
   close(STDOUT_FILENO);
   exit (result);
 #endif
@@ -1195,7 +1197,7 @@ alt_putchar(int c)
     16a0:	000f883a 	mov	r7,zero
     16a4:	01800044 	movi	r6,1
     16a8:	d80b883a 	mov	r5,sp
-    16ac:	2105fb04 	addi	r4,r4,6124
+    16ac:	2105fc04 	addi	r4,r4,6128
  * Uses the ALT_DRIVER_WRITE() macro to call directly to driver if available.
  * Otherwise, uses newlib provided putchar() routine.
  */
@@ -1248,7 +1250,7 @@ alt_putstr(const char* str)
     16ec:	000f883a 	mov	r7,zero
     16f0:	100d883a 	mov	r6,r2
     16f4:	800b883a 	mov	r5,r16
-    16f8:	2105fb04 	addi	r4,r4,6124
+    16f8:	2105fc04 	addi	r4,r4,6128
 #else
     return fputs(str, stdout);
 #endif

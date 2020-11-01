@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'system'
  * SOPC Builder design path: ../../system.sopcinfo
  *
- * Generated: Sun Nov 01 01:53:59 CST 2020
+ * Generated: Sun Nov 01 15:28:52 CST 2020
  */
 
 /*
@@ -134,6 +134,33 @@
 #define BTN_SET_ALARM_RESET_VALUE 0
 #define BTN_SET_ALARM_SPAN 16
 #define BTN_SET_ALARM_TYPE "altera_avalon_pio"
+
+
+/*
+ * BTN_SET_CLOCK configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_BTN_SET_CLOCK altera_avalon_pio
+#define BTN_SET_CLOCK_BASE 0x40a0
+#define BTN_SET_CLOCK_BIT_CLEARING_EDGE_REGISTER 0
+#define BTN_SET_CLOCK_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define BTN_SET_CLOCK_CAPTURE 0
+#define BTN_SET_CLOCK_DATA_WIDTH 1
+#define BTN_SET_CLOCK_DO_TEST_BENCH_WIRING 1
+#define BTN_SET_CLOCK_DRIVEN_SIM_VALUE 0
+#define BTN_SET_CLOCK_EDGE_TYPE "NONE"
+#define BTN_SET_CLOCK_FREQ 50000000
+#define BTN_SET_CLOCK_HAS_IN 1
+#define BTN_SET_CLOCK_HAS_OUT 0
+#define BTN_SET_CLOCK_HAS_TRI 0
+#define BTN_SET_CLOCK_IRQ 4
+#define BTN_SET_CLOCK_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define BTN_SET_CLOCK_IRQ_TYPE "LEVEL"
+#define BTN_SET_CLOCK_NAME "/dev/BTN_SET_CLOCK"
+#define BTN_SET_CLOCK_RESET_VALUE 0
+#define BTN_SET_CLOCK_SPAN 16
+#define BTN_SET_CLOCK_TYPE "altera_avalon_pio"
 
 
 /*

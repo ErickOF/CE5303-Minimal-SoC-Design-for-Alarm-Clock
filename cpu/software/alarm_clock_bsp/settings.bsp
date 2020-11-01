@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>01/11/2020 01:53:57 AM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1604217237720</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>01/11/2020 03:28:48 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1604266128709</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\erick\Documents\Git\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>.\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\system.sopcinfo</SopcDesignFile>
@@ -967,6 +967,12 @@
         <MemoryMap>
                 <slaveDescriptor>BTN_DOWN</slaveDescriptor>
                 <addressRange>0x00004090 - 0x0000409F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>BTN_SET_CLOCK</slaveDescriptor>
+                <addressRange>0x000040A0 - 0x000040AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>

@@ -16,6 +16,11 @@
          value = "10";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element ALARM.s1
    {
@@ -31,6 +36,11 @@
       {
          value = "13";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
       }
    }
    element BTN_DOWN.irq
@@ -56,6 +66,11 @@
          value = "11";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element BTN_SET_ALARM.s1
    {
@@ -65,12 +80,33 @@
          type = "String";
       }
    }
+   element BTN_SET_CLOCK
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+   }
+   element BTN_SET_CLOCK.s1
+   {
+      datum baseAddress
+      {
+         value = "16544";
+         type = "String";
+      }
+   }
    element BTN_UP
    {
       datum _sortIndex
       {
          value = "12";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element BTN_UP.s1
@@ -88,6 +124,11 @@
          value = "0";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
    }
    element CPU
    {
@@ -95,6 +136,11 @@
       {
          value = "1";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
       }
    }
    element CPU.debug_mem_slave
@@ -112,6 +158,11 @@
          value = "5";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element H0.s1
    {
@@ -127,6 +178,11 @@
       {
          value = "4";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element H1.s1
@@ -144,6 +200,11 @@
          value = "7";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element M0.s1
    {
@@ -159,6 +220,11 @@
       {
          value = "6";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element M1.s1
@@ -176,6 +242,11 @@
          value = "2";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element RAM.s1
    {
@@ -191,6 +262,11 @@
       {
          value = "9";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element S0.s1
@@ -208,6 +284,11 @@
          value = "8";
          type = "int";
       }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
    }
    element S1.s1
    {
@@ -223,6 +304,11 @@
       {
          value = "3";
          type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
       }
    }
    element UART.avalon_jtag_slave
@@ -267,6 +353,11 @@
  <interface
    name="btn_set_alarm"
    internal="BTN_SET_ALARM.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="btn_set_clock"
+   internal="BTN_SET_CLOCK.external_connection"
    type="conduit"
    dir="end" />
  <interface
@@ -352,6 +443,24 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="1" />
  </module>
+ <module
+   name="BTN_SET_CLOCK"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="true" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="true" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
  <module name="BTN_UP" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -392,7 +501,7 @@
   <parameter name="dataAddrWidth" value="15" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3148' end='0x3150' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x4000' end='0x4010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x4020' end='0x4030' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x4030' end='0x4040' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x4050' end='0x4060' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x4060' end='0x4070' type='altera_avalon_pio.s1' /><slave name='BTN_SET_ALARM.s1' start='0x4070' end='0x4080' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x4080' end='0x4090' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x4090' end='0x40A0' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3148' end='0x3150' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x4000' end='0x4010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x4020' end='0x4030' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x4030' end='0x4040' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x4050' end='0x4060' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x4060' end='0x4070' type='altera_avalon_pio.s1' /><slave name='BTN_SET_ALARM.s1' start='0x4070' end='0x4080' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x4080' end='0x4090' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x4090' end='0x40A0' type='altera_avalon_pio.s1' /><slave name='BTN_SET_CLOCK.s1' start='0x40A0' end='0x40B0' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -431,14 +540,14 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="15" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3148' end='0x3150' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x4000' end='0x4010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x4020' end='0x4030' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x4030' end='0x4040' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x4050' end='0x4060' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x4060' end='0x4070' type='altera_avalon_pio.s1' /><slave name='BTN_SET_ALARM.s1' start='0x4070' end='0x4080' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x4080' end='0x4090' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x4090' end='0x40A0' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3148' end='0x3150' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x4000' end='0x4010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x4020' end='0x4030' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x4030' end='0x4040' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x4050' end='0x4060' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x4060' end='0x4070' type='altera_avalon_pio.s1' /><slave name='BTN_SET_ALARM.s1' start='0x4070' end='0x4080' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x4080' end='0x4090' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x4090' end='0x40A0' type='altera_avalon_pio.s1' /><slave name='BTN_SET_CLOCK.s1' start='0x40A0' end='0x40B0' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="15" />
+  <parameter name="internalIrqMaskSystemInfo" value="31" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -765,6 +874,15 @@
  <connection
    kind="avalon"
    version="18.1"
+   start="CPU.data_master"
+   end="BTN_SET_CLOCK.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x40a0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
    start="CPU.instruction_master"
    end="UART.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
@@ -879,6 +997,15 @@
   <parameter name="baseAddress" value="0x4090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="CPU.instruction_master"
+   end="BTN_SET_CLOCK.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x40a0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection kind="clock" version="18.1" start="CLK.clk" end="CPU.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="UART.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="H1.clk" />
@@ -891,6 +1018,7 @@
  <connection kind="clock" version="18.1" start="CLK.clk" end="BTN_SET_ALARM.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="BTN_UP.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="BTN_DOWN.clk" />
+ <connection kind="clock" version="18.1" start="CLK.clk" end="BTN_SET_CLOCK.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="RAM.clk1" />
  <connection kind="interrupt" version="18.1" start="CPU.irq" end="UART.irq">
   <parameter name="irqNumber" value="0" />
@@ -907,6 +1035,13 @@
  </connection>
  <connection kind="interrupt" version="18.1" start="CPU.irq" end="BTN_DOWN.irq">
   <parameter name="irqNumber" value="3" />
+ </connection>
+ <connection
+   kind="interrupt"
+   version="18.1"
+   start="CPU.irq"
+   end="BTN_SET_CLOCK.irq">
+  <parameter name="irqNumber" value="4" />
  </connection>
  <connection kind="reset" version="18.1" start="CLK.clk_reset" end="CPU.reset" />
  <connection kind="reset" version="18.1" start="CLK.clk_reset" end="UART.reset" />
@@ -928,6 +1063,11 @@
    version="18.1"
    start="CLK.clk_reset"
    end="BTN_DOWN.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="CLK.clk_reset"
+   end="BTN_SET_CLOCK.reset" />
  <connection kind="reset" version="18.1" start="CLK.clk_reset" end="RAM.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
