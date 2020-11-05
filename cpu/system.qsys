@@ -18,7 +18,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -68,7 +68,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -105,7 +105,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -160,7 +160,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -181,7 +181,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -202,7 +202,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -223,7 +223,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -244,7 +244,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -265,7 +265,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -286,7 +286,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -307,7 +307,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -316,6 +316,22 @@
       datum baseAddress
       {
          value = "12616";
+         type = "String";
+      }
+   }
+   element timer_0
+   {
+      datum _sortIndex
+      {
+         value = "15";
+         type = "int";
+      }
+   }
+   element timer_0.s1
+   {
+      datum baseAddress
+      {
+         value = "16576";
          type = "String";
       }
    }
@@ -501,7 +517,7 @@
   <parameter name="dataAddrWidth" value="15" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3148' end='0x3150' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x4000' end='0x4010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x4020' end='0x4030' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x4030' end='0x4040' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x4050' end='0x4060' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x4060' end='0x4070' type='altera_avalon_pio.s1' /><slave name='BTN_SET_ALARM.s1' start='0x4070' end='0x4080' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x4080' end='0x4090' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x4090' end='0x40A0' type='altera_avalon_pio.s1' /><slave name='BTN_SET_CLOCK.s1' start='0x40A0' end='0x40B0' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3148' end='0x3150' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x4000' end='0x4010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x4020' end='0x4030' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x4030' end='0x4040' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x4050' end='0x4060' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x4060' end='0x4070' type='altera_avalon_pio.s1' /><slave name='BTN_SET_ALARM.s1' start='0x4070' end='0x4080' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x4080' end='0x4090' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x4090' end='0x40A0' type='altera_avalon_pio.s1' /><slave name='BTN_SET_CLOCK.s1' start='0x40A0' end='0x40B0' type='altera_avalon_pio.s1' /><slave name='timer_0.s1' start='0x40C0' end='0x40E0' type='altera_avalon_timer.s1' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -539,15 +555,15 @@
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
-  <parameter name="instAddrWidth" value="15" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3148' end='0x3150' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x4000' end='0x4010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x4020' end='0x4030' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x4030' end='0x4040' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x4050' end='0x4060' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x4060' end='0x4070' type='altera_avalon_pio.s1' /><slave name='BTN_SET_ALARM.s1' start='0x4070' end='0x4080' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x4080' end='0x4090' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x4090' end='0x40A0' type='altera_avalon_pio.s1' /><slave name='BTN_SET_CLOCK.s1' start='0x40A0' end='0x40B0' type='altera_avalon_pio.s1' /></address-map>]]></parameter>
+  <parameter name="instAddrWidth" value="14" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3148' end='0x3150' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
   <parameter name="instruction_master_high_performance_paddr_size" value="0" />
   <parameter name="instruction_master_paddr_base" value="0" />
   <parameter name="instruction_master_paddr_size" value="0" />
-  <parameter name="internalIrqMaskSystemInfo" value="31" />
+  <parameter name="internalIrqMaskSystemInfo" value="63" />
   <parameter name="io_regionbase" value="0" />
   <parameter name="io_regionsize" value="0" />
   <parameter name="master_addr_map" value="false" />
@@ -790,6 +806,18 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
+ <module name="timer_0" kind="altera_avalon_timer" version="18.1" enabled="1">
+  <parameter name="alwaysRun" value="true" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="true" />
+  <parameter name="period" value="1" />
+  <parameter name="periodUnits" value="SEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="false" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="watchdogPulse" value="2" />
+ </module>
  <connection
    kind="avalon"
    version="18.1"
@@ -880,6 +908,11 @@
   <parameter name="baseAddress" value="0x40a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
+ <connection kind="avalon" version="18.1" start="CPU.data_master" end="timer_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x40c0" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
  <connection
    kind="avalon"
    version="18.1"
@@ -907,105 +940,6 @@
   <parameter name="baseAddress" value="0x1000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="H1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4000" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="H0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4010" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="M1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4020" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="M0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4030" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="S1.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4040" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="S0.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4050" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="ALARM.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4060" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="BTN_SET_ALARM.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4070" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="BTN_UP.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4080" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="BTN_DOWN.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4090" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
- <connection
-   kind="avalon"
-   version="18.1"
-   start="CPU.instruction_master"
-   end="BTN_SET_CLOCK.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x40a0" />
-  <parameter name="defaultConnection" value="false" />
- </connection>
  <connection kind="clock" version="18.1" start="CLK.clk" end="CPU.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="UART.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="H1.clk" />
@@ -1019,6 +953,7 @@
  <connection kind="clock" version="18.1" start="CLK.clk" end="BTN_UP.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="BTN_DOWN.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="BTN_SET_CLOCK.clk" />
+ <connection kind="clock" version="18.1" start="CLK.clk" end="timer_0.clk" />
  <connection kind="clock" version="18.1" start="CLK.clk" end="RAM.clk1" />
  <connection kind="interrupt" version="18.1" start="CPU.irq" end="UART.irq">
   <parameter name="irqNumber" value="0" />
@@ -1042,6 +977,9 @@
    start="CPU.irq"
    end="BTN_SET_CLOCK.irq">
   <parameter name="irqNumber" value="4" />
+ </connection>
+ <connection kind="interrupt" version="18.1" start="CPU.irq" end="timer_0.irq">
+  <parameter name="irqNumber" value="5" />
  </connection>
  <connection kind="reset" version="18.1" start="CLK.clk_reset" end="CPU.reset" />
  <connection kind="reset" version="18.1" start="CLK.clk_reset" end="UART.reset" />
@@ -1068,6 +1006,7 @@
    version="18.1"
    start="CLK.clk_reset"
    end="BTN_SET_CLOCK.reset" />
+ <connection kind="reset" version="18.1" start="CLK.clk_reset" end="timer_0.reset" />
  <connection kind="reset" version="18.1" start="CLK.clk_reset" end="RAM.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
