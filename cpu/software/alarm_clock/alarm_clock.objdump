@@ -35,41 +35,41 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
   8 .debug_aranges 000001d0  00000000  00000000  00001818  2**3
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_info   000012c6  00000000  00000000  000019e8  2**0
+  9 .debug_info   000012fa  00000000  00000000  000019e8  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_abbrev 000009cd  00000000  00000000  00002cae  2**0
+ 10 .debug_abbrev 000009d4  00000000  00000000  00002ce2  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_line   00000a38  00000000  00000000  0000367b  2**0
+ 11 .debug_line   00000a51  00000000  00000000  000036b6  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_frame  000002cc  00000000  00000000  000040b4  2**2
+ 12 .debug_frame  000002cc  00000000  00000000  00004108  2**2
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    00000899  00000000  00000000  00004380  2**0
+ 13 .debug_str    00000968  00000000  00000000  000043d4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    00000926  00000000  00000000  00004c19  2**0
+ 14 .debug_loc    00000926  00000000  00000000  00004d3c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_alt_sim_info 00000010  00000000  00000000  00005540  2**2
+ 15 .debug_alt_sim_info 00000010  00000000  00000000  00005664  2**2
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000170  00000000  00000000  00005550  2**3
+ 16 .debug_ranges 00000170  00000000  00000000  00005678  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .thread_model 00000003  00000000  00000000  00006699  2**0
+ 17 .thread_model 00000003  00000000  00000000  000067c1  2**0
                   CONTENTS, READONLY
- 18 .cpu          00000003  00000000  00000000  0000669c  2**0
+ 18 .cpu          00000003  00000000  00000000  000067c4  2**0
                   CONTENTS, READONLY
- 19 .qsys         00000001  00000000  00000000  0000669f  2**0
+ 19 .qsys         00000001  00000000  00000000  000067c7  2**0
                   CONTENTS, READONLY
- 20 .simulation_enabled 00000001  00000000  00000000  000066a0  2**0
+ 20 .simulation_enabled 00000001  00000000  00000000  000067c8  2**0
                   CONTENTS, READONLY
- 21 .stderr_dev   00000004  00000000  00000000  000066a1  2**0
+ 21 .stderr_dev   00000004  00000000  00000000  000067c9  2**0
                   CONTENTS, READONLY
- 22 .stdin_dev    00000004  00000000  00000000  000066a5  2**0
+ 22 .stdin_dev    00000004  00000000  00000000  000067cd  2**0
                   CONTENTS, READONLY
- 23 .stdout_dev   00000004  00000000  00000000  000066a9  2**0
+ 23 .stdout_dev   00000004  00000000  00000000  000067d1  2**0
                   CONTENTS, READONLY
- 24 .sopc_system_name 00000006  00000000  00000000  000066ad  2**0
+ 24 .sopc_system_name 00000006  00000000  00000000  000067d5  2**0
                   CONTENTS, READONLY
- 25 .quartus_project_dir 0000004a  00000000  00000000  000066b3  2**0
+ 25 .quartus_project_dir 00000066  00000000  00000000  000067db  2**0
                   CONTENTS, READONLY
- 26 .sopcinfo     00075b6a  00000000  00000000  000066fd  2**0
+ 26 .sopcinfo     00077700  00000000  00000000  00006841  2**0
                   CONTENTS, READONLY
 SYMBOL TABLE:
 00001000 l    d  .entry	00000000 .entry
@@ -750,24 +750,12 @@ void set_value(int value, unsigned int* seg1, unsigned int* seg0)
     140c:	003ff706 	br	13ec <_gp+0xffff7c30>
 
 00001410 <alt_load>:
- * there is no bootloader, so this application is responsible for loading to
- * RAM any sections that are required.
- */  
-
-void alt_load (void)
-{
     1410:	deffff04 	addi	sp,sp,-4
     1414:	01000034 	movhi	r4,0
     1418:	01400034 	movhi	r5,0
     141c:	dfc00015 	stw	ra,0(sp)
     1420:	2105ef04 	addi	r4,r4,6076
     1424:	2945fd04 	addi	r5,r5,6132
-
-static void ALT_INLINE alt_load_section (alt_u32* from, 
-                                         alt_u32* to, 
-                                         alt_u32* end)
-{
-  if (to != from)
     1428:	2140061e 	bne	r4,r5,1444 <alt_load+0x34>
     142c:	01000034 	movhi	r4,0
     1430:	01400034 	movhi	r5,0
@@ -779,11 +767,7 @@ static void ALT_INLINE alt_load_section (alt_u32* from,
     1448:	18c5fd04 	addi	r3,r3,6132
     144c:	1907c83a 	sub	r3,r3,r4
     1450:	0005883a 	mov	r2,zero
-  {
-    while( to != end )
     1454:	10fff526 	beq	r2,r3,142c <_gp+0xffff7c70>
-    {
-      *to++ = *from++;
     1458:	114f883a 	add	r7,r2,r5
     145c:	39c00017 	ldw	r7,0(r7)
     1460:	110d883a 	add	r6,r2,r4
@@ -794,62 +778,28 @@ static void ALT_INLINE alt_load_section (alt_u32* from,
     1474:	01400034 	movhi	r5,0
     1478:	2105e404 	addi	r4,r4,6032
     147c:	2945e404 	addi	r5,r5,6032
-
-static void ALT_INLINE alt_load_section (alt_u32* from, 
-                                         alt_u32* to, 
-                                         alt_u32* end)
-{
-  if (to != from)
     1480:	2140101e 	bne	r4,r5,14c4 <alt_load+0xb4>
     1484:	00000b06 	br	14b4 <alt_load+0xa4>
     1488:	00c00034 	movhi	r3,0
     148c:	18c40804 	addi	r3,r3,4128
     1490:	1907c83a 	sub	r3,r3,r4
     1494:	0005883a 	mov	r2,zero
-  {
-    while( to != end )
     1498:	10fff526 	beq	r2,r3,1470 <_gp+0xffff7cb4>
-    {
-      *to++ = *from++;
     149c:	114f883a 	add	r7,r2,r5
     14a0:	39c00017 	ldw	r7,0(r7)
     14a4:	110d883a 	add	r6,r2,r4
     14a8:	10800104 	addi	r2,r2,4
     14ac:	31c00015 	stw	r7,0(r6)
     14b0:	003ff906 	br	1498 <_gp+0xffff7cdc>
-  
-  /*
-   * Now ensure that the caches are in synch.
-   */
-  
-  alt_dcache_flush_all();
     14b4:	00017640 	call	1764 <alt_dcache_flush_all>
-  alt_icache_flush_all();
-}
     14b8:	dfc00017 	ldw	ra,0(sp)
     14bc:	dec00104 	addi	sp,sp,4
-  /*
-   * Now ensure that the caches are in synch.
-   */
-  
-  alt_dcache_flush_all();
-  alt_icache_flush_all();
     14c0:	00017681 	jmpi	1768 <alt_icache_flush_all>
     14c4:	00c00034 	movhi	r3,0
     14c8:	18c5ef04 	addi	r3,r3,6076
     14cc:	1907c83a 	sub	r3,r3,r4
-
-static void ALT_INLINE alt_load_section (alt_u32* from, 
-                                         alt_u32* to, 
-                                         alt_u32* end)
-{
-  if (to != from)
     14d0:	0005883a 	mov	r2,zero
-  {
-    while( to != end )
     14d4:	18bff726 	beq	r3,r2,14b4 <_gp+0xffff7cf8>
-    {
-      *to++ = *from++;
     14d8:	114f883a 	add	r7,r2,r5
     14dc:	39c00017 	ldw	r7,0(r7)
     14e0:	110d883a 	add	r6,r2,r4
@@ -919,12 +869,6 @@ void alt_main (void)
     1518:	00011a81 	jmpi	11a8 <main>
 
 0000151c <alt_printf>:
-/* 
- * ALT printf function 
- */
-void 
-alt_printf(const char* fmt, ... )
-{
     151c:	defff204 	addi	sp,sp,-56
     1520:	2005883a 	mov	r2,r4
     1524:	dfc00a15 	stw	ra,40(sp)
@@ -940,217 +884,71 @@ alt_printf(const char* fmt, ... )
     154c:	d9400b15 	stw	r5,44(sp)
     1550:	d9800c15 	stw	r6,48(sp)
     1554:	d9c00d15 	stw	r7,52(sp)
-    w = fmt;
-    while ((c = *w++) != 0)
-    {
-        /* If not a format escape character, just print  */
-        /* character.  Otherwise, process format string. */
-        if (c != '%')
     1558:	04000944 	movi	r16,37
- */
-void 
-alt_printf(const char* fmt, ... )
-{
-	va_list args;
-	va_start(args, fmt);
     155c:	dd400b04 	addi	r21,sp,44
-                if (c == '%')
-                {
-                    /* Process "%" escape sequence. */
-                    alt_putchar(c);
-                } 
-                else if (c == 'c')
     1560:	048018c4 	movi	r18,99
-                {
-                    int v = va_arg(args, int);
-                    alt_putchar(v);
-                }
-                else if (c == 'x')
     1564:	04c01e04 	movi	r19,120
-                        else
-                            c = 'a' + digit - 10;
-                        alt_putchar(c);
-                    }
-                }
-                else if (c == 's')
     1568:	05001cc4 	movi	r20,115
-    const char *w;
-    char c;
-
-    /* Process format string. */
-    w = fmt;
-    while ((c = *w++) != 0)
     156c:	11000007 	ldb	r4,0(r2)
     1570:	20003a26 	beq	r4,zero,165c <alt_printf+0x140>
-    {
-        /* If not a format escape character, just print  */
-        /* character.  Otherwise, process format string. */
-        if (c != '%')
     1574:	24000226 	beq	r4,r16,1580 <alt_printf+0x64>
-    const char *w;
-    char c;
-
-    /* Process format string. */
-    w = fmt;
-    while ((c = *w++) != 0)
     1578:	14400044 	addi	r17,r2,1
     157c:	00001406 	br	15d0 <alt_printf+0xb4>
-        }
-        else
-        {
-            /* Get format character.  If none     */
-            /* available, processing is complete. */
-            if ((c = *w++) != 0)
     1580:	14400084 	addi	r17,r2,2
     1584:	10800047 	ldb	r2,1(r2)
     1588:	10003426 	beq	r2,zero,165c <alt_printf+0x140>
-            {
-                if (c == '%')
     158c:	1400021e 	bne	r2,r16,1598 <alt_printf+0x7c>
-                {
-                    /* Process "%" escape sequence. */
-                    alt_putchar(c);
     1590:	8009883a 	mov	r4,r16
     1594:	00000e06 	br	15d0 <alt_printf+0xb4>
-                } 
-                else if (c == 'c')
     1598:	1480051e 	bne	r2,r18,15b0 <alt_printf+0x94>
-                {
-                    int v = va_arg(args, int);
-                    alt_putchar(v);
     159c:	a9000017 	ldw	r4,0(r21)
-                    /* Process "%" escape sequence. */
-                    alt_putchar(c);
-                } 
-                else if (c == 'c')
-                {
-                    int v = va_arg(args, int);
     15a0:	ad800104 	addi	r22,r21,4
     15a4:	b02b883a 	mov	r21,r22
-                    alt_putchar(v);
     15a8:	000168c0 	call	168c <alt_putchar>
     15ac:	00002906 	br	1654 <alt_printf+0x138>
-                }
-                else if (c == 'x')
     15b0:	14c0201e 	bne	r2,r19,1634 <alt_printf+0x118>
-                {
-                    /* Process hexadecimal number format. */
-                    unsigned long v = va_arg(args, unsigned long);
     15b4:	adc00017 	ldw	r23,0(r21)
     15b8:	ad400104 	addi	r21,r21,4
-                    unsigned long digit;
-                    int digit_shift;
-
-                    /* If the number value is zero, just print and continue. */
-                    if (v == 0)
     15bc:	b8000326 	beq	r23,zero,15cc <alt_printf+0xb0>
     15c0:	05800704 	movi	r22,28
-                        continue;
-                    }
-
-                    /* Find first non-zero digit. */
-                    digit_shift = 28;
-                    while (!(v & (0xF << digit_shift)))
     15c4:	00c003c4 	movi	r3,15
     15c8:	00000306 	br	15d8 <alt_printf+0xbc>
-                    int digit_shift;
-
-                    /* If the number value is zero, just print and continue. */
-                    if (v == 0)
-                    {
-                        alt_putchar('0');
     15cc:	01000c04 	movi	r4,48
     15d0:	000168c0 	call	168c <alt_putchar>
-                        continue;
     15d4:	00001f06 	br	1654 <alt_printf+0x138>
-                    }
-
-                    /* Find first non-zero digit. */
-                    digit_shift = 28;
-                    while (!(v & (0xF << digit_shift)))
     15d8:	1d84983a 	sll	r2,r3,r22
     15dc:	15c4703a 	and	r2,r2,r23
     15e0:	1000021e 	bne	r2,zero,15ec <alt_printf+0xd0>
-                        digit_shift -= 4;
     15e4:	b5bfff04 	addi	r22,r22,-4
     15e8:	003ffb06 	br	15d8 <_gp+0xffff7e1c>
-
-                    /* Print digits. */
-                    for (; digit_shift >= 0; digit_shift -= 4)
-                    {
-                        digit = (v & (0xF << digit_shift)) >> digit_shift;
     15ec:	070003c4 	movi	fp,15
-                        if (digit <= 9)
     15f0:	00c00244 	movi	r3,9
-                    digit_shift = 28;
-                    while (!(v & (0xF << digit_shift)))
-                        digit_shift -= 4;
-
-                    /* Print digits. */
-                    for (; digit_shift >= 0; digit_shift -= 4)
     15f4:	b0001716 	blt	r22,zero,1654 <alt_printf+0x138>
-                    {
-                        digit = (v & (0xF << digit_shift)) >> digit_shift;
     15f8:	e588983a 	sll	r4,fp,r22
     15fc:	25c8703a 	and	r4,r4,r23
     1600:	2588d83a 	srl	r4,r4,r22
-                        if (digit <= 9)
     1604:	19000236 	bltu	r3,r4,1610 <alt_printf+0xf4>
-                            c = '0' + digit;
     1608:	21000c04 	addi	r4,r4,48
     160c:	00000106 	br	1614 <alt_printf+0xf8>
-                        else
-                            c = 'a' + digit - 10;
     1610:	210015c4 	addi	r4,r4,87
-                        alt_putchar(c);
     1614:	21003fcc 	andi	r4,r4,255
     1618:	2100201c 	xori	r4,r4,128
     161c:	213fe004 	addi	r4,r4,-128
     1620:	d8c00015 	stw	r3,0(sp)
     1624:	000168c0 	call	168c <alt_putchar>
-                    digit_shift = 28;
-                    while (!(v & (0xF << digit_shift)))
-                        digit_shift -= 4;
-
-                    /* Print digits. */
-                    for (; digit_shift >= 0; digit_shift -= 4)
     1628:	b5bfff04 	addi	r22,r22,-4
     162c:	d8c00017 	ldw	r3,0(sp)
     1630:	003ff006 	br	15f4 <_gp+0xffff7e38>
-                        else
-                            c = 'a' + digit - 10;
-                        alt_putchar(c);
-                    }
-                }
-                else if (c == 's')
     1634:	1500071e 	bne	r2,r20,1654 <alt_printf+0x138>
-                {
-                    /* Process string format. */
-                    char *s = va_arg(args, char *);
     1638:	ad800017 	ldw	r22,0(r21)
     163c:	ad400104 	addi	r21,r21,4
-
-                    while(*s)
     1640:	b1000007 	ldb	r4,0(r22)
     1644:	20000326 	beq	r4,zero,1654 <alt_printf+0x138>
-                      alt_putchar(*s++);
     1648:	b5800044 	addi	r22,r22,1
     164c:	000168c0 	call	168c <alt_putchar>
     1650:	003ffb06 	br	1640 <_gp+0xffff7e84>
-                    /* Process "%" escape sequence. */
-                    alt_putchar(c);
-                } 
-                else if (c == 'c')
-                {
-                    int v = va_arg(args, int);
     1654:	8805883a 	mov	r2,r17
     1658:	003fc406 	br	156c <_gp+0xffff7db0>
-        }
-    }
-#ifdef ALT_SEMIHOSTING
-    alt_putbufflush();
-#endif
-}
     165c:	dfc00a17 	ldw	ra,40(sp)
     1660:	df000917 	ldw	fp,36(sp)
     1664:	ddc00817 	ldw	r23,32(sp)

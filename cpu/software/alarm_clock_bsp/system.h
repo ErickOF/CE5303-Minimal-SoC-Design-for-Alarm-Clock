@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'system'
  * SOPC Builder design path: ../../system.sopcinfo
  *
- * Generated: Sun Nov 01 15:28:52 CST 2020
+ * Generated: Thu Nov 05 15:29:10 CST 2020
  */
 
 /*
@@ -222,7 +222,7 @@
 #define ALT_CPU_ICACHE_LINE_SIZE 0
 #define ALT_CPU_ICACHE_LINE_SIZE_LOG2 0
 #define ALT_CPU_ICACHE_SIZE 0
-#define ALT_CPU_INST_ADDR_WIDTH 0xf
+#define ALT_CPU_INST_ADDR_WIDTH 0xe
 #define ALT_CPU_NAME "CPU"
 #define ALT_CPU_OCI_VERSION 1
 #define ALT_CPU_RESET_ADDR 0x00001000
@@ -258,7 +258,7 @@
 #define NIOS2_ICACHE_LINE_SIZE 0
 #define NIOS2_ICACHE_LINE_SIZE_LOG2 0
 #define NIOS2_ICACHE_SIZE 0
-#define NIOS2_INST_ADDR_WIDTH 0xf
+#define NIOS2_INST_ADDR_WIDTH 0xe
 #define NIOS2_OCI_VERSION 1
 #define NIOS2_RESET_ADDR 0x00001000
 
@@ -271,6 +271,7 @@
 #define __ALTERA_AVALON_JTAG_UART
 #define __ALTERA_AVALON_ONCHIP_MEMORY2
 #define __ALTERA_AVALON_PIO
+#define __ALTERA_AVALON_TIMER
 #define __ALTERA_NIOS2_GEN2
 
 
@@ -502,6 +503,32 @@
 
 
 /*
+ * TIMER configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_TIMER altera_avalon_timer
+#define TIMER_ALWAYS_RUN 1
+#define TIMER_BASE 0x40c0
+#define TIMER_COUNTER_SIZE 32
+#define TIMER_FIXED_PERIOD 1
+#define TIMER_FREQ 50000000
+#define TIMER_IRQ 5
+#define TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
+#define TIMER_LOAD_VALUE 49999999
+#define TIMER_MULT 1.0
+#define TIMER_NAME "/dev/TIMER"
+#define TIMER_PERIOD 1
+#define TIMER_PERIOD_UNITS "s"
+#define TIMER_RESET_OUTPUT 0
+#define TIMER_SNAPSHOT 0
+#define TIMER_SPAN 32
+#define TIMER_TICKS_PER_SEC 1
+#define TIMER_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_TYPE "altera_avalon_timer"
+
+
+/*
  * UART configuration
  *
  */
@@ -527,6 +554,6 @@
 #define ALT_INCLUDE_INSTRUCTION_RELATED_EXCEPTION_API
 #define ALT_MAX_FD 4
 #define ALT_SYS_CLK none
-#define ALT_TIMESTAMP_CLK none
+#define ALT_TIMESTAMP_CLK TIMER
 
 #endif /* __SYSTEM_H_ */

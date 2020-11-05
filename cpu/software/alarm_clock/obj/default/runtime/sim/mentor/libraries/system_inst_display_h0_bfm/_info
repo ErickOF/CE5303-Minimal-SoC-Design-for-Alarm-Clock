@@ -1,0 +1,35 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+valtera_conduit_bfm_0003
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+DXx25 altera_common_sv_packages 13 verbosity_pkg 0 22 `AO3Q4@7i]=@BLPk5AOV:0
+!s110 1604611397
+!i10b 1
+!s100 RjkNCZ=:ME[0R`Q4z6i^L0
+I<gkjd^MZfnI8ROCzco6hh1
+VDg1SIo80bB@j0V0VzS_@n1
+!s105 altera_conduit_bfm_0003_sv_unit
+S1
+R0
+w1604609535
+8C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv
+FC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv
+L0 36
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1604611396.000000
+!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv|
+!s90 -reportprogress|300|-sv|C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv|-L|altera_common_sv_packages|-work|system_inst_display_h0_bfm|
+!i113 1
+o-sv -L altera_common_sv_packages -work system_inst_display_h0_bfm
+tCvgOpt 0
