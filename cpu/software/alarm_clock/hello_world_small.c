@@ -78,29 +78,30 @@
  *
  */
 
-#include "sys/alt_stdio.h"
-#include "system.h"
+#include <system.h>
+#include <alt_types.h>
+#include <sys/alt_stdio.h>
 
 #define true 1
 #define false 0
 
 
 // Pointers to interact with the displays
-unsigned int *h1_ptr = (unsigned int*) H1_BASE;
-unsigned int *h0_ptr = (unsigned int*) H0_BASE;
-unsigned int *m1_ptr = (unsigned int*) M1_BASE;
-unsigned int *m0_ptr = (unsigned int*) M0_BASE;
-unsigned int *s1_ptr = (unsigned int*) S1_BASE;
-unsigned int *s0_ptr = (unsigned int*) S0_BASE;
+volatile unsigned char *h1_ptr = (unsigned char*) H1_BASE;
+volatile unsigned char *h0_ptr = (unsigned char*) H0_BASE;
+volatile unsigned char *m1_ptr = (unsigned char*) M1_BASE;
+volatile unsigned char *m0_ptr = (unsigned char*) M0_BASE;
+volatile unsigned char *s1_ptr = (unsigned char*) S1_BASE;
+volatile unsigned char *s0_ptr = (unsigned char*) S0_BASE;
 
 // Pointers to interact with the buttons
-unsigned int *set_alarm_ptr = (unsigned int*) BTN_SET_ALARM_BASE;
-unsigned int *set_clock_ptr = (unsigned int*) BTN_SET_CLOCK_BASE;
-unsigned int *up_ptr = (unsigned int*) BTN_UP_BASE;
-unsigned int *down_ptr = (unsigned int*) BTN_DOWN_BASE;
+volatile unsigned char *set_alarm_ptr = (unsigned char*) BTN_SET_ALARM_BASE;
+volatile unsigned char *set_clock_ptr = (unsigned char*) BTN_SET_CLOCK_BASE;
+volatile unsigned char *up_ptr = (unsigned char*) BTN_UP_BASE;
+volatile unsigned char *down_ptr = (unsigned char*) BTN_DOWN_BASE;
 
 // Pointer to interact with the alarm sound
-unsigned int *alarm_ptr = (unsigned int*) ALARM_BASE;
+volatile unsigned char *alarm_ptr = (unsigned char*) ALARM_BASE;
 
 // Current alarm hour
 unsigned short alarm[3] = {5, 0, 0};
@@ -140,8 +141,8 @@ void add_second()
 
 void display_hour()
 {
-	alt_printf("%u%u:%u%u:%u%u\n", *h1_ptr, *h0_ptr, *m1_ptr, *m0_ptr,
-								   *s1_ptr, *s0_ptr);
+	alt_printf("%x %x : %x %x : %x %x\n", *h1_ptr, *h0_ptr, *m1_ptr, *m0_ptr,
+									   *s1_ptr, *s0_ptr);
 }
 
 void init_values()
@@ -161,10 +162,10 @@ void init_values()
 /**
  *
  */
-void set_value(int value, unsigned int* seg1, unsigned int* seg0)
+void set_value(unsigned short value, volatile unsigned char* seg1, volatile unsigned char* seg0)
 {
-	*seg1 = (unsigned int) value / 10;
-	*seg0 = (unsigned int) value % 10;
+	*seg1 = (unsigned char) value / 10;
+	*seg0 = (unsigned char) value % 10;
 }
 
 int main()
