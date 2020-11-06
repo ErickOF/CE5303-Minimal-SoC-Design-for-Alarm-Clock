@@ -12,7 +12,8 @@ module system (
 	display_m1_export,
 	display_s0_export,
 	display_s1_export,
-	reset_reset_n);	
+	reset_reset_n,
+	timer_out_export);	
 
 	output		alarm_export;
 	input		btn_down_export;
@@ -27,4 +28,5 @@ module system (
 	output	[3:0]	display_s0_export;
 	output	[3:0]	display_s1_export;
 	input		reset_reset_n;
+	output		timer_out_export;
 endmodule

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="system" kind="system" version="1.0" fabric="QSYS">
  <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
- <!-- 2020.11.05.14:51:50 -->
+ <!-- 2020.11.06.13:18:58 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1604609510</value>
+  <value>1604690337</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -13607,7 +13607,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.FIXED_PERIOD</name>
-   <value>1</value>
+   <value>0</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.FREQ</name>
@@ -13615,11 +13615,11 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.LOAD_VALUE</name>
-   <value>49999999</value>
+   <value>49</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.MULT</name>
-   <value>1.0</value>
+   <value>0.000001</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.PERIOD</name>
@@ -13627,7 +13627,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.PERIOD_UNITS</name>
-   <value>s</value>
+   <value>us</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.RESET_OUTPUT</name>
@@ -13635,15 +13635,15 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.SNAPSHOT</name>
-   <value>0</value>
-  </assignment>
-  <assignment>
-   <name>embeddedsw.CMacro.TICKS_PER_SEC</name>
    <value>1</value>
   </assignment>
   <assignment>
+   <name>embeddedsw.CMacro.TICKS_PER_SEC</name>
+   <value>1000000</value>
+  </assignment>
+  <assignment>
    <name>embeddedsw.CMacro.TIMEOUT_PULSE_OUTPUT</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -13667,7 +13667,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="fixedPeriod">
    <type>boolean</type>
-   <value>true</value>
+   <value>false</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -13683,7 +13683,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="periodUnits">
    <type>java.lang.String</type>
-   <value>SEC</value>
+   <value>USEC</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -13699,7 +13699,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="snapshot">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -13707,7 +13707,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timeoutPulseOutput">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -13733,7 +13733,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timerPreset">
    <type>java.lang.String</type>
-   <value>SIMPLE_PERIODIC_INTERRUPT</value>
+   <value>CUSTOM</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -13741,7 +13741,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="periodUnitsString">
    <type>java.lang.String</type>
-   <value>s</value>
+   <value>us</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -13749,7 +13749,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="valueInSecond">
    <type>double</type>
-   <value>1.0</value>
+   <value>1.0E-6</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -13757,7 +13757,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="loadValue">
    <type>java.lang.String</type>
-   <value>49999999</value>
+   <value>49</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -13765,7 +13765,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="mult">
    <type>double</type>
-   <value>1.0</value>
+   <value>1.0E-6</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -13773,7 +13773,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="ticksPerSec">
    <type>double</type>
-   <value>1.0</value>
+   <value>1000000.0</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -14353,6 +14353,51 @@ parameters are a RESULT of the module parameters. -->
     <direction>Output</direction>
     <width>1</width>
     <role>irq</role>
+   </port>
+  </interface>
+  <interface name="external_port" kind="conduit_end" version="18.1">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>timeout_pulse</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>export</role>
    </port>
   </interface>
  </module>
@@ -17070,7 +17115,7 @@ parameters are a RESULT of the module parameters. -->
   <version>18.1</version>
  </plugin>
  <plugin>
-  <instanceCount>11</instanceCount>
+  <instanceCount>12</instanceCount>
   <name>conduit_end</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>

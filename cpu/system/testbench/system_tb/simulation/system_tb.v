@@ -18,6 +18,7 @@ module system_tb (
 	wire  [3:0] system_inst_display_m1_export;                // system_inst:display_m1_export -> system_inst_display_m1_bfm:sig_export
 	wire  [3:0] system_inst_display_s0_export;                // system_inst:display_s0_export -> system_inst_display_s0_bfm:sig_export
 	wire  [3:0] system_inst_display_s1_export;                // system_inst:display_s1_export -> system_inst_display_s1_bfm:sig_export
+	wire        system_inst_timer_out_export;                 // system_inst:timer_out_export -> system_inst_timer_out_bfm:sig_export
 	wire        system_inst_reset_bfm_reset_reset;            // system_inst_reset_bfm:reset -> system_inst:reset_reset_n
 
 	system system_inst (
@@ -33,7 +34,8 @@ module system_tb (
 		.display_m1_export    (system_inst_display_m1_export),                //    display_m1.export
 		.display_s0_export    (system_inst_display_s0_export),                //    display_s0.export
 		.display_s1_export    (system_inst_display_s1_export),                //    display_s1.export
-		.reset_reset_n        (system_inst_reset_bfm_reset_reset)             //         reset.reset_n
+		.reset_reset_n        (system_inst_reset_bfm_reset_reset),            //         reset.reset_n
+		.timer_out_export     (system_inst_timer_out_export)                  //     timer_out.export
 	);
 
 	altera_conduit_bfm system_inst_alarm_bfm (
@@ -93,6 +95,10 @@ module system_tb (
 	) system_inst_reset_bfm (
 		.reset (system_inst_reset_bfm_reset_reset), // reset.reset_n
 		.clk   (system_inst_clk_bfm_clk_clk)        //   clk.clk
+	);
+
+	altera_conduit_bfm system_inst_timer_out_bfm (
+		.sig_export (system_inst_timer_out_export)  // conduit.export
 	);
 
 endmodule

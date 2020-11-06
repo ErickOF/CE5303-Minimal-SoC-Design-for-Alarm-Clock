@@ -413,6 +413,11 @@
    type="conduit"
    dir="end" />
  <interface name="reset" internal="CLK.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="timer_out"
+   internal="TIMER.external_port"
+   type="conduit"
+   dir="end" />
  <module name="ALARM" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
@@ -794,13 +799,13 @@
  <module name="TIMER" kind="altera_avalon_timer" version="18.1" enabled="1">
   <parameter name="alwaysRun" value="true" />
   <parameter name="counterSize" value="32" />
-  <parameter name="fixedPeriod" value="true" />
+  <parameter name="fixedPeriod" value="false" />
   <parameter name="period" value="1" />
-  <parameter name="periodUnits" value="SEC" />
+  <parameter name="periodUnits" value="USEC" />
   <parameter name="resetOutput" value="false" />
-  <parameter name="snapshot" value="false" />
+  <parameter name="snapshot" value="true" />
   <parameter name="systemFrequency" value="50000000" />
-  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="timeoutPulseOutput" value="true" />
   <parameter name="watchdogPulse" value="2" />
  </module>
  <module name="UART" kind="altera_avalon_jtag_uart" version="18.1" enabled="1">

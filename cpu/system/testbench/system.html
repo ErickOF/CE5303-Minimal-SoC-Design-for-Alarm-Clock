@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2020.11.05.14:51:50</td>
+    <td class="l">2020.11.06.13:18:58</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -4171,7 +4171,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">fixedPeriod</td>
-        <td class="parametervalue">true</td>
+        <td class="parametervalue">false</td>
        </tr>
        <tr>
         <td class="parametername">period</td>
@@ -4179,7 +4179,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">periodUnits</td>
-        <td class="parametervalue">SEC</td>
+        <td class="parametervalue">USEC</td>
        </tr>
        <tr>
         <td class="parametername">resetOutput</td>
@@ -4187,11 +4187,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">snapshot</td>
-        <td class="parametervalue">false</td>
+        <td class="parametervalue">true</td>
        </tr>
        <tr>
         <td class="parametername">timeoutPulseOutput</td>
-        <td class="parametervalue">false</td>
+        <td class="parametervalue">true</td>
        </tr>
        <tr>
         <td class="parametername">systemFrequency</td>
@@ -4203,27 +4203,27 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">timerPreset</td>
-        <td class="parametervalue">SIMPLE_PERIODIC_INTERRUPT</td>
+        <td class="parametervalue">CUSTOM</td>
        </tr>
        <tr>
         <td class="parametername">periodUnitsString</td>
-        <td class="parametervalue">s</td>
+        <td class="parametervalue">us</td>
        </tr>
        <tr>
         <td class="parametername">valueInSecond</td>
-        <td class="parametervalue">1.0</td>
+        <td class="parametervalue">1.0E-6</td>
        </tr>
        <tr>
         <td class="parametername">loadValue</td>
-        <td class="parametervalue">49999999</td>
+        <td class="parametervalue">49</td>
        </tr>
        <tr>
         <td class="parametername">mult</td>
-        <td class="parametervalue">1.0</td>
+        <td class="parametervalue">1.0E-6</td>
        </tr>
        <tr>
         <td class="parametername">ticksPerSec</td>
-        <td class="parametervalue">1.0</td>
+        <td class="parametervalue">1000000.0</td>
        </tr>
        <tr>
         <td class="parametername">slave_address_width</td>
@@ -4256,7 +4256,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">FIXED_PERIOD</td>
-        <td class="parametervalue">1</td>
+        <td class="parametervalue">0</td>
        </tr>
        <tr>
         <td class="parametername">FREQ</td>
@@ -4264,11 +4264,11 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">LOAD_VALUE</td>
-        <td class="parametervalue">49999999</td>
+        <td class="parametervalue">49</td>
        </tr>
        <tr>
         <td class="parametername">MULT</td>
-        <td class="parametervalue">1.0</td>
+        <td class="parametervalue">0.000001</td>
        </tr>
        <tr>
         <td class="parametername">PERIOD</td>
@@ -4276,7 +4276,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">PERIOD_UNITS</td>
-        <td class="parametervalue">s</td>
+        <td class="parametervalue">us</td>
        </tr>
        <tr>
         <td class="parametername">RESET_OUTPUT</td>
@@ -4284,15 +4284,15 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
        </tr>
        <tr>
         <td class="parametername">SNAPSHOT</td>
-        <td class="parametervalue">0</td>
-       </tr>
-       <tr>
-        <td class="parametername">TICKS_PER_SEC</td>
         <td class="parametervalue">1</td>
        </tr>
        <tr>
+        <td class="parametername">TICKS_PER_SEC</td>
+        <td class="parametervalue">1000000</td>
+       </tr>
+       <tr>
         <td class="parametername">TIMEOUT_PULSE_OUTPUT</td>
-        <td class="parametervalue">0</td>
+        <td class="parametervalue">1</td>
        </tr>
       </table>
      </td>
@@ -4460,7 +4460,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="blueBar">
    <tr>
     <td class="l">generation took 0.01 seconds</td>
-    <td class="r">rendering took 0.09 seconds</td>
+    <td class="r">rendering took 0.18 seconds</td>
    </tr>
   </table>
  </body>

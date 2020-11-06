@@ -11,6 +11,7 @@
 		.display_m1_export    (<connected-to-display_m1_export>),    //    display_m1.export
 		.display_s0_export    (<connected-to-display_s0_export>),    //    display_s0.export
 		.display_s1_export    (<connected-to-display_s1_export>),    //    display_s1.export
-		.reset_reset_n        (<connected-to-reset_reset_n>)         //         reset.reset_n
+		.reset_reset_n        (<connected-to-reset_reset_n>),        //         reset.reset_n
+		.timer_out_export     (<connected-to-timer_out_export>)      //     timer_out.export
 	);
 

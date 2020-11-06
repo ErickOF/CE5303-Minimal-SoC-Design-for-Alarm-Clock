@@ -121,6 +121,14 @@
          type = "int";
       }
    }
+   element system_inst_timer_out_bfm
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+   }
 }
 ]]></parameter>
  <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
@@ -289,6 +297,17 @@
   <parameter name="ASSERT_HIGH_RESET" value="0" />
   <parameter name="INITIAL_RESET_CYCLES" value="50" />
  </module>
+ <module
+   name="system_inst_timer_out_bfm"
+   kind="altera_conduit_bfm"
+   version="18.1"
+   enabled="1">
+  <parameter name="CLOCKED_SIGNAL" value="false" />
+  <parameter name="ENABLE_RESET" value="false" />
+  <parameter name="SIGNAL_DIRECTIONS" value="input" />
+  <parameter name="SIGNAL_ROLES" value="export" />
+  <parameter name="SIGNAL_WIDTHS" value="1" />
+ </module>
  <connection
    kind="clock"
    version="18.1"
@@ -414,6 +433,17 @@
    version="18.1"
    start="system_inst_display_s1_bfm.conduit"
    end="system_inst.display_s1">
+  <parameter name="endPort" value="" />
+  <parameter name="endPortLSB" value="0" />
+  <parameter name="startPort" value="" />
+  <parameter name="startPortLSB" value="0" />
+  <parameter name="width" value="0" />
+ </connection>
+ <connection
+   kind="conduit"
+   version="18.1"
+   start="system_inst_timer_out_bfm.conduit"
+   end="system_inst.timer_out">
   <parameter name="endPort" value="" />
   <parameter name="endPortLSB" value="0" />
   <parameter name="startPort" value="" />

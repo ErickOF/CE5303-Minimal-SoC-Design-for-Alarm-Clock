@@ -1,12 +1,12 @@
-# system info system_tb on 2020.11.05.14:52:48
+# system info system_tb on 2020.11.06.13:20:21
 system_info:
 name,value
 DEVICE,5CEBA2F17A7
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1604609521
+GENERATION_ID,1604690351
 #
 #
-# Files generated for system_tb on 2020.11.05.14:52:48
+# Files generated for system_tb on 2020.11.06.13:20:21
 files:
 filepath,kind,attributes,module,is_top
 system/testbench/system_tb/simulation/system_tb.v,VERILOG,,system_tb,true
@@ -229,6 +229,7 @@ system_tb.system_inst.mm_interconnect_0.avalon_st_adapter_014.error_adapter_0,sy
 system_tb.system_inst.irq_mapper,system_irq_mapper
 system_tb.system_inst.rst_controller,altera_reset_controller
 system_tb.system_inst_alarm_bfm,altera_conduit_bfm
+system_tb.system_inst_timer_out_bfm,altera_conduit_bfm
 system_tb.system_inst_btn_down_bfm,altera_conduit_bfm_0002
 system_tb.system_inst_btn_set_alarm_bfm,altera_conduit_bfm_0002
 system_tb.system_inst_btn_set_clock_bfm,altera_conduit_bfm_0002

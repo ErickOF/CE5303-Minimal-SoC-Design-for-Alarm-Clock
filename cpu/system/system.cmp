@@ -12,7 +12,8 @@
 			display_m1_export    : out std_logic_vector(3 downto 0);        -- export
 			display_s0_export    : out std_logic_vector(3 downto 0);        -- export
 			display_s1_export    : out std_logic_vector(3 downto 0);        -- export
-			reset_reset_n        : in  std_logic                    := 'X'  -- reset_n
+			reset_reset_n        : in  std_logic                    := 'X'; -- reset_n
+			timer_out_export     : out std_logic                            -- export
 		);
 	end component system;
 

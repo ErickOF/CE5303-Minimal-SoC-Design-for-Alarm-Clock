@@ -16,7 +16,8 @@ module system (
 		output wire [3:0] display_m1_export,    //    display_m1.export
 		output wire [3:0] display_s0_export,    //    display_s0.export
 		output wire [3:0] display_s1_export,    //    display_s1.export
-		input  wire       reset_reset_n         //         reset.reset_n
+		input  wire       reset_reset_n,        //         reset.reset_n
+		output wire       timer_out_export      //     timer_out.export
 	);
 
 	wire  [31:0] cpu_data_master_readdata;                             // mm_interconnect_0:CPU_data_master_readdata -> CPU:d_readdata
@@ -292,14 +293,15 @@ module system (
 	);
 
 	system_TIMER timer (
-		.clk        (clk_clk),                               //   clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),       // reset.reset_n
-		.address    (mm_interconnect_0_timer_s1_address),    //    s1.address
-		.writedata  (mm_interconnect_0_timer_s1_writedata),  //      .writedata
-		.readdata   (mm_interconnect_0_timer_s1_readdata),   //      .readdata
-		.chipselect (mm_interconnect_0_timer_s1_chipselect), //      .chipselect
-		.write_n    (~mm_interconnect_0_timer_s1_write),     //      .write_n
-		.irq        (irq_mapper_receiver5_irq)               //   irq.irq
+		.clk           (clk_clk),                               //           clk.clk
+		.reset_n       (~rst_controller_reset_out_reset),       //         reset.reset_n
+		.address       (mm_interconnect_0_timer_s1_address),    //            s1.address
+		.writedata     (mm_interconnect_0_timer_s1_writedata),  //              .writedata
+		.readdata      (mm_interconnect_0_timer_s1_readdata),   //              .readdata
+		.chipselect    (mm_interconnect_0_timer_s1_chipselect), //              .chipselect
+		.write_n       (~mm_interconnect_0_timer_s1_write),     //              .write_n
+		.irq           (irq_mapper_receiver5_irq),              //           irq.irq
+		.timeout_pulse (timer_out_export)                       // external_port.export
 	);
 
 	system_UART uart (
