@@ -7,24 +7,24 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 vsystem_tb
-!s110 1604611401
+!s110 1604694162
 !i10b 1
-!s100 O2@HJDlIT>^bzN9zJg?C=1
-IXASD5KZMa<A]nA@9knB0M2
+!s100 RPoTn?AO@FMFoG>eU@z=m2
+I`l@P1jIkRj[@1m2`bg7?:0
 VDg1SIo80bB@j0V0VzS_@n1
-R0
-w1604609524
-8C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v
-FC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v
+dC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+w1604693799
+8C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v
+FC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v
 L0 6
 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1604611400.000000
-!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v|
-!s90 -reportprogress|300|C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v|
+!s108 1604694162.000000
+!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v|
+!s90 -reportprogress|300|C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v|
 !i113 1
 tCvgOpt 0

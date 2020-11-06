@@ -7,46 +7,46 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 valtera_reset_controller
-Z1 !s110 1604611387
+Z0 !s110 1604694160
 !i10b 1
 !s100 z[H_hRO9gO=:^2E3_jWH03
-Icn[ZI5Hf=a_:g8Y6ZB1>72
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z3 w1604609561
-8C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v
-FC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v
+IFOV<b99clb^CUT<nSeTdi3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+Z3 w1604693835
+8C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v
+FC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v
 L0 42
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1604611386.000000
-!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v|
-!s90 -reportprogress|300|C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
+Z5 !s108 1604694160.000000
+!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v|
+!s90 -reportprogress|300|C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !i113 1
-Z5 o-work rst_controller
-Z6 tCvgOpt 0
+Z6 o-work rst_controller
+Z7 tCvgOpt 0
 valtera_reset_synchronizer
-R1
+R0
 !i10b 1
 !s100 oWLYmSO[EOX[G0PgQhZ2=0
-ITkz=gVdF@Alb_niP[R?KW3
+I`gkM?CPicPFALdndgBXHI0
+R1
 R2
-R0
 R3
-8C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v
-FC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v
+8C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v
+FC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v
 L0 24
 R4
 r1
 !s85 0
 31
-!s108 1604611387.000000
-!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v|
-!s90 -reportprogress|300|C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
-!i113 1
 R5
+!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v|
+!s90 -reportprogress|300|C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
+!i113 1
 R6
+R7

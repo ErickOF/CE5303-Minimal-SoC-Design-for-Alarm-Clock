@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2020.11.05.15:21:57
+# ACDS 18.1 625 win32 2020.11.06.14:22:22
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2020.11.05.15:21:57
+# ACDS 18.1 625 win32 2020.11.06.14:22:22
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="system_tb"
@@ -130,16 +130,16 @@ fi
 # ----------------------------------------
 # copy RAM/ROM files to simulation directory
 if [ $SKIP_FILE_COPY -eq 0 ]; then
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_ociram_default_contents.dat ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_ociram_default_contents.hex ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_ociram_default_contents.mif ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_a.dat ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_a.hex ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_a.mif ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_b.dat ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_b.hex ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_b.mif ./
-  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_RAM.hex ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_ociram_default_contents.dat ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_ociram_default_contents.hex ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_ociram_default_contents.mif ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_a.dat ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_a.hex ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_a.mif ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_b.dat ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_b.hex ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_rf_ram_b.mif ./
+  cp -f C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_RAM.hex ./
 fi
 
 vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS \
@@ -155,51 +155,51 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cyclonev_hssi_atoms.v \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/synopsys/cyclonev_pcie_hip_atoms_ncrypt.v \
   -v $QUARTUS_INSTALL_DIR/eda/sim_lib/cyclonev_pcie_hip_atoms.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/verbosity_pkg.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux_001.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux_003.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_003.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_001.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_005.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_002.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_001.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_sc_fifo.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_agent.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_translator.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_sysclk.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_tck.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_wrapper.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_test_bench.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_irq_mapper.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_TIMER.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_RAM.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_H0.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_BTN_DOWN.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_ALARM.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_clock_source.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0002.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm.sv \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system.v \
-  C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/verbosity_pkg.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_avalon_st_adapter.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux_001.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_arbitrator.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_mux.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux_003.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_rsp_demux.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux_003.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_mux.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux_001.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_cmd_demux.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_005.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_002.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router_001.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0_router.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_sc_fifo.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_agent.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_translator.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_sysclk.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_tck.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_debug_slave_wrapper.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU_cpu_test_bench.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_irq_mapper.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_mm_interconnect_0.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_TIMER.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_RAM.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_H0.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_CPU.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_BTN_DOWN.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_ALARM.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_reset_source.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0003.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_clock_source.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm_0002.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_conduit_bfm.sv \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system.v \
+  C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/system_tb.v \
   -top $TOP_LEVEL_NAME
 # ----------------------------------------
 # simulate

@@ -7,36 +7,36 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 vsystem_UART
-Z1 !s110 1604611390
+Z0 !s110 1604694161
 !i10b 1
 !s100 AIAJBoEEnS<ETG0<m77ZR1
-I0e9L<K23114_;3Z418]m>2
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-Z3 w1604609539
-Z4 8C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v
-Z5 FC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v
+I0PbdQkWgh<bIbTOH]<[>k3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+Z3 w1604693812
+Z4 8C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v
+Z5 FC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v
 L0 331
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1604611390.000000
-Z8 !s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v|
-Z9 !s90 -reportprogress|300|C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v|-work|UART|
+Z7 !s108 1604694161.000000
+Z8 !s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v|
+Z9 !s90 -reportprogress|300|C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_UART.v|-work|UART|
 !i113 1
 Z10 o-work UART
 Z11 tCvgOpt 0
 nsystem_@u@a@r@t
 vsystem_UART_scfifo_r
-R1
+R0
 !i10b 1
 !s100 iQg_dcl6?RUfac4ORV1Zh2
-Io<EBQO4ffZdKe<>h6O?`c1
+ILk=SK2ZH^iCU`?__8=d0i2
+R1
 R2
-R0
 R3
 R4
 R5
@@ -53,12 +53,12 @@ R10
 R11
 nsystem_@u@a@r@t_scfifo_r
 vsystem_UART_scfifo_w
-R1
+R0
 !i10b 1
 !s100 ?n<XTU=cN9TLDkaA=DNfJ1
-IHRT>GdJCiRmeOgUe4VL^50
+IW[_fZVRTf`_NK]c=jQ>Lg2
+R1
 R2
-R0
 R3
 R4
 R5
@@ -75,12 +75,12 @@ R10
 R11
 nsystem_@u@a@r@t_scfifo_w
 vsystem_UART_sim_scfifo_r
-R1
+R0
 !i10b 1
 !s100 PC2=MI8A^J==BS:7bS7Xa0
-IlNHbAoCdg7<4mm1M:ERPX1
+I3f>>Y`^]@gS0T=4i:S^m70
+R1
 R2
-R0
 R3
 R4
 R5
@@ -97,12 +97,12 @@ R10
 R11
 nsystem_@u@a@r@t_sim_scfifo_r
 vsystem_UART_sim_scfifo_w
-R1
+R0
 !i10b 1
 !s100 YPhKn>DQNaCCOOWFbG1nW3
-I9Uf:0GRSXCD]Ub<`]o:eN2
+IgORz`:X?_9:g[O55Dkf8?0
+R1
 R2
-R0
 R3
 R4
 R5

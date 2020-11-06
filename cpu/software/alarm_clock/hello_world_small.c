@@ -81,6 +81,9 @@
 #include <system.h>
 #include <alt_types.h>
 #include <sys/alt_stdio.h>
+#include <altera_avalon_timer_regs.h>
+#include "altera_avalon_timer.h"
+#include <priv/alt_legacy_irq.h>
 
 #define true 1
 #define false 0
@@ -111,6 +114,36 @@ unsigned short hour[3] = {0, 0, 0};
 short is_activated = false;
 
 //Timer pointer
+//Define a special type:
+typedef unsigned char uchar;
+//Timer pointer
+volatile uchar *timer_base_ptr = (uchar *)TIMER_BASE;
+
+/**
+ * Handler for timer interrupt.
+ */
+static void respond(void* context){
+	//*timer_base_ptr = 0;
+	IOWR_ALTERA_AVALON_TIMER_STATUS(timer_base_ptr, 0x0);
+	add_second();
+
+	set_value(hour[0], s1_ptr, s0_ptr);
+	set_value(hour[1], m1_ptr, m0_ptr);
+	set_value(hour[2], h1_ptr, h0_ptr);
+
+	display_hour();
+}
+
+/**
+ * Timer init
+ */
+static void timer_init(void){
+	//Start the values for the timer interrupt.
+	IOWR_ALTERA_AVALON_TIMER_CONTROL(timer_base_ptr, ALTERA_AVALON_TIMER_CONTROL_ITO_MSK
+	        | ALTERA_AVALON_TIMER_CONTROL_START_MSK);
+	//Init the handler for the timer interrupt.
+	alt_irq_register(TIMER_IRQ, TIMER_BASE /*timer_base_ptr*/, respond);
+}
 
 
 /**
@@ -174,9 +207,12 @@ int main()
 
   init_values();
 
+  timer_init();
+
   while (true)
   {
 	  // Timer interrupt
+	  /*
 	  add_second();
 
 	  set_value(hour[0], s1_ptr, s0_ptr);
@@ -184,6 +220,7 @@ int main()
 	  set_value(hour[2], h1_ptr, h0_ptr);
 
 	  display_hour();
+	  */
   }
 
   return 0;

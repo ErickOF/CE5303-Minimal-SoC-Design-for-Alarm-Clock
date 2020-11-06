@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Nov 6, 2020 1:58:11 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1604692691480</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>D:\Work_Files\Quartus_Files\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>06/11/2020 02:19:13 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1604693953338</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>C:\Users\Edgar\Documents\Introduccion_Embebidos\back-up-project2\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>

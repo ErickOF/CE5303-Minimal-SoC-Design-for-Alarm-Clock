@@ -7,28 +7,28 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 valtera_merlin_master_translator
 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-!s110 1604611381
+!s110 1604694159
 !i10b 1
 !s100 NdRk@]3fC2C@V7Rm;dQM31
-Ih`<bSAB2bTj^KgjVbROPQ3
+I]zf<j774UF10mJV;3C^^@1
 VDg1SIo80bB@j0V0VzS_@n1
 !s105 altera_merlin_master_translator_sv_unit
 S1
-R0
-w1604609567
-8C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv
-FC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv
+dC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+w1604693839
+8C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv
+FC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv
 L0 32
 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1604611380.000000
-!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv|
-!s90 -reportprogress|300|-sv|C:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv|-L|altera_common_sv_packages|-work|CPU_data_master_translator|
+!s108 1604694159.000000
+!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv|
+!s90 -reportprogress|300|-sv|C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_master_translator.sv|-L|altera_common_sv_packages|-work|CPU_data_master_translator|
 !i113 1
 o-sv -L altera_common_sv_packages -work CPU_data_master_translator
 tCvgOpt 0
