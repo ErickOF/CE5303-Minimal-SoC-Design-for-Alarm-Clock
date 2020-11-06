@@ -109,6 +109,8 @@ unsigned short hour[3] = {0, 0, 0};
 // To activate and deactivate the Alarm
 short is_activated = false;
 
+//Timer pointer
+
 
 /**
  * Update the value of a specific display

@@ -45,8 +45,9 @@
           <tags>persp.newWizSC:com.altera.sbtgui.ui.newLibrary</tags>
           <tags>persp.perspSC:com.altera.sbtgui.ui.debugPerspective</tags>
           <tags>persp.viewSC:com.altera.sbtgui.launch.hardware.ByteStreamConsoleView</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_c4ewUhsuEeuxdoGSdrrS2Q" selectedElement="_c4ewWBsuEeuxdoGSdrrS2Q" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_c4ewUhsuEeuxdoGSdrrS2Q" selectedElement="_c4ewUxsuEeuxdoGSdrrS2Q" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_c4ewUxsuEeuxdoGSdrrS2Q" elementId="topLeft" containerData="2500" selectedElement="_c4ewVBsuEeuxdoGSdrrS2Q">
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_c4ewVBsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.navigator.ProjectExplorer" ref="_c4ae4BsuEeuxdoGSdrrS2Q"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_c4ewVRsuEeuxdoGSdrrS2Q" elementId="org.eclipse.cdt.ui.CView" toBeRendered="false" ref="_c4btABsuEeuxdoGSdrrS2Q"/>
               <children xsi:type="advanced:Placeholder" xmi:id="_c4ewVhsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.views.ResourceNavigator" toBeRendered="false" ref="_c4btARsuEeuxdoGSdrrS2Q"/>
@@ -60,7 +61,6 @@
                 </children>
               </children>
               <children xsi:type="basic:PartStack" xmi:id="_c4ewXRsuEeuxdoGSdrrS2Q" elementId="bottom" containerData="2500" selectedElement="_c4ewYBsuEeuxdoGSdrrS2Q">
-                <tags>active</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_c4ewXhsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.views.ProblemView" ref="_c4cUEBsuEeuxdoGSdrrS2Q"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_c4ewXxsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.views.TaskList" ref="_c4cUERsuEeuxdoGSdrrS2Q"/>
                 <children xsi:type="advanced:Placeholder" xmi:id="_c4ewYBsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.console.ConsoleView" ref="_c4cUEhsuEeuxdoGSdrrS2Q"/>
@@ -100,6 +100,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1604117194609&quot; org.eclipse.cdt.ui.cview.groupincludes=&quot;false&quot; org.eclipse.cdt.ui.cview.groupmacros=&quot;false&quot; org.eclipse.cdt.ui.editor.CUChildren=&quot;true&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_c6T8UBsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -136,8 +138,6 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
-      <tags>active</tags>
-      <tags>activeOnClose</tags>
       <menus xmi:id="_g8Z4wBsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.console.ConsoleView">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -173,7 +173,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_cbrfkBsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_NPQMlh-rEeugBo6Ha9IgMw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_bid_xBsuEeuxdoGSdrrS2Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_a63-ECBmEeuCdoqL5hnMwQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_bid_xBsuEeuxdoGSdrrS2Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_cbrfkRsuEeuxdoGSdrrS2Q" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -197,7 +197,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_cbsGohsuEeuxdoGSdrrS2Q" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_NPWTNB-rEeugBo6Ha9IgMw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_bicxjhsuEeuxdoGSdrrS2Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_a68PgCBmEeuCdoqL5hnMwQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_bicxjhsuEeuxdoGSdrrS2Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_cbsGoxsuEeuxdoGSdrrS2Q" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

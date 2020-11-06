@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'system'
  * SOPC Builder design path: ../../system.sopcinfo
  *
- * Generated: Thu Nov 05 15:29:10 CST 2020
+ * Generated: Fri Nov 06 13:31:59 CST 2020
  */
 
 /*
@@ -511,20 +511,20 @@
 #define TIMER_ALWAYS_RUN 1
 #define TIMER_BASE 0x40c0
 #define TIMER_COUNTER_SIZE 32
-#define TIMER_FIXED_PERIOD 1
+#define TIMER_FIXED_PERIOD 0
 #define TIMER_FREQ 50000000
 #define TIMER_IRQ 5
 #define TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
-#define TIMER_LOAD_VALUE 49999999
-#define TIMER_MULT 1.0
+#define TIMER_LOAD_VALUE 49
+#define TIMER_MULT 1.0E-6
 #define TIMER_NAME "/dev/TIMER"
 #define TIMER_PERIOD 1
-#define TIMER_PERIOD_UNITS "s"
+#define TIMER_PERIOD_UNITS "us"
 #define TIMER_RESET_OUTPUT 0
-#define TIMER_SNAPSHOT 0
+#define TIMER_SNAPSHOT 1
 #define TIMER_SPAN 32
-#define TIMER_TICKS_PER_SEC 1
-#define TIMER_TIMEOUT_PULSE_OUTPUT 0
+#define TIMER_TICKS_PER_SEC 1000000
+#define TIMER_TIMEOUT_PULSE_OUTPUT 1
 #define TIMER_TYPE "altera_avalon_timer"
 
 
