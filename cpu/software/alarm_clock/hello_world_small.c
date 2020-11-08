@@ -82,8 +82,11 @@
 #include <alt_types.h>
 #include <sys/alt_stdio.h>
 #include <altera_avalon_timer_regs.h>
+#include "altera_avalon_pio_regs.h"
 #include "altera_avalon_timer.h"
 #include <priv/alt_legacy_irq.h>
+#include "sys/alt_irq.h"
+#include "sys/alt_timestamp.h"
 
 #define true 1
 #define false 0
@@ -113,11 +116,52 @@ unsigned short hour[3] = {0, 0, 0};
 // To activate and deactivate the Alarm
 short is_activated = false;
 
-//Timer pointer
+
 //Define a special type:
 typedef unsigned char uchar;
 //Timer pointer
 volatile uchar *timer_base_ptr = (uchar *)TIMER_BASE;
+
+static void btn_up_respond(void* context, alt_u32 id){
+	//logica del boton up.
+	alt_printf("Boton up\n");
+}
+static void btn_down_respond(void* context, alt_u32 id){
+	//logica del boton down.
+	alt_printf("Boton down\n");
+}
+
+static void btn_set_alarm_respond(void* context, alt_u32 id){
+	//logica del boton set_alarm.
+	alt_printf("Boton set alarm\n");
+}
+
+static void btn_set_clock_respond(){
+	//logica del boton set_clock.
+	alt_printf("Boton set clock\n");
+}
+
+static void buttons_init(void){
+	//Up button:
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_UP_BASE, 0xf);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, 0x0);
+	alt_irq_register(BTN_UP_IRQ, BTN_UP_BASE, btn_up_respond);
+
+	//Down button:
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_DOWN_BASE, 0xf);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, 0x0);
+	alt_irq_register(BTN_DOWN_IRQ, BTN_DOWN_BASE, btn_down_respond);
+
+	//Set alarm button:
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_SET_ALARM_BASE, 0xf);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_ALARM_BASE, 0x0);
+	alt_irq_register(BTN_SET_ALARM_IRQ, BTN_SET_ALARM_BASE, btn_set_alarm_respond);
+
+	//Set clock button:
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_SET_CLOCK_BASE, 0xf);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_CLOCK_BASE, 0x0);
+	alt_irq_register(BTN_SET_CLOCK_IRQ, BTN_SET_CLOCK_BASE, btn_set_clock_respond);
+}
 
 /**
  * Handler for timer interrupt.
@@ -201,18 +245,22 @@ void set_value(unsigned short value, volatile unsigned char* seg1, volatile unsi
 	*seg0 = (unsigned char) value % 10;
 }
 
+
 int main()
 { 
   alt_putstr("Welcome to the Alarm Clock\n");
 
   init_values();
 
+  buttons_init();
+
   timer_init();
 
-  while (true)
+
+  /*while (true)
   {
 	  // Timer interrupt
-	  /*
+
 	  add_second();
 
 	  set_value(hour[0], s1_ptr, s0_ptr);
@@ -220,8 +268,8 @@ int main()
 	  set_value(hour[2], h1_ptr, h0_ptr);
 
 	  display_hour();
-	  */
-  }
+
+  }*/
 
   return 0;
 }
