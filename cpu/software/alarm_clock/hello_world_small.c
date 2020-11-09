@@ -78,18 +78,53 @@
  *
  */
 
-#include <system.h>
-#include <alt_types.h>
-#include <sys/alt_stdio.h>
-#include <altera_avalon_timer_regs.h>
+/*
+ * alt_irq.h is the Nios II specific implementation of the interrupt controller
+ * interface.
+ *
+ * Nios II includes optional support for an external interrupt controller.
+ * When an external controller is present, the "Enhanced" interrupt API
+ * must be used to manage individual interrupts. The enhanced API also
+ * supports the processor's internal interrupt controller. Certain API
+ * members are accessible from either the "legacy" or "enhanced" interrpt
+ * API.
+ *
+ * Regardless of which API is in use, this file should be included by
+ * application code and device drivers that register ISRs or manage interrpts.
+ */
+
+/*
+ * This file provides prototypes and inline implementations of certain routines
+ * used by the legacy interrupt API. Do not include this in your driver or
+ * application source files, use "sys/alt_irq.h" instead to access the proper
+ * public API.
+ */
+
+/*
+ * The following protypes and routines are supported by both
+ * the enhanced and legacy interrupt APIs
+ */
+
+#include "system.h"
+#include "alt_types.h"
+#include "sys/alt_stdio.h"
+
+#include "altera_avalon_timer_regs.h"
 #include "altera_avalon_pio_regs.h"
 #include "altera_avalon_timer.h"
-#include <priv/alt_legacy_irq.h>
+#include "priv/alt_legacy_irq.h"
 #include "sys/alt_irq.h"
-#include "sys/alt_timestamp.h"
+#include <errno.h>
 
-#define true 1
-#define false 0
+#include "nios2.h"
+
+
+#define TRUE 1
+#define FALSE 0
+
+#define SEC 2
+#define MIN 3
+#define HR 4
 
 
 // Pointers to interact with the displays
@@ -101,100 +136,187 @@ volatile unsigned char *s1_ptr = (unsigned char*) S1_BASE;
 volatile unsigned char *s0_ptr = (unsigned char*) S0_BASE;
 
 // Pointers to interact with the buttons
-volatile unsigned char *set_alarm_ptr = (unsigned char*) BTN_SET_ALARM_BASE;
-volatile unsigned char *set_clock_ptr = (unsigned char*) BTN_SET_CLOCK_BASE;
+volatile unsigned char *set_clock = (unsigned char*) BTN_SET_BASE;
 volatile unsigned char *up_ptr = (unsigned char*) BTN_UP_BASE;
 volatile unsigned char *down_ptr = (unsigned char*) BTN_DOWN_BASE;
+//volatile unsigned char *right_ptr = (unsigned char*) BTN_RIGHT_BASE;
+//volatile unsigned char *left_ptr = (unsigned char*) BTN_LEFT_BASE;
+volatile unsigned char *swc_sel = (unsigned char*) SWC_SEL_BASE;
+volatile unsigned char *swc_alarm = (unsigned char*) SWC_ALARM_BASE;
 
 // Pointer to interact with the alarm sound
 volatile unsigned char *alarm_ptr = (unsigned char*) ALARM_BASE;
+
+//Timer pointer
+volatile unsigned char *timer_base_ptr = (unsigned char *) TIMER_BASE;
 
 // Current alarm hour
 unsigned short alarm[3] = {5, 0, 0};
 // Current hour
 unsigned short hour[3] = {0, 0, 0};
 // To activate and deactivate the Alarm
-short is_activated = false;
+short is_activated = FALSE;
+unsigned char irqtimer_stall = FALSE;
+unsigned char first = TRUE;
+//unsigned char all_botons_en = FALSE;
+unsigned char ud_buttons_en = FALSE;
+unsigned char up_pressed = FALSE;
+unsigned char down_pressed = FALSE;
+unsigned char set_pressed = FALSE;
+unsigned char button_pressed = FALSE;
 
 
-//Define a special type:
-typedef unsigned char uchar;
-//Timer pointer
-volatile uchar *timer_base_ptr = (uchar *)TIMER_BASE;
+/**
+ * Handler for alarm set button interrupt.
+ */
+static void btn_set_respond(void* context, alt_u32 id) {
 
+	up_pressed = FALSE;
+//	down_pressed = FALSE;
+	//logica del boton set_alarm.
+	unsigned int *button_action = (unsigned int*) context;
+	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE);
+
+	/* Acknowledge interrupt by clearing edge capture register */
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE, *button_action);
+
+	if (!set_pressed) {
+		alt_putstr("Button set\n");
+		set_pressed = TRUE;
+		if (irqtimer_stall) {
+			irqtimer_stall = FALSE;
+
+			alt_irq_enable(TIMER_IRQ);
+		} else {
+			irqtimer_stall = TRUE;
+
+			alt_irq_disable(TIMER_IRQ);
+		}
+	} else {
+		alt_putstr("Button already set\n");
+	}
+}
+
+/**
+ * Handler for button up interrupt.
+ */
 static void btn_up_respond(void* context, alt_u32 id){
 	//logica del boton up.
-	alt_printf("Boton up\n");
+
+	unsigned int *button_action = (unsigned int*) context;
+	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE);
+
+	/* Acknowledge interrupt by clearing edge capture register */
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, *button_action);
+
+	if (!up_pressed) {
+		alt_putstr("Button up\n");
+		up_pressed = TRUE;
+	} else {
+		alt_putstr("Button already set up\n");
+	}
 }
-static void btn_down_respond(void* context, alt_u32 id){
+
+/**
+ * Handler for button down interrupt.
+ */
+static void btn_down_respond(void* context, alt_u32 id) {
 	//logica del boton down.
-	alt_printf("Boton down\n");
+
+	unsigned int *button_action = (unsigned int*) context;
+	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE);
+
+	/* Acknowledge interrupt by clearing edge capture register */
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, *button_action);
+
+	if (!down_pressed) {
+		alt_putstr("Button up\n");
+		down_pressed = TRUE;
+
+	} else {
+		alt_putstr("Button already set up\n");
+	}
 }
 
-static void btn_set_alarm_respond(void* context, alt_u32 id){
-	//logica del boton set_alarm.
-	alt_printf("Boton set alarm\n");
-}
+/**
+ * Handler for button right interrupt.
+ */
+//static void* btn_right_respond(void* context, alt_u32 id){
+//	//logica del boton down.
+//	alt_printf("Button right\n");
+//
+//	unsigned int *button_action = (unsigned int*) context;
+//	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_RIGHT_BASE);
+//
+//	/* Acknowledge interrupt by clearing edge capture register */
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_RIGHT_BASE, *button_action);
+//}
 
-static void btn_set_clock_respond(){
-	//logica del boton set_clock.
-	alt_printf("Boton set clock\n");
-}
+/**
+ * Handler for button right interrupt.
+ */
+//static void* btn_left_respond(void* context, alt_u32 id){
+//	//logica del boton down.
+//	alt_printf("Button left\n");
+//
+//	unsigned int *button_action = (unsigned int*) context;
+//	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_LEFT_BASE);
+//
+//	/* Acknowledge interrupt by clearing edge capture register */
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_LEFT_BASE, *button_action);
+//}
 
+
+/**
+ * Buttons init.
+ */
 static void buttons_init(void){
+
+	//Set alarm button:
+	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_SET_BASE, 0xf);
+	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE, 0x0);
+	alt_irq_register(BTN_SET_IRQ, BTN_SET_BASE, btn_set_respond);
+
 	//Up button:
 	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_UP_BASE, 0xf);
 	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, 0x0);
 	alt_irq_register(BTN_UP_IRQ, BTN_UP_BASE, btn_up_respond);
 
 	//Down button:
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_DOWN_BASE, 0xf);
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, 0x0);
-	alt_irq_register(BTN_DOWN_IRQ, BTN_DOWN_BASE, btn_down_respond);
+//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_DOWN_BASE, 0xf);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, 0x0);
+//	alt_irq_register(BTN_DOWN_IRQ, BTN_DOWN_BASE, btn_down_respond);
 
-	//Set alarm button:
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_SET_ALARM_BASE, 0xf);
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_ALARM_BASE, 0x0);
-	alt_irq_register(BTN_SET_ALARM_IRQ, BTN_SET_ALARM_BASE, btn_set_alarm_respond);
+//	//Right button:
+//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_RIGHT_BASE, 0xf);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_RIGHT_BASE, 0x0);
+//	alt_irq_register(BTN_RIGHT_IRQ, BTN_RIGHT_BASE, btn_right_respond);
+//
+//
+//	//Left button:
+//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_LEFT_BASE, 0xf);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_LEFT_BASE, 0x0);
+//	alt_irq_register(BTN_LEFT_IRQ, BTN_LEFT_BASE, btn_left_respond);
 
-	//Set clock button:
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_SET_CLOCK_BASE, 0xf);
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_CLOCK_BASE, 0x0);
-	alt_irq_register(BTN_SET_CLOCK_IRQ, BTN_SET_CLOCK_BASE, btn_set_clock_respond);
 }
 
 /**
- * Handler for timer interrupt.
+ * Set values to the correct output.
  */
-static void respond(void* context){
-	//*timer_base_ptr = 0;
-	IOWR_ALTERA_AVALON_TIMER_STATUS(timer_base_ptr, 0x0);
-	add_second();
+int set_value(unsigned short value, volatile unsigned char* seg1, volatile unsigned char* seg0)
+{
+	*seg1 = (unsigned char) value / 10;
+	*seg0 = (unsigned char) value % 10;
 
-	set_value(hour[0], s1_ptr, s0_ptr);
-	set_value(hour[1], m1_ptr, m0_ptr);
-	set_value(hour[2], h1_ptr, h0_ptr);
-
-	display_hour();
+	return 0;
 }
-
-/**
- * Timer init
- */
-static void timer_init(void){
-	//Start the values for the timer interrupt.
-	IOWR_ALTERA_AVALON_TIMER_CONTROL(timer_base_ptr, ALTERA_AVALON_TIMER_CONTROL_ITO_MSK
-	        | ALTERA_AVALON_TIMER_CONTROL_START_MSK);
-	//Init the handler for the timer interrupt.
-	alt_irq_register(TIMER_IRQ, TIMER_BASE /*timer_base_ptr*/, respond);
-}
-
 
 /**
  * Update the value of a specific display
  */
 void add_second()
 {
+//	if (sel == 0) {
 	// Add a second
 	hour[0]++;
 
@@ -222,6 +344,45 @@ void display_hour()
 									   *s1_ptr, *s0_ptr);
 }
 
+/**
+ * Handler for timer interrupt.
+ */
+static void timer_respond(void* context){
+
+	/* Acknowledge interrupt by clearing status register */
+	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0x0);
+
+	//	IOWR_ALTERA_AVALON_TIMER_STATUS(timer_base_ptr, 0x0);
+//	clock_pressed = FALSE;
+	set_pressed = FALSE;
+	ud_buttons_en = FALSE;
+
+	alt_irq_disable(BTN_UP_IRQ);
+	alt_irq_disable(BTN_DOWN_IRQ);
+
+	add_second();
+
+	set_value(hour[0], s1_ptr, s0_ptr);
+	set_value(hour[1], m1_ptr, m0_ptr);
+	set_value(hour[2], h1_ptr, h0_ptr);
+
+//	alt_irq_disable(BTN_UP_IRQ);
+//	alt_irq_disable(BTN_DOWN_IRQ);
+
+	display_hour();
+}
+
+/**
+ * Timer init
+ */
+static void timer_init(void){
+	//Start the values for the timer interrupt.
+	IOWR_ALTERA_AVALON_TIMER_CONTROL(timer_base_ptr, ALTERA_AVALON_TIMER_CONTROL_ITO_MSK
+	        | ALTERA_AVALON_TIMER_CONTROL_START_MSK);
+	//Init the handler for the timer interrupt.
+	alt_irq_register(TIMER_IRQ, TIMER_BASE /*timer_base_ptr*/, timer_respond);
+}
+
 void init_values()
 {
 	// Init all pointer in zero
@@ -236,40 +397,114 @@ void init_values()
 	*alarm_ptr = 0;
 }
 
-/**
- *
- */
-void set_value(unsigned short value, volatile unsigned char* seg1, volatile unsigned char* seg0)
-{
-	*seg1 = (unsigned char) value / 10;
-	*seg0 = (unsigned char) value % 10;
-}
-
-
 int main()
 { 
-  alt_putstr("Welcome to the Alarm Clock\n");
+	alt_putstr("Welcome to the Alarm Clock\n");
 
-  init_values();
+	if (first) {
+		init_values();
+		first = FALSE;
+	}
 
-  buttons_init();
+	buttons_init();
 
-  timer_init();
+	alt_irq_disable(BTN_UP_IRQ);
+	alt_irq_disable(BTN_DOWN_IRQ);
 
+	// Timer interrupt
+	timer_init();
 
-  /*while (true)
-  {
-	  // Timer interrupt
+	while (TRUE)
+	{
 
-	  add_second();
+		if (!ud_buttons_en && set_pressed) {
+			alt_irq_enable(BTN_UP_IRQ);
+			alt_irq_enable(BTN_DOWN_IRQ);
+			ud_buttons_en = TRUE;
+		}
 
-	  set_value(hour[0], s1_ptr, s0_ptr);
-	  set_value(hour[1], m1_ptr, m0_ptr);
-	  set_value(hour[2], h1_ptr, h0_ptr);
+//		changevariable (*swc_sel, 1);
+		if (up_pressed) {
+			if (*swc_sel == 0) {
+				if (hour[1]<60)
+					hour[1]++;
+				else
+					hour[1] = 0;
+			} else {
+				if (alarm[1]<60)
+					alarm[1]++;
+				else
+					alarm[1] = 0;
+			}
+		}
 
-	  display_hour();
+		//		if (down_pressed){
+		//			if (hour[pos]>0)
+		//				hour[pos]--;
+		//			else
+		//				hour[pos] = 59;
+		//		}
+//			}
+		//		if (down_pressed){
+		//			if (alarm[pos]>0)
+		//				alarm[pos]--;
+		//			else
+		//				alarm[pos] = 59;
+		//		}
+//			}
 
-  }*/
+//		alt_printf("Changing %s\n", *swc_sel == 0 ? "Time" : "Alarm");
+//
+//			if (up_pressed) {
+//				if (this_sel == 0) {
+//					if (hour[1]<60)
+//						hour[1]++;
+//					else
+//						hour[1] = 0;
+//		//				set_value(hour[1], m1_ptr, m0_ptr);
+//		//				alt_putstr("Hour changed\n");
+//				} else {
+//					if (alarm[1]<60)
+//						alarm[1]++;
+//					else
+//						alarm[1] = 0;
+//				}
+//			}
+//
+//			if (down_pressed) {
+//				if (this_sel == 0) {
+//					if (hour[1]>0)
+//						hour[1]--;
+//					else
+//						hour[1] = 59;
+//				}
+//	//				set_value(hour[1], m1_ptr, m0_ptr);
+//	//				alt_putstr("Hour changed\n");
+//			}
 
-  return 0;
+//			if (this_sel == 0) {
+//
+//
+//				if (down_pressed) {
+//					if (hour[1]>0)
+//						hour[1]--;
+//					else
+//						hour[1] = 59;
+//	//				set_value(hour[1], m1_ptr, m0_ptr);
+//	//				alt_putstr("Hour changed\n");
+//				}
+//			} else {
+//				alarm[1] = 0;
+//			}
+
+		up_pressed = FALSE;
+		down_pressed = FALSE;
+		set_pressed = FALSE;
+		button_pressed = FALSE;
+
+		display_hour();
+	}
+
+	return 0;
 }
+

@@ -22,13 +22,13 @@
 <td width="20%" bgcolor="#77BBFF">BSP Version:</td><td>default</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>07/11/2020 07:15:07 PM</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated On:</td><td>Nov 9, 2020 3:38:09 PM</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1604798107788</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Timestamp:</td><td>1604957889313</td>
 </tr>
 <tr mode="wrap">
-<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>C:\Users\Edgar\Documents\Introduccion_Embebidos\back-up-project2\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</td>
+<td width="20%" bgcolor="#77BBFF">BSP Generated Location:</td><td>D:\Work_Files\Quartus_Files\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</td>
 </tr>
 </table>
 <br>
@@ -38,10 +38,13 @@
 <th align="left" width="20%">Slave Descriptor</th><th align="left" width="40%">Address Range</th><th align="left" width="20%">Size</th><th align="left" width="20%">Attributes</th>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>TIMER</td><td>0x000040C0 - 0x000040DF</td><td>32</td><td class="listing">timer</td>
+<td>TIMER</td><td>0x000040E0 - 0x000040FF</td><td>32</td><td class="listing">timer</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>BTN_SET_CLOCK</td><td>0x000040A0 - 0x000040AF</td><td>16</td><td class="listing">&nbsp;</td>
+<td>SWC_ALARM</td><td>0x000040D0 - 0x000040DF</td><td>16</td><td class="listing">&nbsp;</td>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>SWC_SEL</td><td>0x000040C0 - 0x000040CF</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>BTN_DOWN</td><td>0x00004090 - 0x0000409F</td><td>16</td><td class="listing">&nbsp;</td>
@@ -50,7 +53,7 @@
 <td>BTN_UP</td><td>0x00004080 - 0x0000408F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>BTN_SET_ALARM</td><td>0x00004070 - 0x0000407F</td><td>16</td><td class="listing">&nbsp;</td>
+<td>BTN_SET</td><td>0x00004070 - 0x0000407F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>ALARM</td><td>0x00004060 - 0x0000406F</td><td>16</td><td class="listing">&nbsp;</td>
@@ -74,7 +77,7 @@
 <td>H1</td><td>0x00004000 - 0x0000400F</td><td>16</td><td class="listing">&nbsp;</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
-<td>UART</td><td>0x00003148 - 0x0000314F</td><td>8</td><td class="listing">printable</td>
+<td>UART</td><td>0x00003108 - 0x0000310F</td><td>8</td><td class="listing">printable</td>
 </tr>
 <tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
 <td>RAM</td><td>0x00001000 - 0x00001FFF</td><td>4096</td><td class="listing">memory</td>
@@ -114,6 +117,17 @@
 <td>.stack</td><td>RAM</td>
 </tr>
 </table>
+<h3>Drivers</h3>
+<table border="1" bgcolor="#FFFFCC" width="90%">
+<tr bgcolor="#77BBFF" mode="wrap">
+<th align="left" width="15%">Module Name</th><th align="left" width="40%">Driver</th><th align="left" width="15%">Version</th>
+</tr>
+<tr mode="wrap" STYLE="display: 'block'; font-family: 'courier'; color: '#000000'; font-weight: '500'; font-size: '14'; margin-top: '10pt'; text-align: 'left'">
+<td>TIMER</td><td>none</td><td></td>
+</tr>
+</table>
+<br>
+<br>
 <h3>Settings</h3>
 <table border="1" bgcolor="#FFFFCC" width="60%">
 <tr bgcolor="#77BBFF">

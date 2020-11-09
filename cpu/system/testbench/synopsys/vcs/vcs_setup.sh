@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2020.11.06.14:17:21
+# ACDS 18.1 625 win32 2020.11.09.15:33:50
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,12 +94,12 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2020.11.06.14:17:21
+# ACDS 18.1 625 win32 2020.11.09.15:33:50
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="system_tb"
 QSYS_SIMDIR="./../../"
-QUARTUS_INSTALL_DIR="C:/intelfpga_lite/18.1/quartus/"
+QUARTUS_INSTALL_DIR="D:/intelfpga_lite/18.1/quartus/"
 SKIP_FILE_COPY=0
 SKIP_SIM=0
 USER_DEFINED_ELAB_OPTIONS=""
@@ -188,6 +188,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/system_tb/simulation/submodules/system_mm_interconnect_0.v \
   $QSYS_SIMDIR/system_tb/simulation/submodules/system_UART.v \
   $QSYS_SIMDIR/system_tb/simulation/submodules/system_TIMER.v \
+  $QSYS_SIMDIR/system_tb/simulation/submodules/system_SWC_ALARM.v \
   $QSYS_SIMDIR/system_tb/simulation/submodules/system_RAM.v \
   $QSYS_SIMDIR/system_tb/simulation/submodules/system_H0.v \
   $QSYS_SIMDIR/system_tb/simulation/submodules/system_CPU.v \

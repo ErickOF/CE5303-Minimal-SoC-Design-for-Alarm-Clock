@@ -35,6 +35,7 @@ DEFINE irq_mapper                            ./libraries/irq_mapper/
 DEFINE mm_interconnect_0                     ./libraries/mm_interconnect_0/                    
 DEFINE UART                                  ./libraries/UART/                                 
 DEFINE TIMER                                 ./libraries/TIMER/                                
+DEFINE SWC_ALARM                             ./libraries/SWC_ALARM/                            
 DEFINE RAM                                   ./libraries/RAM/                                  
 DEFINE H0                                    ./libraries/H0/                                   
 DEFINE CPU                                   ./libraries/CPU/                                  

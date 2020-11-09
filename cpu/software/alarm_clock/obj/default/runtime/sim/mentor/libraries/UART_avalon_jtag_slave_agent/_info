@@ -7,52 +7,52 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/Users/Edgar/Documents/Introduccion_Embebidos/Project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
+Z0 dD:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 valtera_merlin_burst_uncompressor
-Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1604801040
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1604958103
 !i10b 1
 !s100 f1?Rb<=9U?R9LJoHl;7>T3
-II@Fek_LO3C5GKK^^`;R5=1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+I7H6>MlYPnJ3hmfzFb:zmf3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 altera_merlin_burst_uncompressor_sv_unit
 S1
-Z3 dC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
-Z4 w1604693839
-8C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
-FC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
+R0
+Z4 w1604957627
+8D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
+FD:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv
 L0 40
 Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1604801040.000000
-!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv|
-!s90 -reportprogress|300|-sv|C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv|-L|altera_common_sv_packages|-work|UART_avalon_jtag_slave_agent|
+Z6 !s108 1604958103.000000
+!s107 D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv|
+!s90 -reportprogress|300|-sv|D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_burst_uncompressor.sv|-L|altera_common_sv_packages|-work|UART_avalon_jtag_slave_agent|
 !i113 1
 Z7 o-sv -L altera_common_sv_packages -work UART_avalon_jtag_slave_agent
 Z8 tCvgOpt 0
 valtera_merlin_slave_agent
-R0
 R1
+R2
 !i10b 1
 !s100 ePZN1d?B062J`OBb?blff3
-IS]G^:4F>HOX2fDf`>e:_D2
-R2
+IFz1a;M@=jbAXbNj5eNS4^1
+R3
 !s105 altera_merlin_slave_agent_sv_unit
 S1
-R3
+R0
 R4
-8C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv
-FC:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv
+8D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv
+FD:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv
 L0 34
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv|
-!s90 -reportprogress|300|-sv|C:/Users/Edgar/Documents/Introduccion_Embebidos/back-up-project2/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv|-L|altera_common_sv_packages|-work|UART_avalon_jtag_slave_agent|
+!s107 D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv|
+!s90 -reportprogress|300|-sv|D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_merlin_slave_agent.sv|-L|altera_common_sv_packages|-work|UART_avalon_jtag_slave_agent|
 !i113 1
 R7
 R8

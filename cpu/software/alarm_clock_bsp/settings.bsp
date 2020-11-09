@@ -2,9 +2,9 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>07/11/2020 07:15:07 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1604798107788</BspGeneratedUnixTimeStamp>
-        <BspGeneratedLocation>C:\Users\Edgar\Documents\Introduccion_Embebidos\back-up-project2\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</BspGeneratedLocation>
+        <BspGeneratedTimeStamp>Nov 9, 2020 3:38:09 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1604957889313</BspGeneratedUnixTimeStamp>
+        <BspGeneratedLocation>D:\Work_Files\Quartus_Files\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
@@ -906,7 +906,7 @@
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>UART</slaveDescriptor>
-                <addressRange>0x00003148 - 0x0000314F</addressRange>
+                <addressRange>0x00003108 - 0x0000310F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
@@ -953,7 +953,7 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>BTN_SET_ALARM</slaveDescriptor>
+                <slaveDescriptor>BTN_SET</slaveDescriptor>
                 <addressRange>0x00004070 - 0x0000407F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
@@ -971,14 +971,20 @@
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>BTN_SET_CLOCK</slaveDescriptor>
-                <addressRange>0x000040A0 - 0x000040AF</addressRange>
+                <slaveDescriptor>SWC_SEL</slaveDescriptor>
+                <addressRange>0x000040C0 - 0x000040CF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>SWC_ALARM</slaveDescriptor>
+                <addressRange>0x000040D0 - 0x000040DF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>TIMER</slaveDescriptor>
-                <addressRange>0x000040C0 - 0x000040DF</addressRange>
+                <addressRange>0x000040E0 - 0x000040FF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>
@@ -1006,4 +1012,8 @@
                 <sectionName>.stack</sectionName>
                 <regionName>RAM</regionName>
         </LinkerSection>
+        <DriverPackageInfo>
+                <name>none</name>
+                <moduleName>TIMER</moduleName>
+        </DriverPackageInfo>
 </sch:Settings>

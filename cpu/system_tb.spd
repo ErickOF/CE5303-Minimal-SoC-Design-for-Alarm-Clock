@@ -194,6 +194,10 @@
    type="VERILOG"
    library="TIMER" />
  <file
+   path="system/testbench/system_tb/simulation/submodules/system_SWC_ALARM.v"
+   type="VERILOG"
+   library="SWC_ALARM" />
+ <file
    path="system/testbench/system_tb/simulation/submodules/system_RAM.hex"
    type="HEX"
    library="RAM" />

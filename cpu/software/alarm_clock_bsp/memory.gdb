@@ -3,7 +3,7 @@
 # Machine generated for CPU 'CPU' in SOPC Builder design 'system'
 # SOPC Builder design path: ../../system.sopcinfo
 #
-# Generated: Fri Nov 06 14:19:14 CST 2020
+# Generated: Mon Nov 09 09:32:42 CST 2020
 
 # DO NOT MODIFY THIS FILE
 #
