@@ -3,7 +3,7 @@
 # Machine generated for CPU 'CPU' in SOPC Builder design 'system'
 # SOPC Builder design path: ../../system.sopcinfo
 #
-# Generated: Mon Nov 09 09:32:42 CST 2020
+# Generated: Mon Nov 09 23:18:21 CST 2020
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,4 +47,4 @@
 # by allowing GDB to cache memory contents on the host.
 
 # RAM
-memory 0x1000 0x2000 cache
+memory 0x2000 0x4000 cache

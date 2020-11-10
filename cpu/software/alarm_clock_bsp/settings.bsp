@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Nov 9, 2020 3:38:09 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1604957889313</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Nov 9, 2020 11:18:19 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1604985499404</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\Work_Files\Quartus_Files\CE5303-Minimal-SoC-Design-for-Alarm-Clock\cpu\software\alarm_clock_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\system.sopcinfo</SopcDesignFile>
@@ -900,91 +900,91 @@
         </Setting>
         <MemoryMap>
                 <slaveDescriptor>RAM</slaveDescriptor>
-                <addressRange>0x00001000 - 0x00001FFF</addressRange>
-                <addressSpan>4096</addressSpan>
+                <addressRange>0x00002000 - 0x00003FFF</addressRange>
+                <addressSpan>8192</addressSpan>
                 <attributes>memory</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>UART</slaveDescriptor>
-                <addressRange>0x00003108 - 0x0000310F</addressRange>
+                <addressRange>0x000050E8 - 0x000050EF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>H1</slaveDescriptor>
-                <addressRange>0x00004000 - 0x0000400F</addressRange>
+                <addressRange>0x00006000 - 0x0000600F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>H0</slaveDescriptor>
-                <addressRange>0x00004010 - 0x0000401F</addressRange>
+                <addressRange>0x00006010 - 0x0000601F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>M1</slaveDescriptor>
-                <addressRange>0x00004020 - 0x0000402F</addressRange>
+                <addressRange>0x00006030 - 0x0000603F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>M0</slaveDescriptor>
-                <addressRange>0x00004030 - 0x0000403F</addressRange>
+                <addressRange>0x00006040 - 0x0000604F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>S1</slaveDescriptor>
-                <addressRange>0x00004040 - 0x0000404F</addressRange>
+                <addressRange>0x00006050 - 0x0000605F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>S0</slaveDescriptor>
-                <addressRange>0x00004050 - 0x0000405F</addressRange>
+                <addressRange>0x00006060 - 0x0000606F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>ALARM</slaveDescriptor>
-                <addressRange>0x00004060 - 0x0000406F</addressRange>
+                <addressRange>0x00006070 - 0x0000607F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>BTN_SET</slaveDescriptor>
-                <addressRange>0x00004070 - 0x0000407F</addressRange>
+                <addressRange>0x00006080 - 0x0000608F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>BTN_UP</slaveDescriptor>
-                <addressRange>0x00004080 - 0x0000408F</addressRange>
+                <addressRange>0x00006090 - 0x0000609F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>BTN_DOWN</slaveDescriptor>
-                <addressRange>0x00004090 - 0x0000409F</addressRange>
+                <addressRange>0x000060A0 - 0x000060AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SWC_SEL</slaveDescriptor>
-                <addressRange>0x000040C0 - 0x000040CF</addressRange>
+                <addressRange>0x000060B0 - 0x000060BF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>SWC_ALARM</slaveDescriptor>
-                <addressRange>0x000040D0 - 0x000040DF</addressRange>
+                <addressRange>0x000060C0 - 0x000060CF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>TIMER</slaveDescriptor>
-                <addressRange>0x000040E0 - 0x000040FF</addressRange>
+                <addressRange>0x000060E0 - 0x000060FF</addressRange>
                 <addressSpan>32</addressSpan>
                 <attributes>timer</attributes>
         </MemoryMap>

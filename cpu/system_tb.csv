@@ -1,12 +1,12 @@
-# system info system_tb on 2020.11.09.15:33:48
+# system info system_tb on 2020.11.09.23:17:42
 system_info:
 name,value
 DEVICE,5CEBA2F17A7
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1604957584
+GENERATION_ID,1604985424
 #
 #
-# Files generated for system_tb on 2020.11.09.15:33:48
+# Files generated for system_tb on 2020.11.09.23:17:42
 files:
 filepath,kind,attributes,module,is_top
 system/testbench/system_tb/simulation/system_tb.v,VERILOG,,system_tb,true

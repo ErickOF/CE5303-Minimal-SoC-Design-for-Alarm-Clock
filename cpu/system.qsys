@@ -26,7 +26,7 @@
    {
       datum baseAddress
       {
-         value = "16480";
+         value = "24688";
          type = "String";
       }
    }
@@ -55,7 +55,7 @@
    {
       datum baseAddress
       {
-         value = "16528";
+         value = "24736";
          type = "String";
       }
    }
@@ -76,7 +76,7 @@
    {
       datum baseAddress
       {
-         value = "16496";
+         value = "24704";
          type = "String";
       }
    }
@@ -97,7 +97,7 @@
    {
       datum baseAddress
       {
-         value = "16512";
+         value = "24720";
          type = "String";
       }
    }
@@ -131,7 +131,7 @@
    {
       datum baseAddress
       {
-         value = "10240";
+         value = "18432";
          type = "String";
       }
    }
@@ -152,7 +152,7 @@
    {
       datum baseAddress
       {
-         value = "16400";
+         value = "24592";
          type = "String";
       }
    }
@@ -173,7 +173,7 @@
    {
       datum baseAddress
       {
-         value = "16384";
+         value = "24576";
          type = "String";
       }
    }
@@ -194,7 +194,7 @@
    {
       datum baseAddress
       {
-         value = "16432";
+         value = "24640";
          type = "String";
       }
    }
@@ -215,7 +215,7 @@
    {
       datum baseAddress
       {
-         value = "16416";
+         value = "24624";
          type = "String";
       }
    }
@@ -236,7 +236,7 @@
    {
       datum baseAddress
       {
-         value = "4096";
+         value = "8192";
          type = "String";
       }
    }
@@ -257,7 +257,7 @@
    {
       datum baseAddress
       {
-         value = "16464";
+         value = "24672";
          type = "String";
       }
    }
@@ -278,7 +278,7 @@
    {
       datum baseAddress
       {
-         value = "16448";
+         value = "24656";
          type = "String";
       }
    }
@@ -302,7 +302,7 @@
    {
       datum baseAddress
       {
-         value = "16592";
+         value = "24768";
          type = "String";
       }
    }
@@ -318,7 +318,7 @@
    {
       datum baseAddress
       {
-         value = "16576";
+         value = "24752";
          type = "String";
       }
    }
@@ -355,7 +355,7 @@
       }
       datum baseAddress
       {
-         value = "16608";
+         value = "24800";
          type = "String";
       }
    }
@@ -376,7 +376,7 @@
    {
       datum baseAddress
       {
-         value = "12552";
+         value = "20712";
          type = "String";
       }
    }
@@ -545,7 +545,7 @@
   <parameter name="dataAddrWidth" value="15" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3108' end='0x3110' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x4000' end='0x4010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x4010' end='0x4020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x4020' end='0x4030' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x4030' end='0x4040' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x4040' end='0x4050' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x4050' end='0x4060' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x4060' end='0x4070' type='altera_avalon_pio.s1' /><slave name='BTN_SET.s1' start='0x4070' end='0x4080' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x4080' end='0x4090' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x4090' end='0x40A0' type='altera_avalon_pio.s1' /><slave name='SWC_SEL.s1' start='0x40C0' end='0x40D0' type='altera_avalon_pio.s1' /><slave name='SWC_ALARM.s1' start='0x40D0' end='0x40E0' type='altera_avalon_pio.s1' /><slave name='TIMER.s1' start='0x40E0' end='0x4100' type='altera_avalon_timer.s1' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x50E8' end='0x50F0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /><slave name='H1.s1' start='0x6000' end='0x6010' type='altera_avalon_pio.s1' /><slave name='H0.s1' start='0x6010' end='0x6020' type='altera_avalon_pio.s1' /><slave name='M1.s1' start='0x6030' end='0x6040' type='altera_avalon_pio.s1' /><slave name='M0.s1' start='0x6040' end='0x6050' type='altera_avalon_pio.s1' /><slave name='S1.s1' start='0x6050' end='0x6060' type='altera_avalon_pio.s1' /><slave name='S0.s1' start='0x6060' end='0x6070' type='altera_avalon_pio.s1' /><slave name='ALARM.s1' start='0x6070' end='0x6080' type='altera_avalon_pio.s1' /><slave name='BTN_SET.s1' start='0x6080' end='0x6090' type='altera_avalon_pio.s1' /><slave name='BTN_UP.s1' start='0x6090' end='0x60A0' type='altera_avalon_pio.s1' /><slave name='BTN_DOWN.s1' start='0x60A0' end='0x60B0' type='altera_avalon_pio.s1' /><slave name='SWC_SEL.s1' start='0x60B0' end='0x60C0' type='altera_avalon_pio.s1' /><slave name='SWC_ALARM.s1' start='0x60C0' end='0x60D0' type='altera_avalon_pio.s1' /><slave name='TIMER.s1' start='0x60E0' end='0x6100' type='altera_avalon_timer.s1' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -583,8 +583,8 @@
   <parameter name="icache_size" value="4096" />
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
-  <parameter name="instAddrWidth" value="14" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x3108' end='0x3110' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="instAddrWidth" value="15" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x2000' end='0x4000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x4800' end='0x5000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='UART.avalon_jtag_slave' start='0x50E8' end='0x50F0' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -765,7 +765,7 @@
    version="18.1"
    enabled="1">
   <parameter name="allowInSystemMemoryContentEditor" value="false" />
-  <parameter name="autoInitializationFileName" value="system_RAM" />
+  <parameter name="autoInitializationFileName" value="$${FILENAME}_RAM" />
   <parameter name="blockType" value="AUTO" />
   <parameter name="copyInitFile" value="false" />
   <parameter name="dataWidth" value="32" />
@@ -779,7 +779,7 @@
   <parameter name="initMemContent" value="true" />
   <parameter name="initializationFileName" value="onchip_mem.hex" />
   <parameter name="instanceID" value="NONE" />
-  <parameter name="memorySize" value="4096" />
+  <parameter name="memorySize" value="8192" />
   <parameter name="readDuringWriteMode" value="DONT_CARE" />
   <parameter name="resetrequest_enabled" value="true" />
   <parameter name="simAllowMRAMContentsFile" value="false" />
@@ -880,7 +880,7 @@
    start="CPU.data_master"
    end="UART.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3108" />
+  <parameter name="baseAddress" value="0x50e8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -889,57 +889,57 @@
    start="CPU.data_master"
    end="CPU.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2800" />
+  <parameter name="baseAddress" value="0x4800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="RAM.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x1000" />
+  <parameter name="baseAddress" value="0x2000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="H1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4000" />
+  <parameter name="baseAddress" value="0x6000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="H0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4010" />
+  <parameter name="baseAddress" value="0x6010" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="M1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4020" />
+  <parameter name="baseAddress" value="0x6030" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="M0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4030" />
+  <parameter name="baseAddress" value="0x6040" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="S1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4040" />
+  <parameter name="baseAddress" value="0x6050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="S0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4050" />
+  <parameter name="baseAddress" value="0x6060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="ALARM.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4060" />
+  <parameter name="baseAddress" value="0x6070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="BTN_SET.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4070" />
+  <parameter name="baseAddress" value="0x6080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="BTN_UP.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4080" />
+  <parameter name="baseAddress" value="0x6090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -948,12 +948,12 @@
    start="CPU.data_master"
    end="BTN_DOWN.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x4090" />
+  <parameter name="baseAddress" value="0x60a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="SWC_SEL.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x40c0" />
+  <parameter name="baseAddress" value="0x60b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -962,12 +962,12 @@
    start="CPU.data_master"
    end="SWC_ALARM.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x40d0" />
+  <parameter name="baseAddress" value="0x60c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="TIMER.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x40e0" />
+  <parameter name="baseAddress" value="0x60e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -976,7 +976,7 @@
    start="CPU.instruction_master"
    end="UART.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3108" />
+  <parameter name="baseAddress" value="0x50e8" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -985,7 +985,7 @@
    start="CPU.instruction_master"
    end="CPU.debug_mem_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2800" />
+  <parameter name="baseAddress" value="0x4800" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -994,7 +994,7 @@
    start="CPU.instruction_master"
    end="RAM.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x1000" />
+  <parameter name="baseAddress" value="0x2000" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="18.1" start="CLK.clk" end="CPU.clk" />

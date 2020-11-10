@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dD:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 valtera_avalon_sc_fifo
-!s110 1604958103
+!s110 1604986933
 !i10b 1
 !s100 4mK@em][G=j]om3zJIhOc0
 Iz4k@GnTDW^eEV:dH4BmOS0
 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1604957627
+w1604985461
 8D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_sc_fifo.v
 FD:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_sc_fifo.v
 L0 21
@@ -23,7 +23,7 @@ OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1604958103.000000
+!s108 1604986933.000000
 !s107 D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_sc_fifo.v|
 !s90 -reportprogress|300|D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_avalon_sc_fifo.v|-work|UART_avalon_jtag_slave_agent_rsp_fifo|
 !i113 1
