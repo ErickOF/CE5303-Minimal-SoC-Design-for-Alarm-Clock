@@ -13,7 +13,7 @@ add wave -noupdate -expand -group Input -label ALARM_SWITCH /system_tb/system_in
 add wave -noupdate -expand -group Input -label SEL_SWITCH /system_tb/system_inst_swc_sel_bfm_conduit_export
 add wave -noupdate /system_tb/system_inst_alarm_export
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {15739526671 ps} 0}
+WaveRestoreCursors {{Cursor 1} {16743800373 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -29,4 +29,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {33603601500 ps}
+WaveRestoreZoom {0 ps} {19684633500 ps}

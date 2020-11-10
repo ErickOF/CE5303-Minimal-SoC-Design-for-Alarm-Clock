@@ -10,9 +10,7 @@ obj/default/hello_world_small.o: hello_world_small.c \
  ../alarm_clock_bsp//HAL/inc/sys/alt_llist.h \
  ../alarm_clock_bsp//HAL/inc/priv/alt_dev_llist.h \
  ../alarm_clock_bsp//HAL/inc/sys/alt_warning.h \
- ../alarm_clock_bsp//HAL/inc/priv/alt_legacy_irq.h \
- ../alarm_clock_bsp//HAL/inc/nios2.h \
- ../alarm_clock_bsp//HAL/inc/sys/alt_irq.h
+ ../alarm_clock_bsp//HAL/inc/nios2.h
 
 ../alarm_clock_bsp/system.h:
 
@@ -40,8 +38,4 @@ obj/default/hello_world_small.o: hello_world_small.c \
 
 ../alarm_clock_bsp//HAL/inc/sys/alt_warning.h:
 
-../alarm_clock_bsp//HAL/inc/priv/alt_legacy_irq.h:
-
 ../alarm_clock_bsp//HAL/inc/nios2.h:
-
-../alarm_clock_bsp//HAL/inc/sys/alt_irq.h:

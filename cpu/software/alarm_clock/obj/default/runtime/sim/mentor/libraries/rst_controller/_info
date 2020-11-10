@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dD:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 valtera_reset_controller
-Z1 !s110 1604986937
+Z1 !s110 1605038811
 !i10b 1
 !s100 z[H_hRO9gO=:^2E3_jWH03
 IF0@:2W1n4HLk_ZkCORaeQ1
@@ -23,12 +23,12 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1604986936.000000
+Z5 !s108 1605038811.000000
 !s107 D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v|
 !s90 -reportprogress|300|D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_controller.v|-work|rst_controller|
 !i113 1
-Z5 o-work rst_controller
-Z6 tCvgOpt 0
+Z6 o-work rst_controller
+Z7 tCvgOpt 0
 valtera_reset_synchronizer
 R1
 !i10b 1
@@ -44,9 +44,9 @@ R4
 r1
 !s85 0
 31
-!s108 1604986937.000000
+R5
 !s107 D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v|
 !s90 -reportprogress|300|D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/altera_reset_synchronizer.v|-work|rst_controller|
 !i113 1
-R5
 R6
+R7
