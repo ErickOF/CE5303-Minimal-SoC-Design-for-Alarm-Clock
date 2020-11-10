@@ -86,8 +86,6 @@
 #include "altera_avalon_timer_regs.h"
 #include "altera_avalon_pio_regs.h"
 #include "altera_avalon_timer.h"
-//#include "priv/alt_legacy_irq.h"
-//#include "sys/alt_irq.h"
 #include <errno.h>
 
 #include "nios2.h"
@@ -209,24 +207,12 @@ static ALT_INLINE void ALT_ALWAYS_INLINE
  * application source files, use "sys/alt_irq.h" instead to access the proper
  * public API.
  */
-
 #ifndef NIOS2_EIC_PRESENT
 
 /*
  * alt_irq_register() can be used to register an interrupt handler. If the
  * function is succesful, then the requested interrupt will be enabled upon
  * return.
- */
-/*
- * The header, alt_irq_entry.h, contains the exception entry point, and is
- * provided by the processor component. It is included here, so that the code
- * will be added to the executable only if alt_irq_register() is present, i.e.
- * if no interrupts are registered - there's no need to provide any
- * interrupt handling.
- */
-/*
- * This file pulls in the IRQ entry assembler and C code, which is only
- * required if there are any interruptes in the system.
  */
 
 __asm__( "\n\t.globl alt_irq_entry" );
