@@ -455,13 +455,8 @@ static void btn_set_respond(void* context, alt_u32 id) {
 	*alarm_ptr = (unsigned char) 0;
 
 	//logica del boton set_alarm.
-//	unsigned int *button_action;
-//	__builtin_ldwio (((void *)(((alt_u8*)BTN_SET_BASE) + ((3) * (4)))));
-//	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE);
-//	*button_action = (int *)((alt_u8*)BTN_SET_BASE) + ((3) * (4));
 
 	/* Acknowledge interrupt by clearing edge capture register */
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE, *button_action);
 	*(set_clock + 12) = 0;
 
 	if (!set_pressed) {
@@ -497,11 +492,7 @@ static void btn_set_respond(void* context, alt_u32 id) {
 static void btn_up_respond(void* context, alt_u32 id){
 	//logica del boton up.
 
-//	unsigned int *button_action = (unsigned int*) context;
-//	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE);
-
 	/* Acknowledge interrupt by clearing edge capture register */
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, *button_action);
 	*(up_ptr + 12) = 0;
 
 	if (!up_pressed) {
@@ -518,12 +509,7 @@ static void btn_up_respond(void* context, alt_u32 id){
 static void btn_down_respond(void* context, alt_u32 id) {
 	//logica del boton down.
 
-//	unsigned int *button_action = (unsigned int*) context;
-//	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE);
-
 	/* Acknowledge interrupt by clearing edge capture register */
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, *button_action);
-
 	*(down_ptr + 12) = 0;
 
 	if (!down_pressed) {
@@ -544,22 +530,16 @@ static void buttons_init(void){
 
 	*(set_clock + 8) = 0x1;
 	*(set_clock + 12) = 0x0;
-//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_SET_BASE, 0x1);
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE, 0x0);
 	alt_irq_register(BTN_SET_IRQ, BTN_SET_BASE, btn_set_respond);
 
 	//Up button:
 	*(up_ptr + 8) = 0x1;
 	*(up_ptr + 12) = 0x0;
-//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_UP_BASE, 0x1);
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, 0x0);
 	alt_irq_register(BTN_UP_IRQ, BTN_UP_BASE, btn_up_respond);
 
 	//Down button:
 	*(down_ptr + 8) = 0x1;
 	*(down_ptr + 12) = 0x0;
-//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_DOWN_BASE, 0x1);
-//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, 0x0);
 	alt_irq_register(BTN_DOWN_IRQ, BTN_DOWN_BASE, btn_down_respond);
 }
 
@@ -619,7 +599,6 @@ static void timer_respond(void* context){
 	alt_irq_disable(BTN_DOWN_IRQ);
 
 	/* Acknowledge interrupt by clearing status register */
-//	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0x0);
 	*timer_base_ptr = 0x0;
 
 	add_second();
@@ -643,8 +622,6 @@ static void timer_respond(void* context){
  */
 static void timer_init(void){
 	//Start the values for the timer interrupt.
-//	IOWR_ALTERA_AVALON_TIMER_CONTROL(timer_base_ptr, ALTERA_AVALON_TIMER_CONTROL_ITO_MSK
-//	        | ALTERA_AVALON_TIMER_CONTROL_START_MSK);
 	*(timer_base_ptr + 4) = 0x1 | 0x4;
 	//Init the handler for the timer interrupt.
 	alt_irq_register(TIMER_IRQ, TIMER_BASE /*timer_base_ptr*/, timer_respond);
