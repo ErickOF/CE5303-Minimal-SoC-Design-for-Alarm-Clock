@@ -78,17 +78,9 @@
  *
  */
 
-
 #include "system.h"
 #include "alt_types.h"
 #include "sys/alt_stdio.h"
-
-#include "altera_avalon_timer_regs.h"
-#include "altera_avalon_pio_regs.h"
-#include "altera_avalon_timer.h"
-#include <errno.h>
-
-#include "nios2.h"
 
 
 #define TRUE 1
@@ -98,13 +90,12 @@
 #define MIN 3
 #define HR 4
 
-#ifndef __ALT_IRQ_H__
-#define __ALT_IRQ_H__
+volatile alt_u32 alt_irq_active    = 0;
 
 /*
  * Number of available interrupts in internal interrupt controller.
  */
-#define ALT_NIRQ NIOS2_NIRQ
+#define ALT_NIRQ 32 //NIOS2_NIRQ
 
 /*
  * Used by alt_irq_disable_all() and alt_irq_enable_all().
@@ -112,246 +103,7 @@
 typedef int alt_irq_context;
 
 /* ISR Prototype */
-#ifdef ALT_ENHANCED_INTERRUPT_API_PRESENT
-typedef void (*alt_isr_func)(void* isr_context);
-#else
 typedef void (*alt_isr_func)(void* isr_context, alt_u32 id);
-#endif
-
-/*
- * alt_irq_disable_all()
- *
- * This routine inhibits all interrupts by negating the status register PIE
- * bit. It returns the previous contents of the CPU status register (IRQ
- * context) which can be used to restore the status register PIE bit to its
- * state before this routine was called.
- */
-static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
-       alt_irq_disable_all (void)
-{
-  alt_irq_context context;
-
-  NIOS2_READ_STATUS (context);
-
-  NIOS2_WRITE_STATUS (context & ~NIOS2_STATUS_PIE_MSK);
-
-  return context;
-}
-
-/*
- * alt_irq_enable_all()
- *
- * Enable all interrupts that were previously disabled by alt_irq_disable_all()
- *
- * This routine accepts a context to restore the CPU status register PIE bit
- * to the state prior to a call to alt_irq_disable_all().
-
- * In the case of nested calls to alt_irq_disable_all()/alt_irq_enable_all(),
- * this means that alt_irq_enable_all() does not necessarily re-enable
- * interrupts.
- *
- * This routine will perform a read-modify-write sequence to restore only
- * status.PIE if the processor is configured with options that add additional
- * writeable status register bits. These include the MMU, MPU, the enhanced
- * interrupt controller port, and shadow registers. Otherwise, as a performance
- * enhancement, status is overwritten with the prior context.
- */
-static ALT_INLINE void ALT_ALWAYS_INLINE
-       alt_irq_enable_all (alt_irq_context context)
-{
-#if (NIOS2_NUM_OF_SHADOW_REG_SETS > 0) || (defined NIOS2_EIC_PRESENT) || \
-    (defined NIOS2_MMU_PRESENT) || (defined NIOS2_MPU_PRESENT)
-  alt_irq_context status;
-
-  NIOS2_READ_STATUS (status);
-
-  status &= ~NIOS2_STATUS_PIE_MSK;
-  status |= (context & NIOS2_STATUS_PIE_MSK);
-
-  NIOS2_WRITE_STATUS (status);
-#else
-  NIOS2_WRITE_STATUS (context);
-#endif
-}
-
-/*
- * The function alt_irq_init() is defined within the auto-generated file
- * alt_sys_init.c. This function calls the initilization macros for all
- * interrupt controllers in the system at config time, before any other
- * non-interrupt controller driver is initialized.
- *
- * The "base" parameter is ignored and only present for backwards-compatibility.
- * It is recommended that NULL is passed in for the "base" parameter.
- */
-extern void alt_irq_init (const void* base);
-
-/*
- * alt_irq_cpu_enable_interrupts() enables the CPU to start taking interrupts.
- */
-static ALT_INLINE void ALT_ALWAYS_INLINE
-       alt_irq_cpu_enable_interrupts (void)
-{
-    NIOS2_WRITE_STATUS(NIOS2_STATUS_PIE_MSK
-#if defined(NIOS2_EIC_PRESENT) && (NIOS2_NUM_OF_SHADOW_REG_SETS > 0)
-    | NIOS2_STATUS_RSIE_MSK
-#endif
-      );
-}
-
-#ifndef __ALT_LEGACY_IRQ_H__
-#define __ALT_LEGACY_IRQ_H__
-
-/*
- * This file provides prototypes and inline implementations of certain routines
- * used by the legacy interrupt API. Do not include this in your driver or
- * application source files, use "sys/alt_irq.h" instead to access the proper
- * public API.
- */
-#ifndef NIOS2_EIC_PRESENT
-
-/*
- * alt_irq_register() can be used to register an interrupt handler. If the
- * function is succesful, then the requested interrupt will be enabled upon
- * return.
- */
-
-__asm__( "\n\t.globl alt_irq_entry" );
-
-__asm__( "\n\t.globl alt_irq_handler" );
-
-/*
- * The header, alt_irq_table.h contains a table describing which function
- * handles each interrupt.
- */
-
-#ifndef __ALT_IRQ_TABLE_H__
-#define __ALT_IRQ_TABLE_H__
-
-/*
- * Definition of a table describing each interrupt handler. The index into
- * the array is the interrupt id associated with the handler.
- *
- * When an interrupt occurs, the associated handler is called with
- * the argument stored in the context member.
- *
- * The table is physically created in alt_irq_handler.c
- */
-extern struct ALT_IRQ_HANDLER
-{
-#ifdef ALT_ENHANCED_INTERRUPT_API_PRESENT
-  void (*handler)(void*);
-#else
-  void (*handler)(void*, alt_u32);
-#endif
-  void *context;
-} alt_irq[ALT_NIRQ];
-
-#endif
-
-/*
- * alt_irq_register() can be used to register an interrupt handler. If the
- * function is succesful, then the requested interrupt will be enabled upon
- * return.
- */
-int alt_irq_register (alt_u32 id,
-					 void*   context,
-					 alt_isr_func handler);
-
-/*
- * alt_irq_disable() disables the individual interrupt indicated by "id".
- */
-static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_disable (alt_u32 id)
-{
-  alt_irq_context  status;
-  extern volatile alt_u32 alt_irq_active;
-
-  status = alt_irq_disable_all ();
-
-  alt_irq_active &= ~(1 << id);
-  NIOS2_WRITE_IENABLE (alt_irq_active);
-
-  alt_irq_enable_all(status);
-
-  return 0;
-}
-
-/*
- * alt_irq_enable() enables the individual interrupt indicated by "id".
- */
-static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enable (alt_u32 id)
-{
-  alt_irq_context  status;
-  extern volatile alt_u32 alt_irq_active;
-
-  status = alt_irq_disable_all ();
-
-  alt_irq_active |= (1 << id);
-  NIOS2_WRITE_IENABLE (alt_irq_active);
-
-  alt_irq_enable_all(status);
-
-  return 0;
-}
-
-/*
- * alt_irq_handler() is called to register an interrupt handler. If the
- * function is succesful, then the requested interrupt will be enabled upon
- * return. Registering a NULL handler will disable the interrupt.
- *
- * The return value is 0 if the interrupt handler was registered and the
- * interrupt was enabled, otherwise it is negative.
- */
-int alt_irq_register (alt_u32 id,
-                      void* context,
-                      alt_isr_func handler)
-{
-  int rc = -EINVAL;
-  alt_irq_context status;
-
-  if (id < ALT_NIRQ)
-  {
-    /*
-     * interrupts are disabled while the handler tables are updated to ensure
-     * that an interrupt doesn't occur while the tables are in an inconsistant
-     * state.
-     */
-
-    status = alt_irq_disable_all ();
-
-    alt_irq[id].handler = handler;
-    alt_irq[id].context = context;
-
-    rc = (handler) ? alt_irq_enable (id): alt_irq_disable (id);
-
-    alt_irq_enable_all(status);
-  }
-  return rc;
-}
-
-#endif /* NIOS2_EIC_PRESENT */
-
-#endif /* __ALT_LEGACY_IRQ_H__ */
-
-/*
- * alt_irq_pending() returns a bit list of the current pending interrupts.
- * This is used by alt_irq_handler() to determine which registered interrupt
- * handlers should be called.
- *
- * This routine is only available for the Nios II internal interrupt
- * controller.
- */
-#ifndef NIOS2_EIC_PRESENT
-static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_pending (void)
-{
-  alt_u32 active;
-
-  NIOS2_READ_IPENDING (active);
-
-  return active;
-}
-#endif
-
-#endif /* __ALT_IRQ_H__ */
 
 
 // Pointers to interact with the displays
@@ -384,12 +136,314 @@ short is_activated = FALSE;
 short time_unit_sel = SEC;
 unsigned char irqtimer_stall = FALSE;
 unsigned char first = TRUE;
-//unsigned char all_botons_en = FALSE;
 unsigned char ud_buttons_en = FALSE;
 unsigned char up_pressed = FALSE;
 unsigned char down_pressed = FALSE;
 unsigned char set_pressed = FALSE;
 unsigned char button_pressed = FALSE;
+
+
+/*
+ * alt_irq_disable_all()
+ *
+ * This routine inhibits all interrupts by negating the status register PIE
+ * bit. It returns the previous contents of the CPU status register (IRQ
+ * context) which can be used to restore the status register PIE bit to its
+ * state before this routine was called.
+ */
+static ALT_INLINE alt_irq_context ALT_ALWAYS_INLINE
+       alt_irq_disable_all (void)
+{
+  alt_irq_context context;
+
+  do { context = __builtin_rdctl(0); } while (0);
+
+  do { __builtin_wrctl(0, context & ~(0x00000001)); } while (0);
+
+  return context;
+}
+
+/*
+ * alt_irq_enable_all()
+ *
+ * Enable all interrupts that were previously disabled by alt_irq_disable_all()
+ *
+ * This routine accepts a context to restore the CPU status register PIE bit
+ * to the state prior to a call to alt_irq_disable_all().
+
+ * In the case of nested calls to alt_irq_disable_all()/alt_irq_enable_all(),
+ * this means that alt_irq_enable_all() does not necessarily re-enable
+ * interrupts.
+ *
+ * This routine will perform a read-modify-write sequence to restore only
+ * status.PIE if the processor is configured with options that add additional
+ * writeable status register bits. These include the MMU, MPU, the enhanced
+ * interrupt controller port, and shadow registers. Otherwise, as a performance
+ * enhancement, status is overwritten with the prior context.
+ */
+static ALT_INLINE void ALT_ALWAYS_INLINE
+       alt_irq_enable_all (alt_irq_context context)
+{
+	do { __builtin_wrctl(0, context); } while (0);
+}
+
+/*
+ * alt_irq_pending() returns a bit list of the current pending interrupts.
+ * This is used by irq_handler() to determine which registered interrupt
+ * handlers should be called.
+ *
+ * This routine is only available for the Nios II internal interrupt
+ * controller.
+ */
+static ALT_INLINE alt_u32 ALT_ALWAYS_INLINE alt_irq_pending (void)
+{
+  alt_u32 active;
+
+  do { active = __builtin_rdctl(4); } while (0);
+
+  return active;
+}
+
+/*
+The assembly language code below handles CPU exception
+processing. This code should not be modified; instead, the C
+language code in the function interrupt_handler() can be
+modified as needed for a given application.
+*/
+void the_exception (void) __attribute__ ((section(".exceptions")));
+void the_exception (void)
+/***************************************************************
+************
+Exceptions code. By giving the code a section attribute with the
+name
+".exceptions" we allow the linker program to locate this code at
+the proper exceptions vector address. This code calls the
+interrupt handler and later returns from the exception.
+****************************************************************
+************/
+{
+	asm ( ".set noat" ); // Magic, for the C compiler
+	asm ( ".set nobreak" ); // Magic, for the C compiler
+	asm ( "subi sp, sp, 128" );
+	asm ( "stw et, 96(sp)" );
+	asm ( "rdctl et, ctl4" );
+	asm ( "beq et, r0, SKIP_EA_DEC" ); // Interrupt is not external
+	asm ( "subi ea, ea, 4" ); /* Must decrement ea by one
+	instruction for external interrupts, so that the interrupted
+	instruction will be run */
+	asm ( "SKIP_EA_DEC:" );
+	asm ( "stw r1, 4(sp)" ); // Save all registers
+	asm ( "stw r2, 8(sp)" );
+	asm ( "stw r3, 12(sp)" );
+	asm ( "stw r4, 16(sp)" );
+	asm ( "stw r5, 20(sp)" );
+	asm ( "stw r6, 24(sp)" );
+	asm ( "stw r7, 28(sp)" );
+	asm ( "stw r8, 32(sp)" );
+	asm ( "stw r9, 36(sp)" );
+	asm ( "stw r10, 40(sp)" );
+	asm ( "stw r11, 44(sp)" );
+	asm ( "stw r12, 48(sp)" );
+	asm ( "stw r13, 52(sp)" );
+	asm ( "stw r14, 56(sp)" );
+	asm ( "stw r15, 60(sp)" );
+	asm ( "stw r16, 64(sp)" );
+	asm ( "stw r17, 68(sp)" );
+	asm ( "stw r18, 72(sp)" );
+	asm ( "stw r19, 76(sp)" );
+	asm ( "stw r20, 80(sp)" );
+	asm ( "stw r21, 84(sp)" );
+	asm ( "stw r22, 88(sp)" );
+	asm ( "stw r23, 92(sp)" );
+	asm ( "stw r25, 100(sp)" ); // r25 = bt (skip r24 et, because it is saved above)
+	asm ( "stw r26, 104(sp)" ); // r26 = gp
+	// skip r27 because it is sp, and there is no point in saving this
+	asm ( "stw r28, 112(sp)" ); // r28 = fp
+	asm ( "stw r29, 116(sp)" ); // r29 = ea
+	asm ( "stw r30, 120(sp)" ); // r30 = ba
+	asm ( "stw r31, 124(sp)" ); // r31 = ra
+	asm ( "addi fp, sp, 128" );
+	asm ( "call irq_handler" ); // Call the Clanguage interrupt handler
+	asm ( "ldw r1, 4(sp)" ); // Restore all registers
+	asm ( "ldw r2, 8(sp)" );
+	asm ( "ldw r3, 12(sp)" );
+	asm ( "ldw r4, 16(sp)" );
+	asm ( "ldw r5, 20(sp)" );
+	asm ( "ldw r6, 24(sp)" );
+	asm ( "ldw r7, 28(sp)" );
+	asm ( "ldw r8, 32(sp)" );
+	asm ( "ldw r9, 36(sp)" );
+	asm ( "ldw r10, 40(sp)" );
+	asm ( "ldw r11, 44(sp)" );
+	asm ( "ldw r12, 48(sp)" );
+	asm ( "ldw r13, 52(sp)" );
+	asm ( "ldw r14, 56(sp)" );
+	asm ( "ldw r15, 60(sp)" );
+	asm ( "ldw r16, 64(sp)" );
+	asm ( "ldw r17, 68(sp)" );
+	asm ( "ldw r18, 72(sp)" );
+	asm ( "ldw r19, 76(sp)" );
+	asm ( "ldw r20, 80(sp)" );
+	asm ( "ldw r21, 84(sp)" );
+	asm ( "ldw r22, 88(sp)" );
+	asm ( "ldw r23, 92(sp)" );
+	asm ( "ldw r24, 96(sp)" );
+	asm ( "ldw r25, 100(sp)" ); // r25 = bt
+	asm ( "ldw r26, 104(sp)" ); // r26 = gp
+	// skip r27 because it is sp, and we did not save this on the stack
+	asm ( "ldw r28, 112(sp)" ); // r28 = fp
+	asm ( "ldw r29, 116(sp)" ); // r29 = ea
+	asm ( "ldw r30, 120(sp)" ); // r30 = ba
+	asm ( "ldw r31, 124(sp)" ); // r31 = ra
+	asm ( "addi sp, sp, 128" );
+	asm ( "eret" );
+}
+
+/*
+ * A table describing each interrupt handler. The index into the array is the
+ * interrupt id associated with the handler.
+ *
+ * When an interrupt occurs, the associated handler is called with
+ * the argument stored in the context member.
+ */
+struct ALT_IRQ_HANDLER
+{
+  void (*handler)(void*, alt_u32);
+  void *context;
+} alt_irq[ALT_NIRQ];
+
+
+void irq_handler (void)
+{
+  alt_u32 active;
+  alt_u32 mask;
+  alt_u32 i;
+
+  /*
+   * Obtain from the interrupt controller a bit list of pending interrupts,
+   * and then process the highest priority interrupt. This process loops,
+   * loading the active interrupt list on each pass until alt_irq_pending()
+   * return zero.
+   *
+   * The maximum interrupt latency for the highest priority interrupt is
+   * reduced by finding out which interrupts are pending as late as possible.
+   * Consider the case where the high priority interupt is asserted during
+   * the interrupt entry sequence for a lower priority interrupt to see why
+   * this is the case.
+   */
+
+  active = alt_irq_pending ();
+
+  do
+  {
+    i = 0;
+    mask = 1;
+
+    /*
+     * Test each bit in turn looking for an active interrupt. Once one is
+     * found, the interrupt handler asigned by a call to alt_irq_register() is
+     * called to clear the interrupt condition.
+     */
+
+    do
+    {
+      if (active & mask)
+      {
+        alt_irq[i].handler(alt_irq[i].context, i);
+        break;
+      }
+      mask <<= 1;
+      i++;
+
+    } while (1);
+
+    active = alt_irq_pending ();
+
+  } while (active);
+}
+
+/*
+ * alt_irq_register() can be used to register an interrupt handler. If the
+ * function is succesful, then the requested interrupt will be enabled upon
+ * return.
+ */
+int alt_irq_register (alt_u32 id,
+					 void*   context,
+					 alt_isr_func handler);
+
+/*
+ * alt_irq_disable() disables the individual interrupt indicated by "id".
+ */
+static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_disable (alt_u32 id)
+{
+  alt_irq_context  status;
+
+  status = alt_irq_disable_all ();
+
+  alt_irq_active &= ~(1 << id);
+
+  do { __builtin_wrctl(3, alt_irq_active); } while (0);
+
+  alt_irq_enable_all(status);
+
+  return 0;
+}
+
+/*
+ * alt_irq_enable() enables the individual interrupt indicated by "id".
+ */
+static ALT_INLINE int ALT_ALWAYS_INLINE alt_irq_enable (alt_u32 id)
+{
+  alt_irq_context  status;
+
+  status = alt_irq_disable_all ();
+
+  alt_irq_active |= (1 << id);
+
+  do { __builtin_wrctl(3, alt_irq_active); } while (0);
+
+  alt_irq_enable_all(status);
+
+  return 0;
+}
+
+/*
+ * irq_handler() is called to register an interrupt handler. If the
+ * function is succesful, then the requested interrupt will be enabled upon
+ * return. Registering a NULL handler will disable the interrupt.
+ *
+ * The return value is 0 if the interrupt handler was registered and the
+ * interrupt was enabled, otherwise it is negative.
+ */
+int alt_irq_register (alt_u32 id,
+                      void* context,
+                      alt_isr_func handler)
+{
+  int rc = -22;
+  alt_irq_context status;
+
+  if (id < ALT_NIRQ)
+  {
+    /*
+     * interrupts are disabled while the handler tables are updated to ensure
+     * that an interrupt doesn't occur while the tables are in an inconsistant
+     * state.
+     */
+
+    status = alt_irq_disable_all ();
+
+    alt_irq[id].handler = handler;
+    alt_irq[id].context = context;
+
+    rc = (handler) ? alt_irq_enable (id): alt_irq_disable (id);
+
+    alt_irq_enable_all(status);
+  }
+  return rc;
+}
+
+/*********** THIS STARTS THE ALARM CODE *****************/
+
 
 /**
  * Handler for alarm set button interrupt.
@@ -401,11 +455,14 @@ static void btn_set_respond(void* context, alt_u32 id) {
 	*alarm_ptr = (unsigned char) 0;
 
 	//logica del boton set_alarm.
-	unsigned int *button_action = (unsigned int*) context;
-	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE);
+//	unsigned int *button_action;
+//	__builtin_ldwio (((void *)(((alt_u8*)BTN_SET_BASE) + ((3) * (4)))));
+//	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE);
+//	*button_action = (int *)((alt_u8*)BTN_SET_BASE) + ((3) * (4));
 
 	/* Acknowledge interrupt by clearing edge capture register */
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE, *button_action);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE, *button_action);
+	*(set_clock + 12) = 0;
 
 	if (!set_pressed) {
 		alt_putstr("Button set\n");
@@ -440,11 +497,12 @@ static void btn_set_respond(void* context, alt_u32 id) {
 static void btn_up_respond(void* context, alt_u32 id){
 	//logica del boton up.
 
-	unsigned int *button_action = (unsigned int*) context;
-	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE);
+//	unsigned int *button_action = (unsigned int*) context;
+//	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE);
 
 	/* Acknowledge interrupt by clearing edge capture register */
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, *button_action);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, *button_action);
+	*(up_ptr + 12) = 0;
 
 	if (!up_pressed) {
 		alt_putstr("Button up\n");
@@ -460,11 +518,13 @@ static void btn_up_respond(void* context, alt_u32 id){
 static void btn_down_respond(void* context, alt_u32 id) {
 	//logica del boton down.
 
-	unsigned int *button_action = (unsigned int*) context;
-	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE);
+//	unsigned int *button_action = (unsigned int*) context;
+//	*button_action =  IORD_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE);
 
 	/* Acknowledge interrupt by clearing edge capture register */
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, *button_action);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, *button_action);
+
+	*(down_ptr + 12) = 0;
 
 	if (!down_pressed) {
 		alt_putstr("Button down\n");
@@ -481,18 +541,25 @@ static void btn_down_respond(void* context, alt_u32 id) {
 static void buttons_init(void){
 
 	//Set alarm button:
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_SET_BASE, 0xf);
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE, 0x0);
+
+	*(set_clock + 8) = 0x1;
+	*(set_clock + 12) = 0x0;
+//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_SET_BASE, 0x1);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_SET_BASE, 0x0);
 	alt_irq_register(BTN_SET_IRQ, BTN_SET_BASE, btn_set_respond);
 
 	//Up button:
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_UP_BASE, 0xf);
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, 0x0);
+	*(up_ptr + 8) = 0x1;
+	*(up_ptr + 12) = 0x0;
+//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_UP_BASE, 0x1);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_UP_BASE, 0x0);
 	alt_irq_register(BTN_UP_IRQ, BTN_UP_BASE, btn_up_respond);
 
 	//Down button:
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_DOWN_BASE, 0xf);
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, 0x0);
+	*(down_ptr + 8) = 0x1;
+	*(down_ptr + 12) = 0x0;
+//	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BTN_DOWN_BASE, 0x1);
+//	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BTN_DOWN_BASE, 0x0);
 	alt_irq_register(BTN_DOWN_IRQ, BTN_DOWN_BASE, btn_down_respond);
 }
 
@@ -552,11 +619,13 @@ static void timer_respond(void* context){
 	alt_irq_disable(BTN_DOWN_IRQ);
 
 	/* Acknowledge interrupt by clearing status register */
-	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0x0);
+//	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0x0);
+	*timer_base_ptr = 0x0;
 
 	add_second();
 
-	if (*swc_alarm == 1 && hour[2] == alarm [2] && hour[1] == alarm[1]) {
+	if (*swc_alarm == 1 && hour[2] == alarm [2] &&
+			hour[1] == alarm[1] && hour[0] < 30) {
 		*alarm_ptr = (unsigned char) 1;
 	} else {
 		*alarm_ptr = (unsigned char) 0;
@@ -574,8 +643,9 @@ static void timer_respond(void* context){
  */
 static void timer_init(void){
 	//Start the values for the timer interrupt.
-	IOWR_ALTERA_AVALON_TIMER_CONTROL(timer_base_ptr, ALTERA_AVALON_TIMER_CONTROL_ITO_MSK
-	        | ALTERA_AVALON_TIMER_CONTROL_START_MSK);
+//	IOWR_ALTERA_AVALON_TIMER_CONTROL(timer_base_ptr, ALTERA_AVALON_TIMER_CONTROL_ITO_MSK
+//	        | ALTERA_AVALON_TIMER_CONTROL_START_MSK);
+	*(timer_base_ptr + 4) = 0x1 | 0x4;
 	//Init the handler for the timer interrupt.
 	alt_irq_register(TIMER_IRQ, TIMER_BASE /*timer_base_ptr*/, timer_respond);
 }
@@ -597,6 +667,8 @@ void init_values()
 int main()
 { 
 	alt_putstr("Welcome to the Alarm Clock\n");
+
+//	do{__builtin_wrctl(0, 0x00000001);} while(0);
 
 	if (first) {
 		init_values();

@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dD:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/software/alarm_clock/obj/default/runtime/sim/mentor
 vsystem_TIMER
-!s110 1605044438
+!s110 1605142837
 !i10b 1
 !s100 2ZKRe`Gla@Y52FF5Uib3j2
 I6`NDfofJ^hcX@UNZI?za>1
 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1604985439
+w1605142673
 8D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_TIMER.v
 FD:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_TIMER.v
 L0 21
@@ -23,7 +23,7 @@ OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1605044438.000000
+!s108 1605142837.000000
 !s107 D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_TIMER.v|
 !s90 -reportprogress|300|D:/Work_Files/Quartus_Files/CE5303-Minimal-SoC-Design-for-Alarm-Clock/cpu/system/testbench/system_tb/simulation/submodules/system_TIMER.v|-work|TIMER|
 !i113 1

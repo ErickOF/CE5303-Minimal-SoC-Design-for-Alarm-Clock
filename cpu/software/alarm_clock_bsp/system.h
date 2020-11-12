@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'system'
  * SOPC Builder design path: ../../system.sopcinfo
  *
- * Generated: Mon Nov 09 23:18:21 CST 2020
+ * Generated: Wed Nov 11 18:58:54 CST 2020
  */
 
 /*
@@ -60,7 +60,7 @@
  *
  */
 
-#define ALARM_BASE 0x6070
+#define ALARM_BASE 0x5070
 #define ALARM_BIT_CLEARING_EDGE_REGISTER 0
 #define ALARM_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define ALARM_CAPTURE 0
@@ -88,7 +88,7 @@
  */
 
 #define ALT_MODULE_CLASS_BTN_DOWN altera_avalon_pio
-#define BTN_DOWN_BASE 0x60a0
+#define BTN_DOWN_BASE 0x5040
 #define BTN_DOWN_BIT_CLEARING_EDGE_REGISTER 0
 #define BTN_DOWN_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BTN_DOWN_CAPTURE 0
@@ -115,7 +115,7 @@
  */
 
 #define ALT_MODULE_CLASS_BTN_SET altera_avalon_pio
-#define BTN_SET_BASE 0x6080
+#define BTN_SET_BASE 0x5060
 #define BTN_SET_BIT_CLEARING_EDGE_REGISTER 0
 #define BTN_SET_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BTN_SET_CAPTURE 0
@@ -142,7 +142,7 @@
  */
 
 #define ALT_MODULE_CLASS_BTN_UP altera_avalon_pio
-#define BTN_UP_BASE 0x6090
+#define BTN_UP_BASE 0x5050
 #define BTN_UP_BIT_CLEARING_EDGE_REGISTER 0
 #define BTN_UP_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BTN_UP_CAPTURE 0
@@ -254,7 +254,7 @@
  */
 
 #define ALT_MODULE_CLASS_H0 altera_avalon_pio
-#define H0_BASE 0x6010
+#define H0_BASE 0x50c0
 #define H0_BIT_CLEARING_EDGE_REGISTER 0
 #define H0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define H0_CAPTURE 0
@@ -281,7 +281,7 @@
  */
 
 #define ALT_MODULE_CLASS_H1 altera_avalon_pio
-#define H1_BASE 0x6000
+#define H1_BASE 0x50d0
 #define H1_BIT_CLEARING_EDGE_REGISTER 0
 #define H1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define H1_CAPTURE 0
@@ -308,7 +308,7 @@
  */
 
 #define ALT_MODULE_CLASS_M0 altera_avalon_pio
-#define M0_BASE 0x6040
+#define M0_BASE 0x50a0
 #define M0_BIT_CLEARING_EDGE_REGISTER 0
 #define M0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define M0_CAPTURE 0
@@ -335,7 +335,7 @@
  */
 
 #define ALT_MODULE_CLASS_M1 altera_avalon_pio
-#define M1_BASE 0x6030
+#define M1_BASE 0x50b0
 #define M1_BIT_CLEARING_EDGE_REGISTER 0
 #define M1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define M1_CAPTURE 0
@@ -391,7 +391,7 @@
  */
 
 #define ALT_MODULE_CLASS_S0 altera_avalon_pio
-#define S0_BASE 0x6060
+#define S0_BASE 0x5080
 #define S0_BIT_CLEARING_EDGE_REGISTER 0
 #define S0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define S0_CAPTURE 0
@@ -418,7 +418,7 @@
  */
 
 #define ALT_MODULE_CLASS_S1 altera_avalon_pio
-#define S1_BASE 0x6050
+#define S1_BASE 0x5090
 #define S1_BIT_CLEARING_EDGE_REGISTER 0
 #define S1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define S1_CAPTURE 0
@@ -445,7 +445,7 @@
  */
 
 #define ALT_MODULE_CLASS_SWC_ALARM altera_avalon_pio
-#define SWC_ALARM_BASE 0x60c0
+#define SWC_ALARM_BASE 0x5020
 #define SWC_ALARM_BIT_CLEARING_EDGE_REGISTER 0
 #define SWC_ALARM_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SWC_ALARM_CAPTURE 0
@@ -472,7 +472,7 @@
  */
 
 #define ALT_MODULE_CLASS_SWC_SEL altera_avalon_pio
-#define SWC_SEL_BASE 0x60b0
+#define SWC_SEL_BASE 0x5030
 #define SWC_SEL_BIT_CLEARING_EDGE_REGISTER 0
 #define SWC_SEL_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SWC_SEL_CAPTURE 0
@@ -509,19 +509,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/UART"
-#define ALT_STDERR_BASE 0x50e8
+#define ALT_STDERR_BASE 0x6008
 #define ALT_STDERR_DEV UART
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/UART"
-#define ALT_STDIN_BASE 0x50e8
+#define ALT_STDIN_BASE 0x6008
 #define ALT_STDIN_DEV UART
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/UART"
-#define ALT_STDOUT_BASE 0x50e8
+#define ALT_STDOUT_BASE 0x6008
 #define ALT_STDOUT_DEV UART
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -536,7 +536,7 @@
 
 #define ALT_MODULE_CLASS_TIMER altera_avalon_timer
 #define TIMER_ALWAYS_RUN 1
-#define TIMER_BASE 0x60e0
+#define TIMER_BASE 0x5000
 #define TIMER_COUNTER_SIZE 32
 #define TIMER_FIXED_PERIOD 1
 #define TIMER_FREQ 50000000
@@ -561,7 +561,7 @@
  */
 
 #define ALT_MODULE_CLASS_UART altera_avalon_jtag_uart
-#define UART_BASE 0x50e8
+#define UART_BASE 0x6008
 #define UART_IRQ 0
 #define UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define UART_NAME "/dev/UART"
